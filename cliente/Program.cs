@@ -26,22 +26,26 @@ namespace Cliente
                 while (true)
                 {
                     // Enviar datos al servidor
-                    Console.Write("Ingrese el mensaje a enviar ('FIN' para cerrar la conexión): ");
-                    string mensaje = Console.ReadLine() + "\n"; // Agregar un salto de línea al final del mensaje
-                    byte[] mensajeBytes = Encoding.UTF8.GetBytes(mensaje);
-                    clienteSocket.Send(mensajeBytes);
+                    Console.Write("Ingrese el comando: ");
+                    string comando = Console.ReadLine() + "\n"; // Agregar un salto de línea al final del comando
+                    byte[] comandoBytes = Encoding.UTF8.GetBytes(comando);
+                    clienteSocket.Send(comandoBytes);
 
-                    // Si el mensaje es 'FIN', salir del bucle
-                    if (mensaje.Trim().Equals("FIN"))
+                    // Si el comando es 'Get playlist', 'Vote up' o 'Vote down', esperar 'ok' del servidor
+                    if (comando.Trim().Equals("Get playlist") || comando.Trim().Equals("Vote up") || comando.Trim().Equals("Vote down"))
                     {
-                        break;
+                        byte[] buffer = new byte[1024];
+                        int bytesRecibidos = clienteSocket.Receive(buffer);
+                        string respuesta = Encoding.UTF8.GetString(buffer, 0, bytesRecibidos);
+                        Console.WriteLine("Respuesta del servidor: " + respuesta);
                     }
-
-                    // Recibir respuesta del servidor
-                    byte[] buffer = new byte[1024];
-                    int bytesRecibidos = clienteSocket.Receive(buffer);
-                    string respuesta = Encoding.UTF8.GetString(buffer, 0, bytesRecibidos);
-                    Console.WriteLine("Respuesta del servidor: " + respuesta);
+                    else // En caso contrario, esperar 'ERROR' del servidor
+                    {
+                        byte[] buffer = new byte[1024];
+                        int bytesRecibidos = clienteSocket.Receive(buffer);
+                        string respuesta = Encoding.UTF8.GetString(buffer, 0, bytesRecibidos);
+                        Console.WriteLine("Respuesta del servidor: " + respuesta);
+                    }
                 }
 
                 // Cerrar el socket
