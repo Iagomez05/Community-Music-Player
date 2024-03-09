@@ -30,13 +30,25 @@ public class Servidor {
                 while ((mensajeCliente = entrada.readLine()) != null) {
                     System.out.println("Mensaje recibido del cliente: " + mensajeCliente);
                     
-                    // Verificar si el mensaje es el comando para cerrar la conexión
-                    if (mensajeCliente.equals("FIN")) {
-                        break;  // Salir del bucle si se recibe el comando FIN
+                    // Verificar y responder según el comando recibido
+                    switch (mensajeCliente) {
+                        case "Get playlist":
+                        case "Vote up":
+                        case "Vote down":
+                            salida.println("ok");
+                            break;
+                        case "FIN":
+                            salida.println("Cerrando conexión...");
+                            break;
+                        default:
+                            salida.println("ERROR");
+                            break;
                     }
                     
-                    // Procesar el mensaje recibido (en este caso, simplemente se envía de vuelta al cliente)
-                    salida.println("Mensaje recibido: " + mensajeCliente);
+                    // Salir del bucle si se recibe el comando FIN
+                    if (mensajeCliente.equals("FIN")) {
+                        break;
+                    }
                 }
                 
                 // Cerrar la conexión con el cliente
