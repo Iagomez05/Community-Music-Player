@@ -2,7 +2,7 @@
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
-
+/*
 namespace Cliente
 {
     class Program
@@ -55,3 +55,4 @@ namespace Cliente
         }
     }
 }
+*/

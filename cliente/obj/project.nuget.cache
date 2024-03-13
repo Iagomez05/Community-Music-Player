@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Fx+2EgnXZQCtUelOJQapCE6gRH1uK5DUG8/4AWoSMHSleW0ktIhB+XzTx1K023wQI+neAw5XETVdJSu9nxT/YQ==",
+  "dgSpecHash": "F6jhlAzPI6E/HNmAybTfVZMC1pCKlCpeFwySuQehowOGBc8UfbNDhrlO5+w8ERKtbJQsSVzUjw02Y1D/8nO8hg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\joelg\\OneDrive\\Desktop\\ProyectoDatos\\Community-Music-Player\\cliente\\cliente.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\mario\\OneDrive\\Escritorio\\2024\\I Semestre\\Datos I\\Community-Music-Player\\cliente\\cliente.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mario\\.nuget\\packages\\ini-parser-netstandard\\2.5.2\\ini-parser-netstandard.2.5.2.nupkg.sha512"
+  ],
   "logs": []
 }
