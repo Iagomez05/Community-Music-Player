@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\joelg\\OneDrive\\Desktop\\ProyectoDatos\\Community-Music-Player\\cliente\\cliente.csproj": {}
+    "C:\\Users\\mario\\OneDrive\\Escritorio\\2024\\I Semestre\\Datos I\\Community-Music-Player\\cliente\\cliente.csproj": {}
   },
   "projects": {
-    "C:\\Users\\joelg\\OneDrive\\Desktop\\ProyectoDatos\\Community-Music-Player\\cliente\\cliente.csproj": {
+    "C:\\Users\\mario\\OneDrive\\Escritorio\\2024\\I Semestre\\Datos I\\Community-Music-Player\\cliente\\cliente.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joelg\\OneDrive\\Desktop\\ProyectoDatos\\Community-Music-Player\\cliente\\cliente.csproj",
+        "projectUniqueName": "C:\\Users\\mario\\OneDrive\\Escritorio\\2024\\I Semestre\\Datos I\\Community-Music-Player\\cliente\\cliente.csproj",
         "projectName": "cliente",
-        "projectPath": "C:\\Users\\joelg\\OneDrive\\Desktop\\ProyectoDatos\\Community-Music-Player\\cliente\\cliente.csproj",
-        "packagesPath": "C:\\Users\\joelg\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joelg\\OneDrive\\Desktop\\ProyectoDatos\\Community-Music-Player\\cliente\\obj\\",
+        "projectPath": "C:\\Users\\mario\\OneDrive\\Escritorio\\2024\\I Semestre\\Datos I\\Community-Music-Player\\cliente\\cliente.csproj",
+        "packagesPath": "C:\\Users\\mario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mario\\OneDrive\\Escritorio\\2024\\I Semestre\\Datos I\\Community-Music-Player\\cliente\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\joelg\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\mario\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -42,6 +42,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "ini-parser-netstandard": {
+              "target": "Package",
+              "version": "[2.5.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -58,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
