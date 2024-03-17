@@ -1,32 +1,31 @@
-import java.io.FileReader;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
 public class LeerIni {
+    private Properties properties;
 
-    public static void main(String[] args) {
-
-        // Ruta al archivo INI
-        String rutaArchivo = "data.ini";
-
-        // Crear una instancia de la clase Properties
-        Properties propiedades = new Properties();
-
-        // Cargar el archivo INI
-        try (FileReader lector = new FileReader(rutaArchivo)) {
-            propiedades.load(lector);
+    public LeerIni(String filePath) {
+        properties = new Properties();
+        try {
+            properties.load(new FileInputStream(filePath));
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
 
-        // Obtener el valor de una clave
-        String valor = propiedades.getProperty("clave1");
-        String valor2 = propiedades.getProperty("clave2");
-        String valor3 = propiedades.getProperty("clave3");
+    public String getValue(String key) {
+        return properties.getProperty(key);
+    }
 
-        // Imprimir el valor
-        System.out.println("Valor: " + valor);
-        System.out.println("Valor: " + valor2);
-        System.out.println("Valor: " + valor3);
+    public int getIntValue(String key) {
+        String value = properties.getProperty(key);
+        try {
+            return Integer.parseInt(value);
+        } catch (NumberFormatException e) {
+            System.out.println("Error: El valor para la clave '" + key + "' no es un número entero válido.");
+            return 0; // Devuelve 0 , lo cual seria un error
+        }
     }
 }
+

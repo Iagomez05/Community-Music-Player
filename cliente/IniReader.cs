@@ -6,18 +6,21 @@ using IniParser.Parser;
 
 namespace lectorIni
 {
-    class IniReader
+    public class IniReader
     {
-        static void Main(string[] args)
+        private FileIniDataParser parser;
+
+        public IniReader()
         {
-            var parser = new FileIniDataParser();
-            IniParser.Model.IniData data = parser.ReadFile("data1.ini");
-        
-            // Acceder a una sección y clave específica
-            string value = data["SectionName"]["KeyName"];
-            Console.WriteLine(value);
-            Console.WriteLine("Prueba");
+            parser = new FileIniDataParser();
+        }
+
+        public string LeerConfiguracion(string rutaArchivo, string seccion, string clave)
+        {
+            IniData data = parser.ReadFile(rutaArchivo);
+            return data[seccion][clave];
         }
     }
+
 }
 

@@ -9,7 +9,9 @@ import java.net.Socket;
 public class Servidor {
 
     public static void main(String[] args) {
-        final int puerto = 7500;
+        LeerIni iniReader = new LeerIni("data.ini");
+        int valor = iniReader.getIntValue("puerto");
+        final int puerto = valor;
         
         try {
             // Se crea un ServerSocket que estará a la escucha en el puerto especificado
