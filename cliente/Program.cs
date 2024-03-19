@@ -1,4 +1,6 @@
 ﻿using lectorIni;
+using log4net;
+using log4net.Config;
 using System;
 using System.Net;
 using System.Net.Sockets;
@@ -9,8 +11,12 @@ namespace Cliente
     class Program
     {
         private static IniReader lector = new IniReader();
+        private static readonly ILog log = LogManager.GetLogger(typeof(Program));
+
         static void Main(string[] args)
         {
+            XmlConfigurator.Configure(new FileInfo("log4net.config"));
+
             try
             {
                 // Establecer la dirección IP y el puerto del servidor
@@ -27,6 +33,7 @@ namespace Cliente
                 clienteSocket.Connect(ipAddress, puerto);
 
                 Console.WriteLine("Conexión establecida con el servidor.");
+                log.Info("Conexión establecida con el servidor.");
 
                 while (true)
                 {
@@ -56,7 +63,9 @@ namespace Cliente
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.ToString());
+                Console.WriteLine("Error: " + ex.Message);
+                log.Error("Error: " + ex.Message);
+                
             }
         }
     }

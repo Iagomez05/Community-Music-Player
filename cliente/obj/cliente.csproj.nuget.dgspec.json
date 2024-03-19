@@ -46,6 +46,10 @@
             "ini-parser-netstandard": {
               "target": "Package",
               "version": "[2.5.2, )"
+            },
+            "log4net": {
+              "target": "Package",
+              "version": "[2.0.16, )"
             }
           },
           "imports": [
