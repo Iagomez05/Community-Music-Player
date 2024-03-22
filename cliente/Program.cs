@@ -1,4 +1,7 @@
-﻿using System;
+﻿using lectorIni;
+using log4net;
+using log4net.Config;
+using System;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -7,21 +10,30 @@ namespace Cliente
 {
     class Program
     {
+        private static IniReader lector = new IniReader();
+        private static readonly ILog log = LogManager.GetLogger(typeof(Program));
+
         static void Main(string[] args)
         {
+            XmlConfigurator.Configure(new FileInfo("log4net.config"));
+
             try
             {
                 // Establecer la dirección IP y el puerto del servidor
-                IPAddress ipAddress = IPAddress.Parse("127.0.0.1");
-                int puerto = 7500;
+                string ipString = lector.LeerConfiguracion("data1.ini", "Sockets", "IP");
+                IPAddress ipAddress = IPAddress.Parse(ipString);
+                int value = int.Parse(lector.LeerConfiguracion("data1.ini", "Sockets", "Puerto"));
+                int puerto = value;
+                Console.WriteLine("Datos leidos");
 
                 // Crear el socket TCP/IP
                 Socket clienteSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
-                // Conectar el socket al servidor
+                // Conectar el socket al servidor de los datos obtenidos del archivo de configuración ini
                 clienteSocket.Connect(ipAddress, puerto);
 
                 Console.WriteLine("Conexión establecida con el servidor.");
+                log.Info("Conexión establecida con el servidor.");
 
                 while (true)
                 {
@@ -38,7 +50,8 @@ namespace Cliente
                     }
 
                     // Recibir respuesta del servidor
-                    byte[] buffer = new byte[1024];
+                    int BYTE = int.Parse(lector.LeerConfiguracion("data1.ini", "Sockets", "Byte"));
+                    byte[] buffer = new byte[BYTE];
                     int bytesRecibidos = clienteSocket.Receive(buffer);
                     string respuesta = Encoding.UTF8.GetString(buffer, 0, bytesRecibidos);
                     Console.WriteLine("Respuesta del servidor: " + respuesta);
@@ -50,7 +63,9 @@ namespace Cliente
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.ToString());
+                Console.WriteLine("Error: " + ex.Message);
+                log.Error("Error: " + ex.Message);
+                
             }
         }
     }

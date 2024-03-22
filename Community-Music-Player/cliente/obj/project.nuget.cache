@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Fi2whYouTtcIaJyNufsSCwv6uTYaf7PdZVpyZV9sLPnFU5WhjEBUAJbiJQ4U82/MTiKg00p11lO7Am2vcRoOlQ==",
+  "dgSpecHash": "kpgtv9ruYMk3xWAeeFX/2DIqE/RtNcyc1avARW3iIJczpowdOBEgXZz0/92nKVA+2v1/kO7nRyoxfIgYlNjf+Q==",
   "success": true,
-  "projectFilePath": "c:\\Users\\joelg\\OneDrive\\Desktop\\ProyectoDatos\\cliente\\cliente.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "c:\\Users\\mario\\OneDrive\\Escritorio\\2024\\I Semestre\\Datos I\\Community-Music-Player\\Community-Music-Player\\cliente\\cliente.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mario\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\mario\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
+    "C:\\Users\\mario\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\joelg\\OneDrive\\Desktop\\ProyectoDatos\\cliente\\cliente.csproj": {}
+    "c:\\Users\\mario\\OneDrive\\Escritorio\\2024\\I Semestre\\Datos I\\Community-Music-Player\\Community-Music-Player\\cliente\\cliente.csproj": {}
   },
   "projects": {
-    "c:\\Users\\joelg\\OneDrive\\Desktop\\ProyectoDatos\\cliente\\cliente.csproj": {
+    "c:\\Users\\mario\\OneDrive\\Escritorio\\2024\\I Semestre\\Datos I\\Community-Music-Player\\Community-Music-Player\\cliente\\cliente.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\joelg\\OneDrive\\Desktop\\ProyectoDatos\\cliente\\cliente.csproj",
+        "projectUniqueName": "c:\\Users\\mario\\OneDrive\\Escritorio\\2024\\I Semestre\\Datos I\\Community-Music-Player\\Community-Music-Player\\cliente\\cliente.csproj",
         "projectName": "cliente",
-        "projectPath": "c:\\Users\\joelg\\OneDrive\\Desktop\\ProyectoDatos\\cliente\\cliente.csproj",
-        "packagesPath": "C:\\Users\\joelg\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\joelg\\OneDrive\\Desktop\\ProyectoDatos\\cliente\\obj\\",
+        "projectPath": "c:\\Users\\mario\\OneDrive\\Escritorio\\2024\\I Semestre\\Datos I\\Community-Music-Player\\Community-Music-Player\\cliente\\cliente.csproj",
+        "packagesPath": "C:\\Users\\mario\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\mario\\OneDrive\\Escritorio\\2024\\I Semestre\\Datos I\\Community-Music-Player\\Community-Music-Player\\cliente\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\joelg\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\mario\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -42,6 +42,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

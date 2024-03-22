@@ -12,3 +12,12 @@ c:\Users\joelg\OneDrive\Desktop\ProyectoDatos\cliente\obj\Debug\net8.0\refint\cl
 c:\Users\joelg\OneDrive\Desktop\ProyectoDatos\cliente\obj\Debug\net8.0\cliente.pdb
 c:\Users\joelg\OneDrive\Desktop\ProyectoDatos\cliente\obj\Debug\net8.0\cliente.genruntimeconfig.cache
 c:\Users\joelg\OneDrive\Desktop\ProyectoDatos\cliente\obj\Debug\net8.0\ref\cliente.dll
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\Community-Music-Player\cliente\obj\Debug\net8.0\cliente.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\Community-Music-Player\cliente\obj\Debug\net8.0\cliente.AssemblyInfoInputs.cache
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\Community-Music-Player\cliente\obj\Debug\net8.0\cliente.AssemblyInfo.cs
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\Community-Music-Player\cliente\obj\Debug\net8.0\cliente.csproj.CoreCompileInputs.cache
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\Community-Music-Player\cliente\obj\Debug\net8.0\cliente.sourcelink.json
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\Community-Music-Player\cliente\obj\Debug\net8.0\cliente.dll
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\Community-Music-Player\cliente\obj\Debug\net8.0\refint\cliente.dll
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\Community-Music-Player\cliente\obj\Debug\net8.0\cliente.pdb
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\Community-Music-Player\cliente\obj\Debug\net8.0\cliente.csproj.AssemblyReference.cache

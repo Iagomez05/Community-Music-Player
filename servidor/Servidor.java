@@ -1,15 +1,18 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
+import log.Log;
+import org.apache.log4j.Logger;
+
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 public class Servidor {
 
+    private static final Logger LOG = Log.getLogger(Servidor.class);
+
     public static void main(String[] args) {
-        final int puerto = 7500;
+        LeerIni iniReader = new LeerIni("data.ini");
+        int valor = iniReader.getIntValue("puerto");
+        final int puerto = valor;
         
         try {
             // Se crea un ServerSocket que estará a la escucha en el puerto especificado
@@ -46,6 +49,7 @@ public class Servidor {
         } catch (IOException e) {
             // En caso de algún error de entrada/salida, se imprime el mensaje de error
             System.err.println("Error de entrada/salida: " + e.getMessage());
+            LOG.error("Error:: entrada/salida");
         }
     }
 }
