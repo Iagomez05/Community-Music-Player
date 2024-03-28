@@ -2,18 +2,27 @@
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using lectorIni;
+using log4net;
+using log4net.Config;
 
 namespace Cliente
 {
     class Program
     {
+        private static IniReader lector = new IniReader();
+        private static readonly ILog log = LogManager.GetLogger(typeof(Program));
         static void Socketcliente(string[] args)
         {
+            XmlConfigurator.Configure(new FileInfo("log4net.config"));
             try
             {
+                XmlConfigurator.Configure(new FileInfo("log4net.config"));
                 // Establecer la dirección IP y el puerto del servidor
-                IPAddress ipAddress = IPAddress.Parse("127.0.0.1");
-                int puerto = 6400;
+                string ipString = lector.LeerConfiguracion("data1.ini", "Sockets", "IP");
+                IPAddress ipAddress = IPAddress.Parse(ipString);
+                int value = int.Parse(lector.LeerConfiguracion("data1.ini", "Sockets", "Puerto1"));
+                int puerto = value;
 
                 // Crear el socket TCP/IP
                 Socket clienteSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -22,6 +31,7 @@ namespace Cliente
                 clienteSocket.Connect(ipAddress, puerto);
 
                 Console.WriteLine("Conexión establecida con el servidor.");
+                log.Info("Conexion establecida con el servidor.");
 
                 while (true)
                 {
@@ -34,10 +44,12 @@ namespace Cliente
                     // Si el comando es 'Get playlist', 'Vote up' o 'Vote down', esperar 'ok' del servidor
                     if (comando.Trim().Equals("Get playlist") || comando.Trim().Equals("Vote up") || comando.Trim().Equals("Vote down"))
                     {
-                        byte[] buffer = new byte[1024];
+                        int BYTE = int.Parse(lector.LeerConfiguracion("data1.ini", "Sockets", "Byte"));
+                        byte[] buffer = new byte[BYTE];
                         int bytesRecibidos = clienteSocket.Receive(buffer);
                         string respuesta = Encoding.UTF8.GetString(buffer, 0, bytesRecibidos);
                         Console.WriteLine("Respuesta del servidor: " + respuesta);
+                        log.Info("Respuesta del servidor: " + respuesta);
                     }
                     else // En caso contrario, esperar 'ERROR' del servidor
                     {
@@ -45,6 +57,7 @@ namespace Cliente
                         int bytesRecibidos = clienteSocket.Receive(buffer);
                         string respuesta = Encoding.UTF8.GetString(buffer, 0, bytesRecibidos);
                         Console.WriteLine("Respuesta del servidor: " + respuesta);
+                        log.Info("Respuesta del servidor: " + respuesta);
                     }
                 }
 
@@ -55,6 +68,7 @@ namespace Cliente
             catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.ToString());
+                log.Error("Error: " + ex.ToString());
             }
         }
     }

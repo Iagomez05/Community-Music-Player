@@ -1,0 +1,80 @@
+22-03-2024 12:19:58 INFO  Main:36: NO se pudo extraer metadata
+22-03-2024 12:19:58 INFO  Main:50: Servidor iniciado en el puerto 7500
+22-03-2024 12:23:05 INFO  Main:36: NO se pudo extraer metadata
+22-03-2024 12:23:05 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 12:28:26 ERROR Main:95: Error de entrada/salida: Address already in use: bind
+22-03-2024 12:31:24 INFO  Main:36: NO se pudo extraer metadata
+22-03-2024 12:31:24 ERROR Main:95: Error de entrada/salida: Address already in use: bind
+22-03-2024 12:31:56 INFO  Main:36: NO se pudo extraer metadata
+22-03-2024 12:31:56 ERROR Main:95: Error de entrada/salida: Address already in use: bind
+22-03-2024 12:32:23 INFO  Main:36: NO se pudo extraer metadata
+22-03-2024 12:32:23 ERROR Main:95: Error de entrada/salida: Address already in use: bind
+22-03-2024 12:34:13 INFO  Main:36: NO se pudo extraer metadata
+22-03-2024 12:34:13 ERROR Main:95: Error de entrada/salida: Address already in use: bind
+22-03-2024 12:48:48 INFO  Main:37: NO se pudo extraer metadata
+22-03-2024 12:48:48 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 12:49:24 INFO  Main:37: NO se pudo extraer metadata
+22-03-2024 12:49:24 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 12:51:04 INFO  Main:37: NO se pudo extraer metadata
+22-03-2024 12:51:05 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 12:51:41 INFO  Main:37: NO se pudo extraer metadata
+22-03-2024 12:51:41 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 12:52:14 INFO  Main:37: NO se pudo extraer metadata
+22-03-2024 12:52:14 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 12:53:39 INFO  Main:37: NO se pudo extraer metadata
+22-03-2024 12:53:39 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 12:54:14 INFO  Main:37: NO se pudo extraer metadata
+22-03-2024 12:54:14 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 12:56:51 INFO  Main:37: NO se pudo extraer metadata
+22-03-2024 12:56:51 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 12:57:20 INFO  Main:37: NO se pudo extraer metadata
+22-03-2024 12:57:20 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 12:58:00 INFO  Main:37: NO se pudo extraer metadata
+22-03-2024 12:58:00 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 12:58:27 INFO  Main:37: NO se pudo extraer metadata
+22-03-2024 12:58:27 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 12:59:18 INFO  Main:37: NO se pudo extraer metadata
+22-03-2024 12:59:19 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 12:59:42 INFO  Main:37: NO se pudo extraer metadata
+22-03-2024 12:59:42 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 13:00:07 INFO  Main:37: NO se pudo extraer metadata
+22-03-2024 13:00:07 INFO  Main:50: Servidor iniciado en el puerto 7590
+22-03-2024 13:00:58 INFO  Main:37: NO se pudo extraer metadata
+22-03-2024 13:00:58 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 13:01:36 INFO  Main:37: NO se pudo extraer metadata
+22-03-2024 13:01:36 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 13:02:52 INFO  Main:37: NO se pudo extraer metadata
+22-03-2024 13:02:52 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 13:03:28 INFO  Main:37: NO se pudo extraer metadata
+22-03-2024 13:03:28 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 13:03:59 INFO  Main:37: NO se pudo extraer metadata
+22-03-2024 13:03:59 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 13:07:17 INFO  Main:37: NO se pudo extraer metadata
+22-03-2024 13:07:17 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 13:08:06 INFO  Main:37: NO se pudo extraer metadata
+22-03-2024 13:08:06 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 13:08:46 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 13:09:28 INFO  Main:37: NO se pudo extraer metadata
+22-03-2024 13:09:28 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 13:10:20 INFO  Main:37: NO se pudo extraer metadata
+22-03-2024 13:10:20 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 13:11:00 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 13:12:35 INFO  Main:37: NO se pudo extraer metadata
+22-03-2024 13:12:35 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 13:14:15 INFO  Main:37: NO se pudo extraer metadata
+22-03-2024 13:14:15 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 13:15:05 INFO  Main:37: NO se pudo extraer metadata
+22-03-2024 13:15:05 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 13:18:57 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 13:19:55 INFO  Main:37: NO se pudo extraer metadata
+22-03-2024 13:19:56 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 13:20:51 INFO  Main:37: NO se pudo extraer metadata
+22-03-2024 13:20:52 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 13:21:21 INFO  Main:37: NO se pudo extraer metadata
+22-03-2024 13:21:21 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 13:22:01 INFO  Main:37: NO se pudo extraer metadata
+22-03-2024 13:22:01 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 13:24:02 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 13:26:16 ERROR Main:96: Error de entrada/salida: Address already in use: bind
+22-03-2024 13:27:01 ERROR Main:95: Error de entrada/salida: Address already in use: bind
+22-03-2024 13:35:20 ERROR Main:95: Error de entrada/salida: Address already in use: bind
