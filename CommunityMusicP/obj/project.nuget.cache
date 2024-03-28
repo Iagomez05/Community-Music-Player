@@ -1,8 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "GOlnNRwooeu8WzPcxwtbC2ZETQ8zhl2gGobj285BSvYZUqnJ9USSbBtHXcR4678RSjA7vrpK7YykWCFL1Rq7VA==",
+  "dgSpecHash": "YnbAArm0U0qhzAkg+tbINpPUgSNVkE496zxA5DjIyZnQWkjgFrejw85xPNeZVOwwBuB0pd1zRc71nRcl8+rDMw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\gonza\\source\\repos\\CommunityMusicP\\CommunityMusicP.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\mario\\OneDrive\\Escritorio\\2024\\I Semestre\\Datos I\\Community-Music-Player\\CommunityMusicP\\CommunityMusicP.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mario\\.nuget\\packages\\ini-parser-netstandard\\2.5.2\\ini-parser-netstandard.2.5.2.nupkg.sha512",
+    "C:\\Users\\mario\\.nuget\\packages\\log4net\\2.0.17\\log4net.2.0.17.nupkg.sha512",
+    "C:\\Users\\mario\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\mario\\.nuget\\packages\\system.configuration.configurationmanager\\4.5.0\\system.configuration.configurationmanager.4.5.0.nupkg.sha512",
+    "C:\\Users\\mario\\.nuget\\packages\\system.security.accesscontrol\\4.5.0\\system.security.accesscontrol.4.5.0.nupkg.sha512",
+    "C:\\Users\\mario\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.5.0\\system.security.cryptography.protecteddata.4.5.0.nupkg.sha512",
+    "C:\\Users\\mario\\.nuget\\packages\\system.security.permissions\\4.5.0\\system.security.permissions.4.5.0.nupkg.sha512",
+    "C:\\Users\\mario\\.nuget\\packages\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }
