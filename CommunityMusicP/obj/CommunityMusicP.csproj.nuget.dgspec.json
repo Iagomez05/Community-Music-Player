@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gonza\\source\\repos\\CommunityMusicP\\CommunityMusicP.csproj": {}
+    "C:\\Users\\gonza\\OneDrive\\Desktop\\Proyecto1Datos\\Community-Music-Player\\CommunityMusicP\\CommunityMusicP.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gonza\\source\\repos\\CommunityMusicP\\CommunityMusicP.csproj": {
+    "C:\\Users\\gonza\\OneDrive\\Desktop\\Proyecto1Datos\\Community-Music-Player\\CommunityMusicP\\CommunityMusicP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gonza\\source\\repos\\CommunityMusicP\\CommunityMusicP.csproj",
+        "projectUniqueName": "C:\\Users\\gonza\\OneDrive\\Desktop\\Proyecto1Datos\\Community-Music-Player\\CommunityMusicP\\CommunityMusicP.csproj",
         "projectName": "CommunityMusicP",
-        "projectPath": "C:\\Users\\gonza\\source\\repos\\CommunityMusicP\\CommunityMusicP.csproj",
+        "projectPath": "C:\\Users\\gonza\\OneDrive\\Desktop\\Proyecto1Datos\\Community-Music-Player\\CommunityMusicP\\CommunityMusicP.csproj",
         "packagesPath": "C:\\Users\\gonza\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gonza\\source\\repos\\CommunityMusicP\\obj\\",
+        "outputPath": "C:\\Users\\gonza\\OneDrive\\Desktop\\Proyecto1Datos\\Community-Music-Player\\CommunityMusicP\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gonza\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -63,7 +63,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
