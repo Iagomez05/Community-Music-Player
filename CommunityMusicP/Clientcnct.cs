@@ -25,6 +25,7 @@ namespace CommunityMusicP
         private int puerto;
         public Clientcnct()
         {
+            XmlConfigurator.Configure(new FileInfo("log4net.config"));
             InitializeComponent();
             // Leer la configuración del archivo INI
             string rutaArchivo = "data1.ini"; // Asegúrate de proporcionar la ruta correcta
@@ -40,6 +41,7 @@ namespace CommunityMusicP
         private void btnsalir_Click(object sender, EventArgs e)
         {
             this.Close();
+            log.Info("Info:: Cerrando la aplicación"); // Log del error, que se guarda en el archivo de logs
         }
 
         private void btnVoteup_Click(object sender, EventArgs e)
