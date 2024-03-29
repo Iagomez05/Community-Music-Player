@@ -6,16 +6,15 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.control.Slider;
+import javafx.scene.control.*;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import org.apache.log4j.Logger;
 import javafx.util.Duration;
 
-import java.io.File;
+import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Timer;
@@ -25,6 +24,7 @@ import java.util.TimerTask;
 public class ControllerClass implements Initializable {
 
     private static final Logger LOG = Log.getLogger(ControllerClass.class);
+    private boolean mode = true;
 
 
     @FXML private Button Button_Last;
@@ -41,7 +41,7 @@ public class ControllerClass implements Initializable {
 
     @FXML private ProgressBar songProgressB;
 
-    @FXML private Button Button_CommP;
+    @FXML private ToggleButton Toggle_commode;
 
     @FXML private Slider songSlider;
 
@@ -211,9 +211,27 @@ public class ControllerClass implements Initializable {
         timer.cancel();
 
     }
+    @FXML
+    public void commumode(ActionEvent event){
+        // Especificar el puerto del socket
+        INI iniReader = new INI("data.ini");
+        final int valor = iniReader.getIntValue("puerto");
+        //System.out.println("el seocket esta activado:" + mode);
+        if (Toggle_commode.isSelected()) {
+            // Crear una instancia de linkedList
+            org.example.pruebafx.linkedList lista = new org.example.pruebafx.linkedList();
+            // Pasar la instancia de linkedList al constructor de Servidor
+            Servidor empiezaservidor = new Servidor();
+            empiezaservidor.iniciarServidor(valor);
 
-    public void CommPlayer(ActionEvent actionEvent) {
+
+        } else {
+            // aqui se cierra el cliente
+        }
+
+
     }
+
 }
 
 

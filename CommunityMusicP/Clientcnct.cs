@@ -46,37 +46,45 @@ namespace CommunityMusicP
 
         private void btnVoteup_Click(object sender, EventArgs e)
         {
+            SendMessageToServer("voteUp");
+        }
+
+        private void btnVotedwn_Click(object sender, EventArgs e)
+        {
+            SendMessageToServer("voteDown");
+        }
+
+
+        private void SendMessageToServer(string message)
+        {
             try
             {
-                // Crear el socket TCP/IP
-                using (Socket clienteSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp))
-                {
-                    // Conectar el socket al servidor
-                    clienteSocket.Connect(ipAddress, puerto);
+                // Llama al método Socketcliente para establecer la conexión con el servidor
+                Program.Socketcliente();
 
-                    // Mensaje a enviar
-                    string mensaje = "Mensaje desde el botón Vote Up";
+                // Enviar datos al servidor
+                byte[] mensajeBytes = Encoding.UTF8.GetBytes(message + "\n"); // Agregar un salto de línea al final del mensaje
+                Program.clienteSocket.Send(mensajeBytes);
 
-                    // Convertir el mensaje a bytes
-                    byte[] mensajeBytes = Encoding.UTF8.GetBytes(mensaje);
-
-                    // Enviar el mensaje al servidor
-                    clienteSocket.Send(mensajeBytes);
-
-                    // Cerrar la conexión
-                    clienteSocket.Shutdown(SocketShutdown.Both);
-                    clienteSocket.Close();
-                }
-
-                MessageBox.Show("Mensaje enviado al servidor");
-                log.Info("Info:: Mesaje enviado"); // Log del error, que se guarda en el archivo de logs
+                // Recibir respuesta del servidor
+                int BYTE = int.Parse(lector.LeerConfiguracion("data1.ini", "Sockets", "Byte"));
+                byte[] buffer = new byte[BYTE];
+                int bytesRecibidos = Program.clienteSocket.Receive(buffer);
+                string respuesta = Encoding.UTF8.GetString(buffer, 0, bytesRecibidos);
+                Console.WriteLine("Respuesta del servidor: " + respuesta);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al enviar el mensaje: " + ex.Message);
-                log.Error("Error: " + ex.Message); // Log del error, que se guarda en el archivo de logs
+                Console.WriteLine("Error: " + ex.ToString());
+                log.Error("Error: " + ex.Message);
             }
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
+
+        
     }
 }
