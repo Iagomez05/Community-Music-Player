@@ -48,12 +48,14 @@ namespace CommunityMusicP
             // 
             // btnEmpezarV
             // 
+            btnEmpezarV.BackColor = Color.DarkRed;
+            btnEmpezarV.ForeColor = SystemColors.ControlLightLight;
             btnEmpezarV.Location = new Point(300, 226);
             btnEmpezarV.Name = "btnEmpezarV";
             btnEmpezarV.Size = new Size(204, 56);
             btnEmpezarV.TabIndex = 1;
             btnEmpezarV.Text = "Empezar a votar";
-            btnEmpezarV.UseVisualStyleBackColor = true;
+            btnEmpezarV.UseVisualStyleBackColor = false;
             btnEmpezarV.Click += btnEmpezarV_Click;
             // 
             // btnsalir
@@ -72,7 +74,7 @@ namespace CommunityMusicP
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Black;
+            BackColor = Color.WhiteSmoke;
             ClientSize = new Size(802, 453);
             Controls.Add(btnsalir);
             Controls.Add(btnEmpezarV);

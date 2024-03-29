@@ -14,6 +14,7 @@ public class Main extends Application {
     private static final Logger LOG = Log.getLogger(Main.class);
     private final linkedList songList = new linkedList();
 
+
     @Override
     public void start(Stage stage) throws IOException {
         INI iniReader = new INI("data.ini");
@@ -24,71 +25,6 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
 
-        // Especificar la ruta del archivo WAV
-        final int valor = iniReader.getIntValue("puerto");
-
-        // Iniciar el servidor en un hilo separado
-        new Thread(() -> {
-
-
-            try {
-                // Se crea un ServerSocket que estará a la escucha en el puerto especificado
-                ServerSocket servidor = new ServerSocket(valor);
-                System.out.println("Servidor iniciado en el puerto " + valor);
-                LOG.info("Servidor iniciado en el puerto " + valor);
-
-                while (true) {
-                    // Se acepta la conexión entrante de un cliente, el programa se bloquea hasta que se recibe una conexión
-                    Socket cliente = servidor.accept();
-                    System.out.println("Cliente conectado: " + cliente.getInetAddress().getHostAddress());
-                    LOG.info("Cliente conectado: " + cliente.getInetAddress().getHostAddress());
-
-                    // Se preparan los objetos de entrada y salida para la comunicación con el cliente
-                    BufferedReader entrada = new BufferedReader(new InputStreamReader(cliente.getInputStream()));
-                    PrintWriter salida = new PrintWriter(new OutputStreamWriter(cliente.getOutputStream()), true);
-
-                    // Se espera a recibir mensajes del cliente hasta que se reciba el comando para cerrar la conexión
-                    String mensajeCliente;
-                    while ((mensajeCliente = entrada.readLine()) != null) {
-                        System.out.println("Mensaje recibido del cliente: " + mensajeCliente);
-
-                        // Verificar y responder según el comando recibido
-                        switch (mensajeCliente) {
-                            case "Get playlist":
-                                salida.println("ok, generando playlist");
-                                songList.generateRandomList();
-                            case "Vote up": //Falta aqui
-                                salida.println("ok, like");
-                            case "Vote down": //Falta aqui
-                                salida.println("ok, dislike");
-                            case "FIN":
-                                salida.println("Cerrando conexión...");
-                                LOG.info("Info:: Conexion cerrada");
-                                break;
-                            default:
-                                salida.println("ERROR");
-                                LOG.error("Error:: Commando erroneo");
-                                break;
-                        }
-
-                        // Salir del bucle si se recibe el comando FIN
-                        if (mensajeCliente.equals("FIN")) {
-                            LOG.info("Info:: Fin del servidor");
-                            break;
-                        }
-                    }
-
-                // Cerrar la conexión con el cliente
-                cliente.close();
-                System.out.println("Conexión cerrada con el cliente.");
-                LOG.info("Info:: Conexión cerrada con el cliente.");
-            }
-            } catch (IOException e) {
-                // En caso de algún error de entrada/salida, se imprime el mensaje de error
-                System.err.println("Error de entrada/salida: " + e.getMessage());
-                LOG.error("Error de entrada/salida: " + e.getMessage());
-            }
-        }).start();
     }
 
     public static void main(String[] args) {

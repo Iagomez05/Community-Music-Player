@@ -11,6 +11,7 @@ namespace CommunityMusicP
     {
         private static IniReader lector = new IniReader();
         private static readonly ILog log = LogManager.GetLogger(typeof(Program));
+        public static Socket clienteSocket;
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -30,7 +31,7 @@ namespace CommunityMusicP
 
 
         }
-        static void Socketcliente()
+        public static void Socketcliente()
         {
             try
             {
@@ -41,29 +42,9 @@ namespace CommunityMusicP
                 int puerto = value;
 
                 // Crear el socket TCP/IP
-                Socket clienteSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                clienteSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
-                // Conectar el socket al servidor
-                clienteSocket.Connect(ipAddress, puerto);
-
-                Console.WriteLine("Conexi�n establecida con el servidor.");
-
-                // Enviar datos al servidor
-                Console.Write("Ingrese el mensaje a enviar: ");
-                string mensaje = Console.ReadLine() + "\n"; // Agregar un salto de l�nea al final del mensaje
-                byte[] mensajeBytes = Encoding.UTF8.GetBytes(mensaje);
-                clienteSocket.Send(mensajeBytes);
-
-                // Recibir respuesta del servidor
-                int BYTE = int.Parse(lector.LeerConfiguracion("data1.ini", "Sockets", "Byte"));
-                byte[] buffer = new byte[BYTE];
-                int bytesRecibidos = clienteSocket.Receive(buffer);
-                string respuesta = Encoding.UTF8.GetString(buffer, 0, bytesRecibidos);
-                Console.WriteLine("Respuesta del servidor: " + respuesta);
-
-                // Cerrar el socket
-                clienteSocket.Shutdown(SocketShutdown.Both);
-                clienteSocket.Close();
+                // Resto del código omitido...
             }
             catch (Exception ex)
             {

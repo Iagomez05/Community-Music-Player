@@ -29,67 +29,43 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clientcnct));
-            btnsalir = new Button();
             panel1 = new Panel();
-            button3 = new Button();
             btnVotedwn = new Button();
             btnVoteup = new Button();
             listView1 = new ListView();
             Cancion = new ColumnHeader();
-            Votesups = new ColumnHeader();
-            Votesdown = new ColumnHeader();
+            Artista = new ColumnHeader();
+            Album = new ColumnHeader();
             panel2 = new Panel();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // btnsalir
-            // 
-            btnsalir.ForeColor = SystemColors.ActiveCaptionText;
-            btnsalir.Location = new Point(872, 12);
-            btnsalir.Name = "btnsalir";
-            btnsalir.Size = new Size(67, 28);
-            btnsalir.TabIndex = 0;
-            btnsalir.Text = "SALIR";
-            btnsalir.UseVisualStyleBackColor = true;
-            btnsalir.Click += btnsalir_Click;
-            // 
             // panel1
             // 
-            panel1.Controls.Add(button3);
             panel1.Controls.Add(btnVotedwn);
             panel1.Controls.Add(btnVoteup);
-            panel1.Location = new Point(1, 497);
+            panel1.Location = new Point(1, 421);
             panel1.Name = "panel1";
-            panel1.Size = new Size(603, 74);
+            panel1.Size = new Size(482, 150);
             panel1.TabIndex = 1;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.White;
-            button3.ForeColor = Color.DarkRed;
-            button3.Location = new Point(11, 16);
-            button3.Name = "button3";
-            button3.Size = new Size(284, 46);
-            button3.TabIndex = 2;
-            button3.Text = "Actualizar Playlist";
-            button3.UseVisualStyleBackColor = false;
             // 
             // btnVotedwn
             // 
             btnVotedwn.ForeColor = Color.DarkRed;
-            btnVotedwn.Location = new Point(447, 16);
+            btnVotedwn.Location = new Point(275, 24);
             btnVotedwn.Name = "btnVotedwn";
-            btnVotedwn.Size = new Size(140, 46);
+            btnVotedwn.Size = new Size(140, 101);
             btnVotedwn.TabIndex = 1;
             btnVotedwn.Text = "Vote-down";
             btnVotedwn.UseVisualStyleBackColor = true;
+            btnVotedwn.Click += btnVotedwn_Click;
             // 
             // btnVoteup
             // 
             btnVoteup.ForeColor = Color.DarkRed;
-            btnVoteup.Location = new Point(301, 16);
+            btnVoteup.Location = new Point(91, 24);
             btnVoteup.Name = "btnVoteup";
-            btnVoteup.Size = new Size(140, 46);
+            btnVoteup.Size = new Size(140, 101);
             btnVoteup.TabIndex = 0;
             btnVoteup.Text = "Vote-up";
             btnVoteup.UseVisualStyleBackColor = true;
@@ -97,48 +73,48 @@
             // 
             // listView1
             // 
-            listView1.BackColor = SystemColors.ControlText;
-            listView1.Columns.AddRange(new ColumnHeader[] { Cancion, Votesups, Votesdown });
+            listView1.BackColor = Color.WhiteSmoke;
+            listView1.Columns.AddRange(new ColumnHeader[] { Cancion, Artista, Album });
             listView1.ForeColor = Color.RosyBrown;
             listView1.Location = new Point(1, 2);
             listView1.Name = "listView1";
-            listView1.Size = new Size(603, 489);
+            listView1.Size = new Size(944, 413);
             listView1.TabIndex = 2;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
+            listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;
             // 
             // Cancion
             // 
             Cancion.Text = "Canción";
             Cancion.Width = 300;
             // 
-            // Votesups
+            // Artista
             // 
-            Votesups.Text = "Votes-up";
-            Votesups.Width = 150;
+            Artista.Text = "Artista";
+            Artista.Width = 300;
             // 
-            // Votesdown
+            // Album
             // 
-            Votesdown.Text = "Votes-down";
-            Votesdown.Width = 150;
+            Album.Text = "Album";
+            Album.Width = 300;
             // 
             // panel2
             // 
-            panel2.Location = new Point(614, 46);
+            panel2.Location = new Point(489, 421);
             panel2.Name = "panel2";
-            panel2.Size = new Size(331, 519);
+            panel2.Size = new Size(456, 150);
             panel2.TabIndex = 3;
             // 
             // Clientcnct
             // 
             AutoScaleDimensions = new SizeF(8F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Black;
+            BackColor = Color.WhiteSmoke;
             ClientSize = new Size(951, 571);
             Controls.Add(panel2);
             Controls.Add(listView1);
             Controls.Add(panel1);
-            Controls.Add(btnsalir);
             Font = new Font("Impact", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ForeColor = SystemColors.AppWorkspace;
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -157,8 +133,9 @@
         private Panel panel1;
         private ListView listView1;
         private ColumnHeader Cancion;
+        private ColumnHeader Artista;
         private ColumnHeader Votesups;
-        private ColumnHeader Votesdown;
+        private ColumnHeader Album;
         private Button button3;
         private Button btnVotedwn;
         private Button btnVoteup;
