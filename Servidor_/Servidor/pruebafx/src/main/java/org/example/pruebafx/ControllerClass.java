@@ -12,14 +12,15 @@ import javafx.scene.media.MediaPlayer;
 import org.apache.log4j.Logger;
 import javafx.util.Duration;
 
-import java.io.*;
-import java.net.ServerSocket;
-import java.net.Socket;
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
 
+
+import java.net.ServerSocket;
+import java.net.Socket;
 
 public class ControllerClass implements Initializable {
 
@@ -28,14 +29,12 @@ public class ControllerClass implements Initializable {
 
 
     @FXML private Button Button_Last;
-
     @FXML private Button Button_NEXT;
-
     @FXML private Button Button_Pause;
+    @FXML private Button Button_Play;
+    @FXML private Button Button_Remove;
 
     @FXML private Label songLabel;
-
-    @FXML private Button Button_Play;
 
     @FXML private Slider Slider_Volume;
 
@@ -46,6 +45,7 @@ public class ControllerClass implements Initializable {
     @FXML private Slider songSlider;
 
     @FXML private Label infoLabel;
+
 
 
     private Media media;
@@ -75,6 +75,7 @@ public class ControllerClass implements Initializable {
                 System.out.println(file);
             }
 
+
             getSongInfo(numbersong);
             linkedList listaAleatoria = songList.generateRandomList();
 
@@ -84,6 +85,7 @@ public class ControllerClass implements Initializable {
                 System.out.println(current.data.getName());
                 current = current.next;
             }
+
         }
 
         try {
@@ -115,6 +117,7 @@ public class ControllerClass implements Initializable {
         String metadata = Metadata.extractMetadata(rutaMusics + path);
         if (metadata != null) {
             infoLabel.setText(metadata);
+            System.out.println(metadata);
         } else {
             System.out.println("No se pudo extraer metadatos.");
             LOG.error("NO se pudo extraer metadata");
@@ -176,6 +179,65 @@ public class ControllerClass implements Initializable {
         mediaPlayer = new MediaPlayer(media);
         songLabel.setText(songList.get(numbersong).getName());
         getSongInfo(numbersong);
+    }
+
+    @FXML
+    void removeSong(ActionEvent event) {
+        // Remove the song from the playlist
+        songList.removeAtIndex(numbersong);
+
+        // Adjust the current song index if necessary
+        if (numbersong >= songList.size()) {
+            numbersong = songList.size() > 0 ? songList.size() - 1 : 0;
+        }
+
+        // Update the UI after song removal
+        updateUIAfterSongRemoval();
+
+        // Stop playback if the deleted song was currently playing
+        if (mediaPlayer.getStatus() == MediaPlayer.Status.PLAYING) {
+            mediaPlayer.stop();
+        }
+
+        // Load the next song to play
+        loadNextSong();
+    }
+
+    // Method to update the UI after removing a song
+    // Método para actualizar la interfaz de usuario después de eliminar una canción
+    private void updateUIAfterSongRemoval() {
+        if (songList.size() > 0) {
+            // Si hay canciones restantes en la lista
+            if (numbersong >= songList.size()) {
+                numbersong = songList.size() - 1; // Ajusta el índice si es necesario
+            }
+            songLabel.setText(songList.get(numbersong).getName());
+        } else {
+            // Si no quedan canciones en la lista, borra la etiqueta de la canción actual
+            songLabel.setText("");
+        }
+
+        // Actualiza otros elementos de la interfaz de usuario según sea necesario
+    }
+    // Method to load the next song to play
+    private void loadNextSong() {
+        if (songList.size() > 0) {
+            // Get the file path of the next song
+            String musicFilePath = songList.get(numbersong).toURI().toString();
+            // Stop any playback and load the next song
+            mediaPlayer.stop();
+            media = new Media(musicFilePath);
+            mediaPlayer = new MediaPlayer(media);
+            // Update the song label and song info
+            songLabel.setText(songList.get(numbersong).getName());
+            getSongInfo(numbersong);
+        } else {
+            // If there are no songs left, clear the media player
+            mediaPlayer.stop();
+            mediaPlayer = null;
+            // Clear the song label
+            songLabel.setText("");
+        }
     }
 
 

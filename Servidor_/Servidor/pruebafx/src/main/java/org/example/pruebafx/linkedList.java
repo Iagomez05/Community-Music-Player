@@ -131,39 +131,6 @@ public class linkedList {
         return randomList;
     }
 
-
-    public void print() {
-        StringBuilder jsonOutput = new StringBuilder();
-        jsonOutput.append("{\n");
-        jsonOutput.append("  \"playlist\": [\n");
-
-        Node current = head;
-        while (current != null) {
-            jsonOutput.append("    {\n");
-            jsonOutput.append("      \"id\": \"" + current.id + "\",\n");
-            jsonOutput.append("      \"likes\": " + current.likes + ",\n");
-            jsonOutput.append("      \"dislikes\": " + current.dislikes + ",\n");
-            // Asume que el objeto File se convierte a una cadena para la impresión JSON
-            jsonOutput.append("      \"data\": \"" + current.data.toString() + "\"\n");
-            jsonOutput.append("    }");
-
-            if (current.next != null) {
-                jsonOutput.append(",");
-            }
-
-            jsonOutput.append("\n");
-            current = current.next;
-        }
-
-        jsonOutput.append("  ]\n");
-        jsonOutput.append("}\n");
-
-        // Imprimir la cadena JSON resultante
-        System.out.println(jsonOutput.toString());
-    }
-
-
-
     //Metodo para ordenar la lista aleatoria que manda el Community Player
     public void sortByLikesAndDislikes() {
         Node current = head;
@@ -222,5 +189,38 @@ public class linkedList {
         current.next = null;
         current.previous = null;
     }
+
+
+    public void print() {
+        StringBuilder jsonOutput = new StringBuilder();
+        jsonOutput.append("{\n");
+        jsonOutput.append("  \"playlist\": [\n");
+
+        Node current = head;
+        while (current != null) {
+            jsonOutput.append("    {\n");
+            jsonOutput.append("      \"id\": \"" + current.id + "\",\n");
+            jsonOutput.append("      \"likes\": " + current.likes + ",\n");
+            jsonOutput.append("      \"dislikes\": " + current.dislikes + ",\n");
+            // Asume que el objeto File se convierte a una cadena para la impresión JSON
+            jsonOutput.append("      \"data\": \"" + current.data.toString() + "\"\n");
+            jsonOutput.append("    }");
+
+            if (current.next != null) {
+                jsonOutput.append(",");
+            }
+
+            jsonOutput.append("\n");
+            current = current.next;
+        }
+
+        jsonOutput.append("  ]\n");
+        jsonOutput.append("}\n");
+
+        // Imprimir la cadena JSON resultante
+        System.out.println(jsonOutput.toString());
+    }
+
+
 }
 
