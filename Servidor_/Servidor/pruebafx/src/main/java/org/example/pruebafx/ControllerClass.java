@@ -28,24 +28,34 @@ public class ControllerClass implements Initializable {
     private boolean mode = true;
 
 
-    @FXML private Button Button_Last;
-    @FXML private Button Button_NEXT;
-    @FXML private Button Button_Pause;
-    @FXML private Button Button_Play;
-    @FXML private Button Button_Remove;
+    @FXML
+    private Button Button_Last;
+    @FXML
+    private Button Button_NEXT;
+    @FXML
+    private Button Button_Pause;
+    @FXML
+    private Button Button_Play;
+    @FXML
+    private Button Button_Remove;
 
-    @FXML private Label songLabel;
+    @FXML
+    private Label songLabel;
 
-    @FXML private Slider Slider_Volume;
+    @FXML
+    private Slider Slider_Volume;
 
-    @FXML private ProgressBar songProgressB;
+    @FXML
+    private ProgressBar songProgressB;
 
-    @FXML private ToggleButton Toggle_commode;
+    @FXML
+    private ToggleButton Toggle_commode;
 
-    @FXML private Slider songSlider;
+    @FXML
+    private Slider songSlider;
 
-    @FXML private Label infoLabel;
-
+    @FXML
+    private Label infoLabel;
 
 
     private Media media;
@@ -56,6 +66,7 @@ public class ControllerClass implements Initializable {
     private boolean running; // para el progreso de la canción
     private TimerTask task; // para el progreso de la canción
 
+    private Servidor servidor;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -219,6 +230,7 @@ public class ControllerClass implements Initializable {
 
         // Actualiza otros elementos de la interfaz de usuario según sea necesario
     }
+
     // Method to load the next song to play
     private void loadNextSong() {
         if (songList.size() > 0) {
@@ -241,7 +253,7 @@ public class ControllerClass implements Initializable {
     }
 
 
-    public void beginTimer(){
+    public void beginTimer() {
         timer = new Timer();
         task = new TimerTask() {
 
@@ -256,10 +268,10 @@ public class ControllerClass implements Initializable {
                 double end = media.getDuration().toSeconds();
                 songSlider.setMin(0);
                 songSlider.setMax(media.getDuration().toSeconds());
-                songProgressB.setProgress(currentTime/end);
+                songProgressB.setProgress(currentTime / end);
                 songSlider.setValue(mediaPlayer.getCurrentTime().toSeconds());
 
-                if (currentTime/end == 1 ){
+                if (currentTime / end == 1) {
                     stopTimer();
                 }
 
@@ -268,32 +280,27 @@ public class ControllerClass implements Initializable {
         timer.scheduleAtFixedRate(task, 0, 1000);
 
     }
-    public void stopTimer(){
+
+    public void stopTimer() {
         running = false;
         timer.cancel();
 
     }
+
     @FXML
-    public void commumode(ActionEvent event){
-        // Especificar el puerto del socket
-        INI iniReader = new INI("data.ini");
-        final int valor = iniReader.getIntValue("puerto");
-        //System.out.println("el seocket esta activado:" + mode);
+    public void commumode(ActionEvent event) {
         if (Toggle_commode.isSelected()) {
-            // Crear una instancia de linkedList
-            org.example.pruebafx.linkedList lista = new org.example.pruebafx.linkedList();
-            // Pasar la instancia de linkedList al constructor de Servidor
-            Servidor empiezaservidor = new Servidor();
-            empiezaservidor.iniciarServidor(valor);
-
-
+            Servidor servidor = new Servidor();
+            servidor.iniciarServidor();
         } else {
-            // aqui se cierra el cliente
+            if (servidor != null) {
+                servidor.detenerServidor();
+            }
+
+
         }
 
-
     }
-
 }
 
 
