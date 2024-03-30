@@ -6,12 +6,12 @@ using lectorIni;
 using log4net;
 using log4net.Config;
 
-namespace Cliente
+namespace CommunityMusicP
 {
-    class Program
+    class Clientesoc
     {
         private static IniReader lector = new IniReader();
-        private static readonly ILog log = LogManager.GetLogger(typeof(Program));
+        private static readonly ILog log = LogManager.GetLogger(typeof(Clientesoc));
         static void Socketcliente(string[] args)
         {
             XmlConfigurator.Configure(new FileInfo("log4net.config"));
