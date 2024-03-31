@@ -75,7 +75,6 @@ public class ControllerClass implements Initializable {
                 System.out.println(file);
             }
 
-
             getSongInfo(numbersong);
             linkedList listaAleatoria = songList.generateRandomList();
 
@@ -85,7 +84,6 @@ public class ControllerClass implements Initializable {
                 System.out.println(current.data.getName());
                 current = current.next;
             }
-
         }
 
         try {
@@ -123,6 +121,24 @@ public class ControllerClass implements Initializable {
             LOG.error("NO se pudo extraer metadata");
         }
     }
+    private void getSongInfo1(Integer position) {
+        Node current = songList.find(position);
+        // aquí,ese songList no tiene q ser songList sino el random list
+        String path = current.data.getName();
+        System.out.println("Selected id ::: " + current.id);
+        System.out.println("Selected likes ::: " + current.likes);
+        System.out.println("Selected dislikes ::: " + current.dislikes);
+
+        String rutaMusics = INI.Carpeta1("data.ini");
+        String metadata1 = Metadata1.extractMetadata1(rutaMusics + path);
+        if (metadata1 != null) {
+            System.out.println(metadata1);
+        } else {
+            System.out.println("No se pudo extraer metadatos.");
+            LOG.error("NO se pudo extraer metadata");
+        }
+    }
+
 
     @FXML
     public void nextSong(ActionEvent event) {
@@ -180,32 +196,24 @@ public class ControllerClass implements Initializable {
         songLabel.setText(songList.get(numbersong).getName());
         getSongInfo(numbersong);
     }
-
     @FXML
     void removeSong(ActionEvent event) {
-        // Remove the song from the playlist
         songList.removeAtIndex(numbersong);
 
-        // Adjust the current song index if necessary
-        if (numbersong >= songList.size()) {
-            numbersong = songList.size() > 0 ? songList.size() - 1 : 0;
-        }
-
-        // Update the UI after song removal
+        // Actualiza la interfaz de usuario
         updateUIAfterSongRemoval();
 
-        // Stop playback if the deleted song was currently playing
+        // Detiene la reproducción si la canción eliminada estaba reproduciéndose
         if (mediaPlayer.getStatus() == MediaPlayer.Status.PLAYING) {
             mediaPlayer.stop();
+            // Si es necesario, ajusta el estado de reproducción actual
         }
-
-        // Load the next song to play
-        loadNextSong();
+        getSongInfo(numbersong);
     }
 
-    // Method to update the UI after removing a song
     // Método para actualizar la interfaz de usuario después de eliminar una canción
     private void updateUIAfterSongRemoval() {
+        // Actualiza la etiqueta de la canción actual
         if (songList.size() > 0) {
             // Si hay canciones restantes en la lista
             if (numbersong >= songList.size()) {
@@ -219,27 +227,6 @@ public class ControllerClass implements Initializable {
 
         // Actualiza otros elementos de la interfaz de usuario según sea necesario
     }
-    // Method to load the next song to play
-    private void loadNextSong() {
-        if (songList.size() > 0) {
-            // Get the file path of the next song
-            String musicFilePath = songList.get(numbersong).toURI().toString();
-            // Stop any playback and load the next song
-            mediaPlayer.stop();
-            media = new Media(musicFilePath);
-            mediaPlayer = new MediaPlayer(media);
-            // Update the song label and song info
-            songLabel.setText(songList.get(numbersong).getName());
-            getSongInfo(numbersong);
-        } else {
-            // If there are no songs left, clear the media player
-            mediaPlayer.stop();
-            mediaPlayer = null;
-            // Clear the song label
-            songLabel.setText("");
-        }
-    }
-
 
     public void beginTimer(){
         timer = new Timer();

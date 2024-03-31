@@ -5,17 +5,18 @@ import org.apache.log4j.Logger;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.io.*;
+import java.net.*;
+import java.util.logging.*;
 
 public class Servidor {
     private static final Logger LOG = Logger.getLogger(Servidor.class);
-    //private final linkedList songList;
-
-    //public Servidor(linkedList songList) {this.songList = songList;}
 
     public void iniciarServidor(int puerto) {
         new Thread(() -> {
+            ServerSocket servidor = null;
             try {
-                ServerSocket servidor = new ServerSocket(puerto);
+                servidor = new ServerSocket(puerto);
                 System.out.println("Servidor iniciado en el puerto " + puerto);
                 LOG.info("Servidor iniciado en el puerto " + puerto);
 
@@ -34,7 +35,9 @@ public class Servidor {
                         switch (mensajeCliente) {
                             case "Get playlist":
                                 salida.println("ok, generando playlist");
-                                //songList.generateRandomList();
+
+                                //tirarle al cliente numbersong por numbersong el nombre, el id y votes up y votes down de cada canción
+
                                 break;
                             case "Vote up":
                                 salida.println("ok, like");
@@ -67,6 +70,17 @@ public class Servidor {
             } catch (IOException e) {
                 System.err.println("Error de entrada/salida: " + e.getMessage());
                 LOG.error("Error de entrada/salida: " + e.getMessage());
+            } finally {
+                if (servidor != null) {
+                    try {
+                        servidor.close();
+                        System.out.println("Servidor cerrado.");
+                        LOG.info("Info:: Servidor cerrado.");
+                    } catch (IOException e) {
+                        System.err.println("Error al cerrar el servidor: " + e.getMessage());
+                        LOG.error("Error al cerrar el servidor: " + e.getMessage());
+                    }
+                }
             }
         }).start();
     }

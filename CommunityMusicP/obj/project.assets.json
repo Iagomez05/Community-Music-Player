@@ -368,19 +368,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gonza\\.nuget\\packages\\": {}
+    "C:\\Users\\fmele\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gonza\\OneDrive\\Desktop\\Proyecto1\\Community-Music-Player\\CommunityMusicP\\CommunityMusicP.csproj",
+      "projectUniqueName": "C:\\Datos1_Proyecto1\\Community-Music-Player\\CommunityMusicP\\CommunityMusicP.csproj",
       "projectName": "CommunityMusicP",
-      "projectPath": "C:\\Users\\gonza\\OneDrive\\Desktop\\Proyecto1\\Community-Music-Player\\CommunityMusicP\\CommunityMusicP.csproj",
-      "packagesPath": "C:\\Users\\gonza\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gonza\\OneDrive\\Desktop\\Proyecto1\\Community-Music-Player\\CommunityMusicP\\obj\\",
+      "projectPath": "C:\\Datos1_Proyecto1\\Community-Music-Player\\CommunityMusicP\\CommunityMusicP.csproj",
+      "packagesPath": "C:\\Users\\fmele\\.nuget\\packages\\",
+      "outputPath": "C:\\Datos1_Proyecto1\\Community-Music-Player\\CommunityMusicP\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\gonza\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\fmele\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -439,7 +444,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
