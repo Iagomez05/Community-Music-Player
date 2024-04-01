@@ -1,17 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "bJ3vuHd6RFas6yJVDZAsfnKD8PcfPCAJMXN5A+13zjSP7cTlJjUpLj048pc1BL9UGwbrTmwdCUqFbrF3MWApqw==",
+  "dgSpecHash": "BeM+RtYJVfe27B85+YCwinbLRUiKgexI1X3AzJmqc4N01fwDKRce9imS/df5ap40AiH96jXqRt+41RJNAxzrZw==",
   "success": true,
-  "projectFilePath": "C:\\Datos1_Proyecto1\\Community-Music-Player\\CommunityMusicP\\CommunityMusicP.csproj",
+  "projectFilePath": "C:\\Users\\gonza\\OneDrive\\Desktop\\Proyecto1\\Community-Music-Player\\CommunityMusicP\\CommunityMusicP.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\fmele\\.nuget\\packages\\ini-parser-netstandard\\2.5.2\\ini-parser-netstandard.2.5.2.nupkg.sha512",
-    "C:\\Users\\fmele\\.nuget\\packages\\log4net\\2.0.17\\log4net.2.0.17.nupkg.sha512",
-    "C:\\Users\\fmele\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
-    "C:\\Users\\fmele\\.nuget\\packages\\system.configuration.configurationmanager\\4.5.0\\system.configuration.configurationmanager.4.5.0.nupkg.sha512",
-    "C:\\Users\\fmele\\.nuget\\packages\\system.security.accesscontrol\\4.5.0\\system.security.accesscontrol.4.5.0.nupkg.sha512",
-    "C:\\Users\\fmele\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.5.0\\system.security.cryptography.protecteddata.4.5.0.nupkg.sha512",
-    "C:\\Users\\fmele\\.nuget\\packages\\system.security.permissions\\4.5.0\\system.security.permissions.4.5.0.nupkg.sha512",
-    "C:\\Users\\fmele\\.nuget\\packages\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512"
+    "C:\\Users\\gonza\\.nuget\\packages\\ini-parser-netstandard\\2.5.2\\ini-parser-netstandard.2.5.2.nupkg.sha512",
+    "C:\\Users\\gonza\\.nuget\\packages\\log4net\\2.0.17\\log4net.2.0.17.nupkg.sha512",
+    "C:\\Users\\gonza\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\gonza\\.nuget\\packages\\system.configuration.configurationmanager\\4.5.0\\system.configuration.configurationmanager.4.5.0.nupkg.sha512",
+    "C:\\Users\\gonza\\.nuget\\packages\\system.security.accesscontrol\\4.5.0\\system.security.accesscontrol.4.5.0.nupkg.sha512",
+    "C:\\Users\\gonza\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.5.0\\system.security.cryptography.protecteddata.4.5.0.nupkg.sha512",
+    "C:\\Users\\gonza\\.nuget\\packages\\system.security.permissions\\4.5.0\\system.security.permissions.4.5.0.nupkg.sha512",
+    "C:\\Users\\gonza\\.nuget\\packages\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -32,7 +32,7 @@
             panel1 = new Panel();
             btnVotedwn = new Button();
             btnVoteup = new Button();
-            listView1 = new ListView();
+            listView = new ListView();
             Cancion = new ColumnHeader();
             Artista = new ColumnHeader();
             Album = new ColumnHeader();
@@ -71,18 +71,20 @@
             btnVoteup.UseVisualStyleBackColor = true;
             btnVoteup.Click += btnVoteup_Click;
             // 
-            // listView1
+            // listView
             // 
-            listView1.BackColor = Color.WhiteSmoke;
-            listView1.Columns.AddRange(new ColumnHeader[] { Cancion, Artista, Album });
-            listView1.ForeColor = Color.RosyBrown;
-            listView1.Location = new Point(1, 2);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(944, 413);
-            listView1.TabIndex = 2;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
-            listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;
+            listView.BackColor = Color.WhiteSmoke;
+            listView.Columns.AddRange(new ColumnHeader[] { Cancion, Artista, Album });
+            listView.ForeColor = Color.RosyBrown;
+            listView.FullRowSelect = true;
+            listView.GridLines = true;
+            listView.Location = new Point(1, 2);
+            listView.Name = "listView";
+            listView.Size = new Size(944, 413);
+            listView.TabIndex = 2;
+            listView.UseCompatibleStateImageBehavior = false;
+            listView.View = View.Details;
+            listView.SelectedIndexChanged += listView_SelectedIndexChanged;
             // 
             // Cancion
             // 
@@ -113,7 +115,7 @@
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(951, 571);
             Controls.Add(panel2);
-            Controls.Add(listView1);
+            Controls.Add(listView);
             Controls.Add(panel1);
             Font = new Font("Impact", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ForeColor = SystemColors.AppWorkspace;
@@ -129,14 +131,11 @@
 
         #endregion
 
-        private Button btnsalir;
         private Panel panel1;
-        private ListView listView1;
+        private ListView listView;
         private ColumnHeader Cancion;
         private ColumnHeader Artista;
-        private ColumnHeader Votesups;
         private ColumnHeader Album;
-        private Button button3;
         private Button btnVotedwn;
         private Button btnVoteup;
         private Panel panel2;

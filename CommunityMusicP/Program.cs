@@ -1,55 +1,70 @@
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
-using lectorIni;
-using log4net;
-using log4net.Config;
 
 namespace CommunityMusicP
 {
     internal static class Program
     {
-        private static IniReader lector = new IniReader();
-        private static readonly ILog log = LogManager.GetLogger(typeof(Program));
+        // Declara clienteSocket como una variable estática para que sea accesible desde otros métodos
         public static Socket clienteSocket;
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
-        [STAThread]
+        private static Clientcnct clienteForm;
+
+
         static void Main()
         {
-            // Configura el log
-            XmlConfigurator.Configure(new FileInfo("log4net.config"));
-            // Inicializa la configuraci�n de la aplicaci�n
+            // Inicializa la configuración de la aplicación
             ApplicationConfiguration.Initialize();
-            // Llama al m�todo Socketcliente para establecer la conexi�n con el servidor
-            Console.WriteLine("aqui sirve");
+            // Llama al método Socketcliente para establecer la conexión con el servidor
+            Console.WriteLine("HOLAAAA MUNDOOOOO");
+            clienteForm = new Clientcnct();
             Socketcliente();
-            // Ejecuta la aplicaci�n y muestra el formulario Cliente
-            log.Info("Aplicaci�n iniciada");
-            Application.Run(new Cliente());
 
-
+            // Crear una instancia del primer formulario y pasar la instancia de Clientcnct
+            Application.Run(new Cliente(clienteForm));
         }
+
         public static void Socketcliente()
         {
             try
             {
                 // Establecer la dirección IP y el puerto del servidor
-                string ipString = lector.LeerConfiguracion("data1.ini", "Sockets", "IP");
-                IPAddress ipAddress = IPAddress.Parse(ipString);
-                int value = int.Parse(lector.LeerConfiguracion("data1.ini", "Sockets", "Puerto"));
-                int puerto = value;
+                IPAddress ipAddress = IPAddress.Parse("127.0.0.1");
+                int puerto = 8500;
 
                 // Crear el socket TCP/IP
                 clienteSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
-                // Resto del código omitido...
+                // Conectar el socket al servidor
+                clienteSocket.Connect(ipAddress, puerto);
+
+                Console.WriteLine("Conexión establecida con el servidor.");
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.ToString());
-                log.Error("Error: " + ex.Message);
+            }
+        }
+
+        public static void SendMessageToServer(string message)
+        {
+            try
+            {
+                // Enviar datos al servidor
+                byte[] mensajeBytes = Encoding.UTF8.GetBytes(message + "\n"); // Agregar un salto de línea al final del mensaje
+                Program.clienteSocket.Send(mensajeBytes);
+
+                // Recibir respuesta del servidor
+                byte[] buffer = new byte[1024];
+                int bytesRecibidos = Program.clienteSocket.Receive(buffer);
+                string respuesta = Encoding.UTF8.GetString(buffer, 0, bytesRecibidos);
+
+                // Enviar la respuesta al formulario de cliente
+                clienteForm.MostrarRespuesta(respuesta);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.ToString());
             }
         }
     }

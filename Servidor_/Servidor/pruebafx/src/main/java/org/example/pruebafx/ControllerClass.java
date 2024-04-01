@@ -135,6 +135,25 @@ public class ControllerClass implements Initializable {
         }
     }
 
+
+    public void getSongInfo1() {
+        linkedList listaAleatoria = songList.generateRandomList();
+        Node current = listaAleatoria.head;
+        while (current != null) {
+            String path = current.data.getName();
+            String rutaMusics = INI.Carpeta1("data.ini");
+            String songdata = Metadata1.extractMetadata1(rutaMusics + path);
+            if (songdata != null) {
+                System.out.println(songdata);
+            } else {
+                System.out.println("No se pudo extraer metadatos.");
+                LOG.error("NO se pudo extraer metadata");
+            }
+            System.out.println("Selected id ::: " + current.id);
+            current = current.next;
+        }
+    }
+
     @FXML
     public void nextSong(ActionEvent event) {
         System.out.println("next");
@@ -288,19 +307,27 @@ public class ControllerClass implements Initializable {
     }
 
     @FXML
-    public void commumode(ActionEvent event) {
+    public void commumode(ActionEvent event){
+
+        // Especificar el puerto del socket
+        INI iniReader = new INI("data.ini");
+        final int valor = iniReader.getIntValue("puerto");
+        //System.out.println("el seocket esta activado:" + mode);
         if (Toggle_commode.isSelected()) {
-            Servidor servidor = new Servidor();
-            servidor.iniciarServidor();
+            // Crear una instancia de linkedList
+            org.example.pruebafx.linkedList lista = new org.example.pruebafx.linkedList();
+            // Pasar la instancia de linkedList al constructor de Servidor
+            Servidor empiezaservidor = new Servidor();
+            empiezaservidor.iniciarServidor(valor);
+
+
         } else {
-            if (servidor != null) {
-                servidor.detenerServidor();
-            }
-
-
+            // aqui se cierra el cliente
         }
 
+
     }
+
 }
 
 
