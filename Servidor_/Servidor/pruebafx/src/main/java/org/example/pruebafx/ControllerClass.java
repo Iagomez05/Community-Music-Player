@@ -189,18 +189,46 @@ public class ControllerClass implements Initializable {
     }
     @FXML
     void removeSong(ActionEvent event) {
+        // Remove the song from the playlist
         songList.removeAtIndex(numbersong);
 
-        // Actualiza la interfaz de usuario
+        // Adjust the current song index if necessary
+        if (numbersong >= songList.size()) {
+            numbersong = songList.size() > 0 ? songList.size() - 1 : 0;
+        }
+
+        // Update the UI after song removal
         updateUIAfterSongRemoval();
 
-        // Detiene la reproducción si la canción eliminada estaba reproduciéndose
+        // Stop playback if the deleted song was currently playing
         if (mediaPlayer.getStatus() == MediaPlayer.Status.PLAYING) {
             mediaPlayer.stop();
-            // Si es necesario, ajusta el estado de reproducción actual
         }
-        getSongInfo(numbersong);
+
+        // Load the next song to play
+        loadNextSong();
     }
+    // Method to load the next song to play
+    private void loadNextSong() {
+        if (songList.size() > 0) {
+            // Get the file path of the next song
+            String musicFilePath = songList.get(numbersong).toURI().toString();
+            // Stop any playback and load the next song
+            mediaPlayer.stop();
+            media = new Media(musicFilePath);
+            mediaPlayer = new MediaPlayer(media);
+            // Update the song label and song info
+            songLabel.setText(songList.get(numbersong).getName());
+            getSongInfo(numbersong);
+        } else {
+            // If there are no songs left, clear the media player
+            mediaPlayer.stop();
+            mediaPlayer = null;
+            // Clear the song label
+            songLabel.setText("");
+        }
+    }
+
 
     // Método para actualizar la interfaz de usuario después de eliminar una canción
     private void updateUIAfterSongRemoval() {
