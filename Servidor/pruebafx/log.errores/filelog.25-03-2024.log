@@ -1,0 +1,40 @@
+25-03-2024 19:44:56 ERROR Main:94: Error de entrada/salida: Address already in use
+25-03-2024 19:45:10 INFO  Main:48: Servidor iniciado en el puerto 7500
+25-03-2024 19:46:45 INFO  Main:48: Servidor iniciado en el puerto 7500
+25-03-2024 19:55:02 INFO  Main:48: Servidor iniciado en el puerto 7500
+25-03-2024 19:55:49 INFO  Main:48: Servidor iniciado en el puerto 7500
+25-03-2024 19:59:10 INFO  Main:48: Servidor iniciado en el puerto 7500
+25-03-2024 20:16:48 INFO  Main:48: Servidor iniciado en el puerto 7500
+25-03-2024 20:23:14 INFO  Main:48: Servidor iniciado en el puerto 7500
+25-03-2024 20:24:29 INFO  Main:48: Servidor iniciado en el puerto 7500
+25-03-2024 20:27:40 INFO  Main:48: Servidor iniciado en el puerto 7500
+25-03-2024 20:32:42 INFO  Main:48: Servidor iniciado en el puerto 7500
+25-03-2024 20:33:08 INFO  Main:48: Servidor iniciado en el puerto 7500
+25-03-2024 21:42:47 ERROR Main:94: Error de entrada/salida: Address already in use: bind
+25-03-2024 21:50:53 ERROR Metadata:36: Error:: No se pudo leer metadata
+25-03-2024 21:50:53 ERROR ControllerClass:94: NO se pudo extraer metadata
+25-03-2024 21:50:54 ERROR Main:83: Error de entrada/salida: Address already in use: bind
+25-03-2024 21:51:50 ERROR Main:83: Error de entrada/salida: Address already in use: bind
+25-03-2024 21:52:23 ERROR Main:83: Error de entrada/salida: Address already in use: bind
+25-03-2024 21:55:01 ERROR Main:83: Error de entrada/salida: Address already in use: bind
+25-03-2024 21:56:59 ERROR Main:83: Error de entrada/salida: Address already in use: bind
+25-03-2024 21:58:09 ERROR Main:83: Error de entrada/salida: Address already in use: bind
+25-03-2024 22:01:54 ERROR Main:83: Error de entrada/salida: Address already in use: bind
+25-03-2024 22:03:31 ERROR Main:83: Error de entrada/salida: Address already in use: bind
+25-03-2024 22:06:39 ERROR Main:83: Error de entrada/salida: Address already in use: bind
+25-03-2024 22:09:47 ERROR Main:83: Error de entrada/salida: Address already in use: bind
+25-03-2024 22:13:04 ERROR Main:83: Error de entrada/salida: Address already in use: bind
+25-03-2024 22:15:04 ERROR Main:83: Error de entrada/salida: Address already in use: bind
+25-03-2024 22:19:44 ERROR Main:83: Error de entrada/salida: Address already in use: bind
+25-03-2024 22:22:37 ERROR Main:83: Error de entrada/salida: Address already in use: bind
+25-03-2024 22:28:33 ERROR Main:83: Error de entrada/salida: Address already in use: bind
+25-03-2024 22:31:12 ERROR Main:83: Error de entrada/salida: Address already in use: bind
+25-03-2024 22:33:53 ERROR Main:83: Error de entrada/salida: Address already in use: bind
+25-03-2024 22:40:28 ERROR Main:83: Error de entrada/salida: Address already in use: bind
+25-03-2024 22:41:08 ERROR Main:83: Error de entrada/salida: Address already in use: bind
+25-03-2024 22:50:41 ERROR Main:83: Error de entrada/salida: Address already in use: bind
+25-03-2024 22:59:20 ERROR Main:83: Error de entrada/salida: Address already in use: bind
+25-03-2024 23:00:54 ERROR Main:83: Error de entrada/salida: Address already in use: bind
+25-03-2024 23:49:41 INFO  Main:37: Servidor iniciado en el puerto 7500
+25-03-2024 23:51:00 ERROR Main:83: Error de entrada/salida: Address already in use: bind
+25-03-2024 23:57:38 ERROR Main:83: Error de entrada/salida: Address already in use: bind

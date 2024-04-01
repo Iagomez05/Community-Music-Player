@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ec22a723-48c6-43d3-a800-210d15555fdb" name="Changes" comment="Cambios de hoy">
+      <change afterPath="$PROJECT_DIR$/../../CommunityMusicP/.vs/CommunityMusicP/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CommunityMusicP/.vs/CommunityMusicP/v17/.suo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CommunityMusicP/.vs/CommunityMusicP/v17/.wsuo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CommunityMusicP/.vs/CommunityMusicP/v17/DocumentLayout.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CommunityMusicP/.vs/ProjectSettings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CommunityMusicP/.vs/slnx.sqlite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CommunityMusicP/bin/Debug/net8.0-windows/data1.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CommunityMusicP/obj/Release/net8.0-windows/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../CommunityMusicP/obj/Release/net8.0-windows/CommunityMusicP.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CommunityMusicP/Clientcnct.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../CommunityMusicP/Clientcnct.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CommunityMusicP/Clientcnct.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../CommunityMusicP/Clientcnct.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CommunityMusicP/Clientelgst.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CommunityMusicP/CommunityMusicP.csproj.user" beforeDir="false" afterPath="$PROJECT_DIR$/../../CommunityMusicP/CommunityMusicP.csproj.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CommunityMusicP/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../CommunityMusicP/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CommunityMusicP/UIcliente.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../CommunityMusicP/UIcliente.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CommunityMusicP/bin/Debug/net8.0-windows/CommunityMusicP.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../CommunityMusicP/bin/Debug/net8.0-windows/CommunityMusicP.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CommunityMusicP/bin/Debug/net8.0-windows/CommunityMusicP.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../CommunityMusicP/bin/Debug/net8.0-windows/CommunityMusicP.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CommunityMusicP/bin/Debug/net8.0-windows/CommunityMusicP.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../CommunityMusicP/bin/Debug/net8.0-windows/CommunityMusicP.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CommunityMusicP/data1.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../../CommunityMusicP/data1.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CommunityMusicP/obj/Debug/net8.0-windows/CommunityMusicP.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../CommunityMusicP/obj/Debug/net8.0-windows/CommunityMusicP.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CommunityMusicP/obj/Debug/net8.0-windows/CommunityMusicP.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../CommunityMusicP/obj/Debug/net8.0-windows/CommunityMusicP.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CommunityMusicP/obj/Debug/net8.0-windows/CommunityMusicP.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../CommunityMusicP/obj/Debug/net8.0-windows/CommunityMusicP.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CommunityMusicP/obj/Debug/net8.0-windows/CommunityMusicP.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../CommunityMusicP/obj/Debug/net8.0-windows/CommunityMusicP.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CommunityMusicP/obj/Debug/net8.0-windows/CommunityMusicP.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../CommunityMusicP/obj/Debug/net8.0-windows/CommunityMusicP.csproj.GenerateResource.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CommunityMusicP/obj/Debug/net8.0-windows/CommunityMusicP.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../CommunityMusicP/obj/Debug/net8.0-windows/CommunityMusicP.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CommunityMusicP/obj/Debug/net8.0-windows/CommunityMusicP.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../CommunityMusicP/obj/Debug/net8.0-windows/CommunityMusicP.genruntimeconfig.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CommunityMusicP/obj/Debug/net8.0-windows/CommunityMusicP.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../CommunityMusicP/obj/Debug/net8.0-windows/CommunityMusicP.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CommunityMusicP/obj/Debug/net8.0-windows/CommunityMusicP.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../CommunityMusicP/obj/Debug/net8.0-windows/CommunityMusicP.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CommunityMusicP/obj/Debug/net8.0-windows/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../CommunityMusicP/obj/Debug/net8.0-windows/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CommunityMusicP/obj/Debug/net8.0-windows/ref/CommunityMusicP.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../CommunityMusicP/obj/Debug/net8.0-windows/ref/CommunityMusicP.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CommunityMusicP/obj/Debug/net8.0-windows/refint/CommunityMusicP.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../CommunityMusicP/obj/Debug/net8.0-windows/refint/CommunityMusicP.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CommunityMusicP/obj/Release/net8.0-windows/CommunityMusicP.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../CommunityMusicP/obj/Release/net8.0-windows/CommunityMusicP.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CommunityMusicP/obj/Release/net8.0-windows/CommunityMusicP.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../CommunityMusicP/obj/Release/net8.0-windows/CommunityMusicP.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pruebafx (2).iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.errores/filelog.25-03-2024.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.errores/filelog.26-03-2024.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/data.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/log.errores/filelog.21-03-2024.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/log.errores/filelog.22-03-2024.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/log.errores/filelog.23-03-2024.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/log.errores/filelog.24-03-2024.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/log.errores/filelog.25-03-2024.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/log.errores/filelog.26-03-2024.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/log.errores/filelog.27-03-2024.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/music/Forrest-Gump.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/music/Frank-Ocean-Pink-White.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/music/Some.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/src/main/java/org/example/pruebafx/ControllerClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/src/main/java/org/example/pruebafx/INI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/src/main/java/org/example/pruebafx/Log.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/src/main/java/org/example/pruebafx/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/src/main/java/org/example/pruebafx/Metadata.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/src/main/java/org/example/pruebafx/MetadataList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/src/main/java/org/example/pruebafx/Servidor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/src/main/java/org/example/pruebafx/SongData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/src/main/java/org/example/pruebafx/data.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/src/main/java/org/example/pruebafx/linkedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/src/main/resources/org/example/pruebafx/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruebafx/src/main/resources/org/example/pruebafx/music_player.fxml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/../.." value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
+    {
+      &quot;state&quot;: &quot;OPEN&quot;
+    }
+  ],
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="recentNewPullRequestHead">
+      <RepoCoordinatesHolder>
+        <option name="owner" value="Iagomez05" />
+        <option name="repository" value="Community-Music-Player" />
+      </RepoCoordinatesHolder>
+    </option>
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="35f62185-39a4-4ff7-8e9c-2f7bd09d1c79" />
+        <option name="url" value="https://github.com/Iagomez05/Community-Music-Player.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2eJ1spIpLTvy6IS8IUW7TWzqv4n" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Maven.pruebafx [compile].executor": "Run",
+    "Maven.pruebafx [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "branch3065",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/gonza/OneDrive/Desktop/Proyecto1/Community-Music-Player/Servidor",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ec22a723-48c6-43d3-a800-210d15555fdb" name="Changes" comment="" />
+      <created>1711608075780</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1711608075780</updated>
+      <workItem from="1711608076810" duration="17545000" />
+      <workItem from="1711757496350" duration="10259000" />
+      <workItem from="1711913763188" duration="5780000" />
+      <workItem from="1711946812675" duration="614000" />
+    </task>
+    <task id="LOCAL-00001" summary="Cambios de hoy">
+      <option name="closed" value="true" />
+      <created>1711673014119</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1711673014119</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Cambios de hoy" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambios de hoy" />
+  </component>
+</project>
