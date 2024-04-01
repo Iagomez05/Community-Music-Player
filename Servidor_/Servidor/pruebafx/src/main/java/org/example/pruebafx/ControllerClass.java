@@ -208,6 +208,23 @@ public class ControllerClass implements Initializable {
         // Load the next song to play
         loadNextSong();
     }
+    // Método para actualizar la interfaz de usuario después de eliminar una canción
+    private void updateUIAfterSongRemoval() {
+        // Actualiza la etiqueta de la canción actual
+        if (songList.size() > 0) {
+            // Si hay canciones restantes en la lista
+            if (numbersong >= songList.size()) {
+                numbersong = songList.size() - 1; // Ajusta el índice si es necesario
+            }
+            songLabel.setText(songList.get(numbersong).getName());
+        } else {
+            // Si no quedan canciones en la lista, borra la etiqueta de la canción actual
+            songLabel.setText("");
+        }
+
+        // Actualiza otros elementos de la interfaz de usuario según sea necesario
+    }
+
     // Method to load the next song to play
     private void loadNextSong() {
         if (songList.size() > 0) {
@@ -227,24 +244,6 @@ public class ControllerClass implements Initializable {
             // Clear the song label
             songLabel.setText("");
         }
-    }
-
-
-    // Método para actualizar la interfaz de usuario después de eliminar una canción
-    private void updateUIAfterSongRemoval() {
-        // Actualiza la etiqueta de la canción actual
-        if (songList.size() > 0) {
-            // Si hay canciones restantes en la lista
-            if (numbersong >= songList.size()) {
-                numbersong = songList.size() - 1; // Ajusta el índice si es necesario
-            }
-            songLabel.setText(songList.get(numbersong).getName());
-        } else {
-            // Si no quedan canciones en la lista, borra la etiqueta de la canción actual
-            songLabel.setText("");
-        }
-
-        // Actualiza otros elementos de la interfaz de usuario según sea necesario
     }
 
     public void beginTimer(){
@@ -282,7 +281,6 @@ public class ControllerClass implements Initializable {
     @FXML
     public void commumode(ActionEvent event){
 
-        getSongInfo1();
         // Especificar el puerto del socket
         INI iniReader = new INI("data.ini");
         final int valor = iniReader.getIntValue("puerto");
