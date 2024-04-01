@@ -1,6 +1,8 @@
 package org.example.pruebafx;
 
 import java.io.File;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
 class Node {
@@ -34,12 +36,10 @@ public class linkedList {
     public void insert(File data) {
         String randomID = generateRandomID();
         Node newNode = new Node(data, randomID);
-        //System.out.println("Generated id ::: " + randomID);
 
         if (head == null) {
             head = newNode;
             tail = newNode;
-            System.out.println("seteando la cabeza como el nuevo nodo");
         } else {
             newNode.previous = tail;
             tail.next = newNode;
@@ -124,10 +124,19 @@ public class linkedList {
     // Función para generar una lista aleatoria de 3 elementos
     public linkedList generateRandomList() {
         linkedList randomList = new linkedList();
-        for (int i = 0; i < 3; i++) {
+        Set<Node> selectedNodes = new HashSet<>(); // Conjunto para almacenar nodos seleccionados
+        int maxAttempts = 100; // Número máximo de intentos para evitar un bucle infinito
+        int attempts = 0;
+
+        while (randomList.size() < 2 && attempts < maxAttempts) {
             Node randomNode = getRandomNode();
-            randomList.insert(randomNode.data);
+            if (!selectedNodes.contains(randomNode)) {
+                randomList.insert(randomNode.data);
+                selectedNodes.add(randomNode);
+            }
+            attempts++;
         }
+
         return randomList;
     }
 
