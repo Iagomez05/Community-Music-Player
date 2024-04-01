@@ -10,9 +10,11 @@ import java.net.*;
 import java.util.logging.*;
 
 public class Servidor {
-    private static final Logger LOG = Logger.getLogger(Servidor.class);
+    private static final Logger LOG = Log.getLogger(Servidor.class);
 
     public void iniciarServidor(int puerto) {
+        ControllerClass controller = new ControllerClass();
+
         new Thread(() -> {
             ServerSocket servidor = null;
             try {
@@ -35,6 +37,7 @@ public class Servidor {
                         switch (mensajeCliente) {
                             case "Get playlist":
                                 salida.println("ok, generando playlist");
+                                controller.getSongInfo1();
 
                                 //tirarle al cliente numbersong por numbersong el nombre, el id y votes up y votes down de cada canción
 

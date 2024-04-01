@@ -51,6 +51,7 @@ public class ControllerClass implements Initializable {
     private Media media;
     private MediaPlayer mediaPlayer;
     private final linkedList songList = new linkedList();
+
     private int numbersong = 0; // el  numbersong inicia en 0
     private Timer timer; //para el progreso de la canción
     private boolean running; // para el progreso de la canción
@@ -59,7 +60,6 @@ public class ControllerClass implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //linkedList songList = new linkedList();
 
         String rutaMusica = INI.Carpeta("data.ini");
         assert rutaMusica != null;
@@ -72,18 +72,10 @@ public class ControllerClass implements Initializable {
             for (File file : files) {
 
                 songList.insert(file);
-                System.out.println(file);
             }
 
             getSongInfo(numbersong);
-            linkedList listaAleatoria = songList.generateRandomList();
 
-            // Imprimir los elementos de la lista aleatoria
-            Node current = listaAleatoria.head;
-            while (current != null) {
-                System.out.println(current.data.getName());
-                current = current.next;
-            }
         }
 
         try {
@@ -115,27 +107,26 @@ public class ControllerClass implements Initializable {
         String metadata = Metadata.extractMetadata(rutaMusics + path);
         if (metadata != null) {
             infoLabel.setText(metadata);
-            System.out.println(metadata);
         } else {
             System.out.println("No se pudo extraer metadatos.");
             LOG.error("NO se pudo extraer metadata");
         }
     }
-    private void getSongInfo1(Integer position) {
-        Node current = songList.find(position);
-        // aquí,ese songList no tiene q ser songList sino el random list
-        String path = current.data.getName();
-        System.out.println("Selected id ::: " + current.id);
-        System.out.println("Selected likes ::: " + current.likes);
-        System.out.println("Selected dislikes ::: " + current.dislikes);
-
-        String rutaMusics = INI.Carpeta1("data.ini");
-        String metadata1 = Metadata1.extractMetadata1(rutaMusics + path);
-        if (metadata1 != null) {
-            System.out.println(metadata1);
-        } else {
-            System.out.println("No se pudo extraer metadatos.");
-            LOG.error("NO se pudo extraer metadata");
+    public void getSongInfo1() {
+        linkedList listaAleatoria = songList.generateRandomList();
+        Node current = listaAleatoria.head;
+        while (current != null) {
+            String path = current.data.getName();
+            String rutaMusics = INI.Carpeta1("data.ini");
+            String songdata = Metadata1.extractMetadata1(rutaMusics + path);
+            if (songdata != null) {
+                System.out.println(songdata);
+            } else {
+                System.out.println("No se pudo extraer metadatos.");
+                LOG.error("NO se pudo extraer metadata");
+            }
+            System.out.println("Selected id ::: " + current.id);
+            current = current.next;
         }
     }
 
@@ -262,6 +253,8 @@ public class ControllerClass implements Initializable {
     }
     @FXML
     public void commumode(ActionEvent event){
+
+        getSongInfo1();
         // Especificar el puerto del socket
         INI iniReader = new INI("data.ini");
         final int valor = iniReader.getIntValue("puerto");

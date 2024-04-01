@@ -29,7 +29,7 @@ public class Metadata {
             metadataText.append("Artist: ").append(artist).append("\n");
             metadataText.append("Title: ").append(title).append("\n");
             metadataText.append("Album: ").append(album).append("\n");
-            metadataText.append("Year: ").append(genre).append("\n");
+            metadataText.append("Genre: ").append(genre).append("\n");
 
 
             // Retornar los metadatos como una cadena de texto
