@@ -1,10 +1,17 @@
+using System.Text;
+
 namespace CommunityMusicP
 {
     public partial class Cliente : Form
     {
-        public Cliente()
+
+        private static System.Windows.Forms.Timer timer;
+        private Clientcnct form2;
+
+        public Cliente(Clientcnct form2)
         {
             InitializeComponent();
+            this.form2 = form2;
         }
 
 
@@ -18,12 +25,14 @@ namespace CommunityMusicP
         }
         private void btnEmpezarV_Click(object sender, EventArgs e)
         {
+
             // Crear una instancia del segundo formulario
-            Clientcnct form2 = new Clientcnct();
+            Program.SendMessageToServer("GetPlaylist");
 
             // Mostrar el segundo formulario
             form2.Show();
             this.Hide();
         }
+
     }
 }

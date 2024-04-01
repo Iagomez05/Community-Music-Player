@@ -9,19 +9,17 @@ import java.net.Socket;
 public class Servidor {
     private static final Logger LOG = Log.getLogger(Servidor.class);
 
-    INI iniReader = new INI("data.ini");
-    final int valor = iniReader.getIntValue("puerto");
+    public void iniciarServidor(int puerto) {
+        ControllerClass controller = new ControllerClass();
 
-    private volatile boolean running = true;
-
-    public void iniciarServidor() {
         new Thread(() -> {
+            ServerSocket servidor = null;
             try {
-                ServerSocket servidor = new ServerSocket(valor);
-                System.out.println("Servidor iniciado en el puerto " + valor);
-                LOG.info("Servidor iniciado en el puerto " + valor);
+                servidor = new ServerSocket(puerto);
+                System.out.println("Servidor iniciado en el puerto " + puerto);
+                LOG.info("Servidor iniciado en el puerto " + puerto);
 
-                while (running) {
+                while (true) {
                     Socket cliente = servidor.accept();
                     System.out.println("Cliente conectado: " + cliente.getInetAddress().getHostAddress());
                     LOG.info("Cliente conectado: " + cliente.getInetAddress().getHostAddress());
@@ -36,7 +34,10 @@ public class Servidor {
                         switch (mensajeCliente) {
                             case "Get playlist":
                                 salida.println("ok, generando playlist");
-                                //songList.generateRandomList();
+                                controller.getSongInfo1();
+
+                                //tirarle al cliente numbersong por numbersong el nombre, el id y votes up y votes down de cada canción
+
                                 break;
                             case "Vote up":
                                 salida.println("ok, like");
@@ -49,7 +50,6 @@ public class Servidor {
                             case "FIN":
                                 salida.println("Cerrando conexión...");
                                 LOG.info("Info:: Conexion cerrada");
-                                detenerServidor(); // Llama al método para detener el servidor
                                 break;
                             default:
                                 salida.println("ERROR");
@@ -67,15 +67,21 @@ public class Servidor {
                     System.out.println("Conexión cerrada con el cliente.");
                     LOG.info("Info:: Conexión cerrada con el cliente.");
                 }
-                servidor.close(); // Cerrar el ServerSocket cuando se detiene el servidor
             } catch (IOException e) {
                 System.err.println("Error de entrada/salida: " + e.getMessage());
                 LOG.error("Error de entrada/salida: " + e.getMessage());
+            } finally {
+                if (servidor != null) {
+                    try {
+                        servidor.close();
+                        System.out.println("Servidor cerrado.");
+                        LOG.info("Info:: Servidor cerrado.");
+                    } catch (IOException e) {
+                        System.err.println("Error al cerrar el servidor: " + e.getMessage());
+                        LOG.error("Error al cerrar el servidor: " + e.getMessage());
+                    }
+                }
             }
         }).start();
-    }
-
-    public void detenerServidor() {
-        running = false;
     }
 }
