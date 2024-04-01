@@ -112,6 +112,7 @@ public class ControllerClass implements Initializable {
             LOG.error("NO se pudo extraer metadata");
         }
     }
+    //holap
     public void getSongInfo1() {
         linkedList listaAleatoria = songList.generateRandomList();
         Node current = listaAleatoria.head;
