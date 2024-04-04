@@ -10,6 +10,12 @@ public class MetadataList {
             this.data = data;
             next = null;
         }
+
+        // Override toString method to provide a custom string representation of MetadataNode
+        @Override
+        public String toString() {
+            return data; // Return the data of the node
+        }
     }
 
     public MetadataNode head; // Head of the list

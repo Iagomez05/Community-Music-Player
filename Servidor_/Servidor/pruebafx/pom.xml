@@ -21,6 +21,12 @@
             <version>3.0.1</version>
         </dependency>
         <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.13.1</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
             <version>21</version>
@@ -86,8 +92,21 @@
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
                             <noManPages>true</noManPages>
-                            <stripDebug>true</stripDebug>
+                            <stripDebug>false</stripDebug>
                             <noHeaderFiles>true</noHeaderFiles>
+                            <vmArgs>
+                                <vmArg>-Xdebug</vmArg>
+                                <vmArg>-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=6666</vmArg>
+                            </vmArgs>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>debug</id>
+                        <configuration>
+                            <mainClass>org.example.pruebafx/org.example.pruebafx.Main</mainClass>
+                            <options>
+                                <option>-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:8000</option>
+                            </options>
                         </configuration>
                     </execution>
                 </executions>
