@@ -53,11 +53,9 @@ public class linkedList {
         int currentNumber = 0;
         while (current != null && currentNumber < index) {
             current = current.next;
-            currentNumber ++;
+            currentNumber++;
         }
-        if (current == null && head != null) {
-            return head;
-        } else if (current != null) {
+        if (current != null) {
             return current;
         }
         return null;
@@ -128,9 +126,9 @@ public class linkedList {
         int maxAttempts = 100; // Número máximo de intentos para evitar un bucle infinito
         int attempts = 0;
 
-        while (randomList.size() < 2 && attempts < maxAttempts) {
+        while (randomList.size() <= 2 && attempts < maxAttempts) {
             Node randomNode = getRandomNode();
-            if (!selectedNodes.contains(randomNode)) {
+            if (randomNode != null && !selectedNodes.contains(randomNode)) {
                 randomList.insert(randomNode.data);
                 selectedNodes.add(randomNode);
             }

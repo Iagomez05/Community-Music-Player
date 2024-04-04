@@ -35,7 +35,8 @@
             listView = new ListView();
             Cancion = new ColumnHeader();
             Artista = new ColumnHeader();
-            Album = new ColumnHeader();
+            Votesup = new ColumnHeader();
+            Votesdown = new ColumnHeader();
             panel2 = new Panel();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -74,7 +75,7 @@
             // listView
             // 
             listView.BackColor = Color.WhiteSmoke;
-            listView.Columns.AddRange(new ColumnHeader[] { Cancion, Artista, Album });
+            listView.Columns.AddRange(new ColumnHeader[] { Cancion, Artista, Votesup, Votesdown });
             listView.ForeColor = Color.RosyBrown;
             listView.FullRowSelect = true;
             listView.GridLines = true;
@@ -89,17 +90,22 @@
             // Cancion
             // 
             Cancion.Text = "Canción";
-            Cancion.Width = 300;
+            Cancion.Width = 350;
             // 
             // Artista
             // 
             Artista.Text = "Artista";
-            Artista.Width = 300;
+            Artista.Width = 200;
             // 
-            // Album
+            // Votesup
             // 
-            Album.Text = "Album";
-            Album.Width = 300;
+            Votesup.Text = "Votesup";
+            Votesup.Width = 170;
+            // 
+            // Votesdown
+            // 
+            Votesdown.Text = "VotesDown";
+            Votesdown.Width = 170;
             // 
             // panel2
             // 
@@ -135,9 +141,10 @@
         private ListView listView;
         private ColumnHeader Cancion;
         private ColumnHeader Artista;
-        private ColumnHeader Album;
         private Button btnVotedwn;
         private Button btnVoteup;
         private Panel panel2;
+        private ColumnHeader Votesup;
+        private ColumnHeader Votesdown;
     }
 }

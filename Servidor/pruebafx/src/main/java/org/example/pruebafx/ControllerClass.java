@@ -55,6 +55,7 @@ public class ControllerClass implements Initializable {
     private int numbersong = 0; // el  numbersong inicia en 0
     private Timer timer; //para el progreso de la canción
     private boolean running; // para el progreso de la canción
+
     private TimerTask task; // para el progreso de la canción
 
 
@@ -112,23 +113,39 @@ public class ControllerClass implements Initializable {
             LOG.error("NO se pudo extraer metadata");
         }
     }
-    public void getSongInfo1() {
+    public String getSongInfo1() {
         linkedList listaAleatoria = songList.generateRandomList();
         Node current = listaAleatoria.head;
+        StringBuilder infoCompleta = new StringBuilder(); // Para almacenar toda la información de las canciones
+
         while (current != null) {
             String path = current.data.getName();
             String rutaMusics = INI.Carpeta1("data.ini");
             String songdata = Metadata1.extractMetadata1(rutaMusics + path);
+
             if (songdata != null) {
-                System.out.println(songdata);
+                String infocancion = songdata +
+                        ", " +
+                        current.likes +
+                        ", " +
+                        current.dislikes +
+                        ", " +
+                        current.id;
+                infoCompleta.append(infocancion).append("\n"); // Agregar el formato de canción seguido de un salto de línea
             } else {
                 System.out.println("No se pudo extraer metadatos.");
                 LOG.error("NO se pudo extraer metadata");
             }
-            System.out.println("Selected id ::: " + current.id);
             current = current.next;
         }
+
+        // Devolver toda la información completa de las canciones como una cadena
+        System.out.println(infoCompleta);
+        System.out.println("hole");
+        return infoCompleta.toString();
     }
+
+
 
 
     @FXML
@@ -291,6 +308,8 @@ public class ControllerClass implements Initializable {
             // Pasar la instancia de linkedList al constructor de Servidor
             Servidor empiezaservidor = new Servidor();
             empiezaservidor.iniciarServidor(valor);
+            getSongInfo1();
+
 
         } else {
             // aqui se cierra el cliente

@@ -4,3 +4,19 @@
 31-03-2024 20:58:44 INFO  Servidor:23: Servidor iniciado en el puerto 9500
 31-03-2024 21:25:50 INFO  Servidor:23: Servidor iniciado en el puerto 9500
 31-03-2024 21:26:54 INFO  Servidor:23: Servidor iniciado en el puerto 9500
+31-03-2024 23:12:33 INFO  Servidor:23: Servidor iniciado en el puerto 10500
+31-03-2024 23:13:24 INFO  Servidor:28: Cliente conectado: 127.0.0.1
+31-03-2024 23:13:33 INFO  Servidor:81: Info:: Servidor cerrado.
+31-03-2024 23:17:19 INFO  Servidor:23: Servidor iniciado en el puerto 10500
+31-03-2024 23:17:25 INFO  Servidor:28: Cliente conectado: 127.0.0.1
+31-03-2024 23:17:31 INFO  Servidor:81: Info:: Servidor cerrado.
+31-03-2024 23:26:25 INFO  Servidor:23: Servidor iniciado en el puerto 10500
+31-03-2024 23:26:35 INFO  Servidor:28: Cliente conectado: 127.0.0.1
+31-03-2024 23:30:19 INFO  Servidor:23: Servidor iniciado en el puerto 10500
+31-03-2024 23:30:26 INFO  Servidor:28: Cliente conectado: 127.0.0.1
+31-03-2024 23:46:06 INFO  Servidor:23: Servidor iniciado en el puerto 10500
+31-03-2024 23:46:10 INFO  Servidor:28: Cliente conectado: 127.0.0.1
+31-03-2024 23:49:55 INFO  Servidor:23: Servidor iniciado en el puerto 10500
+31-03-2024 23:50:00 INFO  Servidor:28: Cliente conectado: 127.0.0.1
+31-03-2024 23:50:05 INFO  Servidor:81: Info:: Servidor cerrado.
+31-03-2024 23:56:40 INFO  Servidor:23: Servidor iniciado en el puerto 10500

@@ -16,7 +16,7 @@ import java.net.Socket;
 public class Main extends Application {
     private static final Logger LOG = Log.getLogger(Main.class);
     private final linkedList songList = new linkedList();
-
+    ControllerClass controlito = new ControllerClass();
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -27,6 +27,7 @@ public class Main extends Application {
         stage.setTitle("Music Player");
         stage.setScene(scene);
         stage.show();
+        controlito.getSongInfo1();
 
         stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
             @Override
@@ -39,6 +40,9 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
+
+
         launch(args);
+
     }
 }

@@ -12,7 +12,8 @@ import java.util.logging.*;
 public class Servidor {
     private static final Logger LOG = Log.getLogger(Servidor.class);
 
-    public void iniciarServidor(int puerto) {
+
+    public void iniciarServidor (int puerto) {
         ControllerClass controller = new ControllerClass();
 
         new Thread(() -> {
@@ -27,26 +28,29 @@ public class Servidor {
                     System.out.println("Cliente conectado: " + cliente.getInetAddress().getHostAddress());
                     LOG.info("Cliente conectado: " + cliente.getInetAddress().getHostAddress());
 
+
                     BufferedReader entrada = new BufferedReader(new InputStreamReader(cliente.getInputStream()));
                     PrintWriter salida = new PrintWriter(new OutputStreamWriter(cliente.getOutputStream()), true);
+
 
                     String mensajeCliente;
                     while ((mensajeCliente = entrada.readLine()) != null) {
                         System.out.println("Mensaje recibido del cliente: " + mensajeCliente);
+                        controller.getSongInfo1();
 
                         switch (mensajeCliente) {
-                            case "Get playlist":
-                                salida.println("ok, generando playlist");
-                                controller.getSongInfo1();
-
-                                //tirarle al cliente numbersong por numbersong el nombre, el id y votes up y votes down de cada canción
-
+                            case "GetPlaylist":
+                                salida.println("cancion1, artista1, likes, dislikes, id  \n cancion2, arist2, likes, dislikes, id2 \n");
+                                // Obtener la información de las canciones
+                                //controller.getSongInfo1();
+                                // Enviar la información al cliente
+                                //salida.println(songInfo);
                                 break;
-                            case "Vote up":
+                            case "VoteUp":
                                 salida.println("ok, like");
                                 // Lógica para incrementar el contador de "likes"
                                 break;
-                            case "Vote down":
+                            case "VoteDown":
                                 salida.println("ok, dislike");
                                 // Lógica para incrementar el contador de "dislikes"
                                 break;
@@ -86,5 +90,6 @@ public class Servidor {
                 }
             }
         }).start();
+
     }
 }
