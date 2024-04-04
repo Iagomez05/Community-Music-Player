@@ -31,7 +31,6 @@ public class Metadata {
             metadataText.append("Album: ").append(album).append("\n");
             metadataText.append("Genre: ").append(genre).append("\n");
 
-
             // Retornar los metadatos como una cadena de texto
             return metadataText.toString();
         } catch (Exception e) {

@@ -1,6 +1,5 @@
 package org.example.pruebafx;
 
-import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -17,10 +16,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
-
-
-import java.net.ServerSocket;
-import java.net.Socket;
 
 public class ControllerClass implements Initializable {
 
@@ -60,26 +55,21 @@ public class ControllerClass implements Initializable {
 
     private Media media;
     private MediaPlayer mediaPlayer;
-    private final linkedList songList = new linkedList();
+    private final LinkedList songList = new LinkedList();
+    private MetadataList miau = new MetadataList();
     private int numbersong = 0; // el  numbersong inicia en 0
     private Timer timer; //para el progreso de la canción
     private boolean running; // para el progreso de la canción
     private TimerTask task; // para el progreso de la canción
 
-    private Servidor servidor;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //linkedList songList = new linkedList();
-
-        String rutaMusica = INI.Carpeta("data.ini");
-        assert rutaMusica != null;
+        String rutaMusica = ApplicationSettings.getApplicationSettings().getCarpetaBibliotecaMusical();
         File directory = new File(rutaMusica);
-
         File[] files = directory.listFiles();
 
         if (files != null) {
-
             for (File file : files) {
 
                 songList.insert(file);
@@ -88,7 +78,7 @@ public class ControllerClass implements Initializable {
 
 
             getSongInfo(numbersong);
-            linkedList listaAleatoria = songList.generateRandomList();
+            LinkedList listaAleatoria = songList.generateRandomList();
 
             // Imprimir los elementos de la lista aleatoria
             Node current = listaAleatoria.head;
@@ -117,14 +107,12 @@ public class ControllerClass implements Initializable {
     }
 
     private void getSongInfo(Integer position) {
-        Node current = songList.find(position);
-
-        String path = current.data.getName();
-        System.out.println("Selected id ::: " + current.id);
-        System.out.println("Selected likes ::: " + current.likes);
-        System.out.println("Selected dislikes ::: " + current.dislikes);
-
-        String rutaMusics = INI.Carpeta1("data.ini");
+        SongData current = songList.find(position);
+        String path = current.getTitle();
+        System.out.println("Selected id ::: " + current.getId());
+        System.out.println("Selected likes ::: " + current.getLikes());
+        System.out.println("Selected dislikes ::: " + current.getDislikes());
+        String rutaMusics = ApplicationSettings.getApplicationSettings().getCarpetaBibliotecaMusical();
         String metadata = Metadata.extractMetadata(rutaMusics + path);
         if (metadata != null) {
             infoLabel.setText(metadata);
@@ -136,24 +124,37 @@ public class ControllerClass implements Initializable {
     }
 
 
-    public void getSongInfo1() {
-        linkedList listaAleatoria = songList.generateRandomList();
-        Node current = listaAleatoria.head;
+    public String getSongInfo1() {
+        LinkedList listaAleatoria = songList.generateRandomList();
+        Node current = listaAleatoria.get();
+        StringBuilder infoCompleta = new StringBuilder(); // Para almacenar toda la información de las canciones
+
         while (current != null) {
             String path = current.data.getName();
-            String rutaMusics = INI.Carpeta1("data.ini");
+            String rutaMusics = ApplicationSettings.getApplicationSettings().getCarpetaBibliotecaMusical();
             String songdata = Metadata1.extractMetadata1(rutaMusics + path);
+
             if (songdata != null) {
-                System.out.println(songdata);
+                String infocancion = songdata +
+                        ", " +
+                        current.getLi +
+                        ", " +
+                        current.dislikes +
+                        ", " +
+                        current.id;
+                infoCompleta.append(infocancion).append("\n"); // Agregar el formato de canción seguido de un salto de línea
             } else {
                 System.out.println("No se pudo extraer metadatos.");
                 LOG.error("NO se pudo extraer metadata");
             }
-            System.out.println("Selected id ::: " + current.id);
             current = current.next;
         }
-    }
 
+        // Devolver toda la información completa de las canciones como una cadena
+        System.out.println(infoCompleta);
+        System.out.println("holex");
+        return infoCompleta.toString();
+    }
     @FXML
     public void nextSong(ActionEvent event) {
         System.out.println("next");
@@ -297,37 +298,19 @@ public class ControllerClass implements Initializable {
             }
         };
         timer.scheduleAtFixedRate(task, 0, 1000);
-
     }
 
     public void stopTimer() {
         running = false;
         timer.cancel();
-
     }
 
     @FXML
     public void commumode(ActionEvent event){
-
-        // Especificar el puerto del socket
-        INI iniReader = new INI("data.ini");
-        final int valor = iniReader.getIntValue("puerto");
-        //System.out.println("el seocket esta activado:" + mode);
+        final int valor = ApplicationSettings.getApplicationSettings().getPuertoServidor();
         if (Toggle_commode.isSelected()) {
-            // Crear una instancia de linkedList
-            org.example.pruebafx.linkedList lista = new org.example.pruebafx.linkedList();
-            // Pasar la instancia de linkedList al constructor de Servidor
-            Servidor empiezaservidor = new Servidor();
+            Servidor empiezaservidor = new Servidor(this);
             empiezaservidor.iniciarServidor(valor);
-
-
-        } else {
-            // aqui se cierra el cliente
         }
-
-
     }
-
 }
-
-

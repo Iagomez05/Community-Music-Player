@@ -8,10 +8,13 @@ import java.net.Socket;
 
 public class Servidor {
     private static final Logger LOG = Log.getLogger(Servidor.class);
+    private final ControllerClass controller;
 
+    public Servidor(ControllerClass controller) {
+        this.controller = controller;
+    }
+    
     public void iniciarServidor(int puerto) {
-        ControllerClass controller = new ControllerClass();
-
         new Thread(() -> {
             ServerSocket servidor = null;
             try {
@@ -32,8 +35,8 @@ public class Servidor {
                         System.out.println("Mensaje recibido del cliente: " + mensajeCliente);
 
                         switch (mensajeCliente) {
-                            case "Get playlist":
-                                salida.println("ok, generando playlist");
+                            case "GetPlaylist":
+                                salida.println("cancion, artits, 0, 0, fvbghjgfd");
                                 controller.getSongInfo1();
 
                                 //tirarle al cliente numbersong por numbersong el nombre, el id y votes up y votes down de cada canción

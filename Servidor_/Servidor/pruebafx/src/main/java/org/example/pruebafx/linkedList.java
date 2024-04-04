@@ -5,38 +5,24 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
-class Node {
-    File data;
-    Node next;
-    Node previous;
+public class LinkedList {
+    private static class Node {
+        SongData data;
+        Node next = null;
+        Node previous = null;
 
-    String id;
-
-    Integer likes;
-
-    Integer dislikes;
-
-    // Constructor to create a new node
-    Node(File data, String id) {
-        this.data = data;
-        this.id = id;
-        next = null;
-        previous = null;
-        likes = 0;
-        dislikes = 0;;
+        Node(SongData data) {
+            this.data = data;
+        }
     }
-}
 
-public class linkedList {
-    Node head; // head
-    Node tail;
-    Node current; // current
+    private Node head; // head
+    private Node tail;
+    private Node current; // current
 
-    //metodo de insertar
-    public void insert(File data) {
-        String randomID = generateRandomID();
-        Node newNode = new Node(data, randomID);
-
+    public void insert(SongData data) {
+        data.setId(generateRandomID());
+        Node newNode = new Node(data);
         if (head == null) {
             head = newNode;
             tail = newNode;
@@ -44,11 +30,10 @@ public class linkedList {
             newNode.previous = tail;
             tail.next = newNode;
             tail = newNode;
-
         }
     }
 
-    public Node find(int index) {
+    public SongData find(int index) {
         Node current = head;
         int currentNumber = 0;
         while (current != null && currentNumber < index) {
@@ -56,9 +41,9 @@ public class linkedList {
             currentNumber ++;
         }
         if (current == null && head != null) {
-            return head;
+            return head.data;
         } else if (current != null) {
-            return current;
+            return current.data;
         }
         return null;
     }
@@ -70,27 +55,29 @@ public class linkedList {
         }
         return null;
     }
+
     //Resive un id y le da like a la cancion con dicho id
     public void addLike(String id) {
         Node node = findByID(id);
         if (node != null) {
-            node.likes += 1;
+            node.data.addLike();
         }
     }
+
     //Resive un id y le da dislike a la cancion con dicho id
     public void addDislike(String id) {
         Node node = findByID(id);
         if (node != null) {
-            node.dislikes += 1;
+            node.data.addDislike();
         }
     }
 
     //Funcion que busca el id autogenerado de la cancion implementada
-    public Node findByID(String id) {
+    public SongData findByID(String id) {
         Node current = head;
         while (current != null) {
             if (current.id.equals(id)) {
-                return current;
+                return current.data;
             }
             current = current.next;
         }
@@ -115,22 +102,22 @@ public class linkedList {
     }
 
     // Método para obtener un nodo aleatorio
-    public Node getRandomNode() {
+    private Node getRandomNode() {
         int size = size();
         int randomIndex = (int) (Math.random() * size);
         return find(randomIndex);
     }
 
     // Función para generar una lista aleatoria de 3 elementos
-    public linkedList generateRandomList() {
-        linkedList randomList = new linkedList();
+    public LinkedList generateRandomList() {
+        LinkedList randomList = new LinkedList();
         Set<Node> selectedNodes = new HashSet<>(); // Conjunto para almacenar nodos seleccionados
         int maxAttempts = 100; // Número máximo de intentos para evitar un bucle infinito
         int attempts = 0;
 
-        while (randomList.size() < 2 && attempts < maxAttempts) {
+        while (randomList.size() <= 2 && attempts < maxAttempts) {
             Node randomNode = getRandomNode();
-            if (!selectedNodes.contains(randomNode)) {
+            if (randomNode != null && !selectedNodes.contains(randomNode)) {
                 randomList.insert(randomNode.data);
                 selectedNodes.add(randomNode);
             }
@@ -205,31 +192,26 @@ public class linkedList {
         jsonOutput.append("{\n");
         jsonOutput.append("  \"playlist\": [\n");
 
-        Node current = head;
-        while (current != null) {
-            jsonOutput.append("    {\n");
-            jsonOutput.append("      \"id\": \"" + current.id + "\",\n");
-            jsonOutput.append("      \"likes\": " + current.likes + ",\n");
-            jsonOutput.append("      \"dislikes\": " + current.dislikes + ",\n");
-            // Asume que el objeto File se convierte a una cadena para la impresión JSON
-            jsonOutput.append("      \"data\": \"" + current.data.toString() + "\"\n");
-            jsonOutput.append("    }");
+        Node currentNode = head;
+        while (currentNode != null) {
+            var current = currentNode.data;
+            jsonOutput.append("    {\n")
+                .append("      \"id\": \"" + current.getId() + "\",\n")
+                .append("      \"likes\": " + current.getLikes() + ",\n")
+                .append("      \"dislikes\": " + current.getDislikes())
+                .append("    }");
 
-            if (current.next != null) {
+            if (currentNode.next != null) {
                 jsonOutput.append(",");
             }
 
             jsonOutput.append("\n");
-            current = current.next;
+            currentNode = currentNode.next;
         }
-
         jsonOutput.append("  ]\n");
         jsonOutput.append("}\n");
 
         // Imprimir la cadena JSON resultante
         System.out.println(jsonOutput.toString());
     }
-
-
 }
-

@@ -16,12 +16,15 @@ public class Metadata1 {
             AudioFile audioFile = AudioFileIO.read(file);
 
             // Obtener los metadatos
+            String artist = audioFile.getTag().getFirst(FieldKey.ARTIST);
             String title = audioFile.getTag().getFirst(FieldKey.TITLE);
-
 
             // Crear una cadena de texto con los metadatos
             StringBuilder metadataText = new StringBuilder();
-            metadataText.append("Title: ").append(title);
+            metadataText.append(title);
+            metadataText.append(artist);
+
+
 
 
             // Retornar los metadatos como una cadena de texto
