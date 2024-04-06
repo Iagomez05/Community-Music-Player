@@ -37,3 +37,18 @@ java.io.FileNotFoundException: setting.ini (The system cannot find the file spec
 04-04-2024 00:05:31 ERROR Metadata:38: Error:: No se pudo leer metadata
 04-04-2024 00:05:31 ERROR ControllerClass:124: NO se pudo extraer metadata
 04-04-2024 00:05:37 INFO  Servidor:23: Servidor iniciado en el puerto 10500
+04-04-2024 18:47:22 ERROR Metadata:38: Error:: No se pudo leer metadata
+04-04-2024 18:47:22 ERROR ControllerClass:112: NO se pudo extraer metadata
+04-04-2024 18:47:22 ERROR ControllerClass:88: Error loading media: Unrecognized file signature!
+04-04-2024 22:34:42 ERROR Metadata:38: Error:: No se pudo leer metadata
+04-04-2024 22:34:42 ERROR ControllerClass:113: NO se pudo extraer metadata
+04-04-2024 22:34:42 ERROR ControllerClass:89: Error loading media: Unrecognized file signature!
+04-04-2024 22:35:08 INFO  Servidor:23: Servidor iniciado en el puerto 10500
+04-04-2024 22:39:25 ERROR Metadata:38: Error:: No se pudo leer metadata
+04-04-2024 22:39:25 ERROR ControllerClass:114: NO se pudo extraer metadata
+04-04-2024 22:39:26 ERROR ControllerClass:90: Error loading media: Unrecognized file signature!
+04-04-2024 22:44:48 ERROR Metadata:38: Error:: No se pudo leer metadata
+04-04-2024 22:44:48 ERROR ControllerClass:116: NO se pudo extraer metadata
+04-04-2024 22:44:53 ERROR ControllerClass:92: Error loading media: C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\Servidor_\Servidor\pruebafx\music\null (El sistema no puede encontrar el archivo especificado)
+04-04-2024 22:46:33 ERROR ControllerClass:92: Error loading media: C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\Servidor_\Servidor\pruebafx\music\null (El sistema no puede encontrar el archivo especificado)
+04-04-2024 23:06:28 ERROR ControllerClass:91: Error loading media: Cannot invoke "org.example.pruebafx.SongData.getTitle()" because the return value of "org.example.pruebafx.LinkedList.get(int)" is null

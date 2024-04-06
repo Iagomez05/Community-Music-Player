@@ -1,6 +1,10 @@
 package org.example.pruebafx;
 
+import java.io.File;
+import java.io.IOException;
+
 public class SongData {
+
     private String artist;
     private String title;
     private String album;
@@ -9,12 +13,18 @@ public class SongData {
     private int likes = 0;
     private int dislikes = 0;
 
-    public SongData(String artist, String title, String album, String genre, String id) {
-        this.artist = artist;
-        this.title = title;
-        this.album = album;
-        this.genre = genre;
-        this.id = id;
+    public SongData(File file) throws IOException {
+        // Extraer los datos del nombre del archivo
+        String fileName = file.getName();
+        String[] parts = fileName.split(" - "); // Suponiendo que el nombre del archivo sigue el formato "artista - título.mp3"
+        if (parts.length >= 2) {
+            this.artist = parts[0];
+            this.title = parts[1].replace(".mp3", ""); // Eliminar la extensión del archivo si es necesario
+        } else {
+            // Manejo de caso en el que el nombre del archivo no sigue el formato esperado
+            this.artist = "Artista Desconocido";
+            this.title = fileName.replace(".mp3", ""); // Utilizar el nombre del archivo como título
+        }
     }
 
     public String getArtist() {

@@ -38,9 +38,6 @@ public class Servidor {
                             case "GetPlaylist":
                                 salida.println("cancion, artits, 0, 0, fvbghjgfd");
                                 controller.getSongInfo1();
-
-                                //tirarle al cliente numbersong por numbersong el nombre, el id y votes up y votes down de cada canción
-
                                 break;
                             case "Vote up":
                                 salida.println("ok, like");
