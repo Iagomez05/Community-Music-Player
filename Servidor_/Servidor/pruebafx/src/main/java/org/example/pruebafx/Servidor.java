@@ -36,8 +36,13 @@ public class Servidor {
 
                         switch (mensajeCliente) {
                             case "GetPlaylist":
-                                salida.println("cancion, artits, 0, 0, fvbghjgfd");
+                                salida.println("cancion, artits, 110, 10, fvbghjgfd");
+                                //String infosong = controller.getSongInfo1();
+                                //salida.print(infosong);
                                 controller.getSongInfo1();
+                                break;
+                            case "Update":
+                                controller.UpdateList();
                                 break;
                             case "Vote up":
                                 salida.println("ok, like");

@@ -115,7 +115,7 @@ public class LinkedList {
         int maxAttempts = 100; // Número máximo de intentos para evitar un bucle infinito
         int attempts = 0;
 
-        while (randomList.size() <= 2 && attempts < maxAttempts) {
+        while (randomList.size() <= 1 && attempts < maxAttempts) {
             SongData randomNode = getRandomNode();
             if (randomNode != null && !selectedNodes.contains(randomNode)) {
                 randomList.insert(randomNode);
@@ -153,7 +153,9 @@ public class LinkedList {
         }
     }
 
-    //Metodo para eliminar una cancion(dato importante la elimina solo para esa ejecucion y no de la carpeta)
+    /*Metodo para eliminar una cancion(dato importante la elimina solo para esa ejecucion y
+    no de la carpeta
+     */
     public void removeAtIndex(int index) {
         if (index < 0 || index >= size()) {
             throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size());

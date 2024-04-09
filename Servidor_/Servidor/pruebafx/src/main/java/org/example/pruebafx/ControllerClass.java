@@ -58,11 +58,14 @@ public class ControllerClass implements Initializable {
     private Media media;
     private MediaPlayer mediaPlayer;
     private final LinkedList songList = new LinkedList();
+    private LinkedList listaAleatoria = songList.generateRandomList();
     private MetadataList miau = new MetadataList();
     private int numbersong = 0; // el  numbersong inicia en 0
     private Timer timer; //para el progreso de la canción
     private boolean running; // para el progreso de la canción
     private TimerTask task; // para el progreso de la canción
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -83,15 +86,6 @@ public class ControllerClass implements Initializable {
                 }
             }
             getSongInfo(numbersong);
-
-            //   LinkedList listaAleatoria = songList.generateRandomList();
-            //
-            //            // Imprimir los elementos de la lista aleatoria
-            //            SongData current = listaAleatoria.get(numbersong);
-            //            while (current != null) {
-            //                System.out.println(current.data.getTitle());
-            //                //current = current.next;
-            //            }
         }
 
 
@@ -137,11 +131,12 @@ public class ControllerClass implements Initializable {
     }
 
     public String getSongInfo1() {
-        LinkedList listaAleatoria = songList.generateRandomList();
-        SongData current = listaAleatoria.get(0);
+        listaAleatoria = songList.generateRandomList();
         StringBuilder infoCompleta = new StringBuilder(); // Para almacenar toda la información de las canciones
 
-        while (current != null) {
+        // Suponiendo que listaAleatoria es una lista de objetos SongData
+        for (int i = 0; i < listaAleatoria.size(); i++) {
+            SongData current = listaAleatoria.get(i);
             String path = current.getTitle();
             String rutaMusics = ApplicationSettings.getApplicationSettings().getCarpetaBibliotecaMusical();
             String songdata = Metadata1.extractMetadata1(rutaMusics + path);
@@ -159,13 +154,43 @@ public class ControllerClass implements Initializable {
                 System.out.println("No se pudo extraer metadatos.");
                 LOG.error("NO se pudo extraer metadata");
             }
-            //current = current.next;
+        }
+        // Devolver toda la información completa de las canciones como una cadena
+        System.out.println(infoCompleta);
+        return infoCompleta.toString();
+    }
+
+    public String UpdateList(){
+        listaAleatoria.sortByLikesAndDislikes();
+        StringBuilder infoCompleta = new StringBuilder(); // Para almacenar toda la información de las canciones
+
+        // Suponiendo que listaAleatoria es una lista de objetos SongData
+        for (int i = 0; i < listaAleatoria.size(); i++) {
+            SongData current = listaAleatoria.get(i);
+            String path = current.getTitle();
+            String rutaMusics = ApplicationSettings.getApplicationSettings().getCarpetaBibliotecaMusical();
+            String songdata = Metadata1.extractMetadata1(rutaMusics + path);
+
+            if (songdata != null) {
+                String infocancion = songdata +
+                        ", " +
+                        current.getLikes() + // Llama al método getLikes()
+                        ", " +
+                        current.getDislikes() + // Llama al método getDislikes()
+                        ", " +
+                        current.getId(); // Llama al método getId()
+                infoCompleta.append(infocancion).append("\n"); // Agregar el formato de canción seguido de un salto de línea
+            } else {
+                System.out.println("No se pudo extraer metadatos.");
+                LOG.error("NO se pudo extraer metadata");
+            }
         }
 
         // Devolver toda la información completa de las canciones como una cadena
         System.out.println(infoCompleta);
         return infoCompleta.toString();
     }
+
     @FXML
     public void nextSong(ActionEvent event) {
 
@@ -296,8 +321,6 @@ public class ControllerClass implements Initializable {
             getSongInfo(numbersong);
         }
     }
-
-
 
     public void beginTimer() {
         timer = new Timer();
