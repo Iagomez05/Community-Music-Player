@@ -12,6 +12,7 @@ import org.apache.log4j.Logger;
 import javafx.util.Duration;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Timer;
@@ -53,9 +54,11 @@ public class ControllerClass implements Initializable {
     private Label infoLabel;
 
 
+
     private Media media;
     private MediaPlayer mediaPlayer;
     private final LinkedList songList = new LinkedList();
+    private LinkedList listaAleatoria = songList.generateRandomList();
     private MetadataList miau = new MetadataList();
     private int numbersong = 0; // el  numbersong inicia en 0
     private Timer timer; //para el progreso de la canción
@@ -63,41 +66,41 @@ public class ControllerClass implements Initializable {
     private TimerTask task; // para el progreso de la canción
 
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         String rutaMusica = ApplicationSettings.getApplicationSettings().getCarpetaBibliotecaMusical();
+        assert rutaMusica != null;
         File directory = new File(rutaMusica);
         File[] files = directory.listFiles();
 
         if (files != null) {
             for (File file : files) {
-
-                songList.insert(file);
-                System.out.println(file);
+                try {
+                    SongData songData = new SongData(file);
+                    songList.insert(songData);
+                } catch (IOException e) {
+                    // Manejo de la excepción
+                    e.printStackTrace();
+                    LOG.error("Error al buscar el archivo: " + e.getMessage());
+                }
             }
-
-
             getSongInfo(numbersong);
-            LinkedList listaAleatoria = songList.generateRandomList();
-
-            // Imprimir los elementos de la lista aleatoria
-            Node current = listaAleatoria.head;
-            while (current != null) {
-                System.out.println(current.data.getName());
-                current = current.next;
-            }
-
         }
+
 
         try {
-            media = new Media(songList.get(numbersong).toURI().toString());
+            String musicFileName = songList.get(numbersong).getTitle(); // Obtiene el nombre del archivo de música
+            String musicDirectoryPath = ApplicationSettings.getApplicationSettings().getCarpetaBibliotecaMusical(); // Obtiene la ruta del directorio de música
+            String musicFilePath = musicDirectoryPath + File.separator + musicFileName;
+            media = new Media(new File(musicFilePath).toURI().toString());
             mediaPlayer = new MediaPlayer(media);
-            songLabel.setText(songList.get(numbersong).getName());
-
+            songLabel.setText(songList.get(numbersong).getTitle());
         } catch (Exception e) {
-            System.out.println("Error loading media: " + e.getMessage());
-            LOG.error("Error loading media: " + e.getMessage());
+            System.out.println("Error cargando media: " + e.getMessage());
+            LOG.error("Error cargando media: " + e.getMessage());
         }
+
         Slider_Volume.valueProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
@@ -105,7 +108,6 @@ public class ControllerClass implements Initializable {
             }
         });
     }
-
     private void getSongInfo(Integer position) {
         SongData current = songList.find(position);
         String path = current.getTitle();
@@ -113,9 +115,14 @@ public class ControllerClass implements Initializable {
         System.out.println("Selected likes ::: " + current.getLikes());
         System.out.println("Selected dislikes ::: " + current.getDislikes());
         String rutaMusics = ApplicationSettings.getApplicationSettings().getCarpetaBibliotecaMusical();
-        String metadata = Metadata.extractMetadata(rutaMusics + path);
+
+        // Extract metadata using Metadata class
+        SongData metadata = Metadata.extractMetadata(rutaMusics + path);
+
         if (metadata != null) {
-            infoLabel.setText(metadata);
+            // Update UI with metadata
+            infoLabel.setText("Artist: " + metadata.getArtist() + "\n" + " Title: " + metadata.getTitle() + "\n" + " Album: " + metadata.getAlbum()+ "\n" + " Genre: " + metadata.getGenre());
+
             System.out.println(metadata);
         } else {
             System.out.println("No se pudo extraer metadatos.");
@@ -123,58 +130,92 @@ public class ControllerClass implements Initializable {
         }
     }
 
-
     public String getSongInfo1() {
-        LinkedList listaAleatoria = songList.generateRandomList();
-        Node current = listaAleatoria.get();
+        listaAleatoria = songList.generateRandomList();
         StringBuilder infoCompleta = new StringBuilder(); // Para almacenar toda la información de las canciones
 
-        while (current != null) {
-            String path = current.data.getName();
+        // Suponiendo que listaAleatoria es una lista de objetos SongData
+        for (int i = 0; i < listaAleatoria.size(); i++) {
+            SongData current = listaAleatoria.get(i);
+            String path = current.getTitle();
             String rutaMusics = ApplicationSettings.getApplicationSettings().getCarpetaBibliotecaMusical();
             String songdata = Metadata1.extractMetadata1(rutaMusics + path);
 
             if (songdata != null) {
                 String infocancion = songdata +
                         ", " +
-                        current.getLi +
+                        current.getLikes() + // Llama al método getLikes()
                         ", " +
-                        current.dislikes +
+                        current.getDislikes() + // Llama al método getDislikes()
                         ", " +
-                        current.id;
+                        current.getId(); // Llama al método getId()
                 infoCompleta.append(infocancion).append("\n"); // Agregar el formato de canción seguido de un salto de línea
             } else {
                 System.out.println("No se pudo extraer metadatos.");
                 LOG.error("NO se pudo extraer metadata");
             }
-            current = current.next;
+        }
+        // Devolver toda la información completa de las canciones como una cadena
+        System.out.println(infoCompleta);
+        return infoCompleta.toString();
+    }
+
+    public String UpdateList(){
+        listaAleatoria.sortByLikesAndDislikes();
+        StringBuilder infoCompleta = new StringBuilder(); // Para almacenar toda la información de las canciones
+
+        // Suponiendo que listaAleatoria es una lista de objetos SongData
+        for (int i = 0; i < listaAleatoria.size(); i++) {
+            SongData current = listaAleatoria.get(i);
+            String path = current.getTitle();
+            String rutaMusics = ApplicationSettings.getApplicationSettings().getCarpetaBibliotecaMusical();
+            String songdata = Metadata1.extractMetadata1(rutaMusics + path);
+
+            if (songdata != null) {
+                String infocancion = songdata +
+                        ", " +
+                        current.getLikes() + // Llama al método getLikes()
+                        ", " +
+                        current.getDislikes() + // Llama al método getDislikes()
+                        ", " +
+                        current.getId(); // Llama al método getId()
+                infoCompleta.append(infocancion).append("\n"); // Agregar el formato de canción seguido de un salto de línea
+            } else {
+                System.out.println("No se pudo extraer metadatos.");
+                LOG.error("NO se pudo extraer metadata");
+            }
         }
 
         // Devolver toda la información completa de las canciones como una cadena
         System.out.println(infoCompleta);
-        System.out.println("holex");
         return infoCompleta.toString();
     }
+
     @FXML
     public void nextSong(ActionEvent event) {
+
         System.out.println("next");
         songProgressB.setProgress(0);
         songSlider.setValue(0);
         if (numbersong < songList.size() - 1) {
             numbersong++;
+
         } else {
             numbersong = 0;
         }
-        String musicFilePath = songList.get(numbersong).toURI().toString();
+        String musicFileName = songList.get(numbersong).getTitle(); // Obtiene el nombre del archivo de música
+        String musicDirectoryPath = ApplicationSettings.getApplicationSettings().getCarpetaBibliotecaMusical(); // Obtiene la ruta del directorio de música
+        String musicFilePath = musicDirectoryPath + File.separator + musicFileName;
+
         mediaPlayer.stop();
         if (running) {
             stopTimer();
         }
-        media = new Media(musicFilePath);
+        media = new Media(new File(musicFilePath).toURI().toString());
         mediaPlayer = new MediaPlayer(media);
-        songLabel.setText(songList.get(numbersong).getName());
+        songLabel.setText(songList.get(numbersong).getTitle());
         getSongInfo(numbersong);
-        //songList.removeAtIndex(numbersong);
+        loadNextSong();
     }
 
     @FXML
@@ -201,15 +242,19 @@ public class ControllerClass implements Initializable {
         } else {
             numbersong = songList.size() - 1;
         }
-        String musicFilePath = songList.get(numbersong).toURI().toString();
+        String musicFileName = songList.get(numbersong).getTitle(); // Obtiene el nombre del archivo de música
+        String musicDirectoryPath = ApplicationSettings.getApplicationSettings().getCarpetaBibliotecaMusical(); // Obtiene la ruta del directorio de música
+        String musicFilePath = musicDirectoryPath + File.separator + musicFileName;
+
         mediaPlayer.stop();
         if (running) {
             stopTimer();
         }
-        media = new Media(musicFilePath);
+        media = new Media(new File(musicFilePath).toURI().toString());
         mediaPlayer = new MediaPlayer(media);
-        songLabel.setText(songList.get(numbersong).getName());
+        songLabel.setText(songList.get(numbersong).getTitle());
         getSongInfo(numbersong);
+        loadNextSong();
     }
 
     @FXML
@@ -242,7 +287,7 @@ public class ControllerClass implements Initializable {
             if (numbersong >= songList.size()) {
                 numbersong = songList.size() - 1; // Ajusta el índice si es necesario
             }
-            songLabel.setText(songList.get(numbersong).getName());
+            songLabel.setText(songList.get(numbersong).getTitle());
         } else {
             // Si no quedan canciones en la lista, borra la etiqueta de la canción actual
             songLabel.setText("");
@@ -253,25 +298,29 @@ public class ControllerClass implements Initializable {
 
     // Method to load the next song to play
     private void loadNextSong() {
-        if (songList.size() > 0) {
-            // Get the file path of the next song
-            String musicFilePath = songList.get(numbersong).toURI().toString();
-            // Stop any playback and load the next song
+
+        // Verifica si hay canciones en la lista
+        if (!songList.isEmpty()) {
+            // Obtiene el nombre del archivo de música de la siguiente canción
+            String musicFileName = songList.get(numbersong).getTitle();
+            // Obtiene la ruta del directorio de música
+            String musicDirectoryPath = ApplicationSettings.getApplicationSettings().getCarpetaBibliotecaMusical();
+            // Construye la ruta completa del archivo de música
+            String musicFilePath = musicDirectoryPath + File.separator + musicFileName;
+
+            // Detiene cualquier reproducción actual
             mediaPlayer.stop();
-            media = new Media(musicFilePath);
+            if (running) {
+                stopTimer();
+            }
+            // Carga y reproduce la siguiente canción
+            media = new Media(new File(musicFilePath).toURI().toString());
             mediaPlayer = new MediaPlayer(media);
-            // Update the song label and song info
-            songLabel.setText(songList.get(numbersong).getName());
+            // Actualiza la etiqueta de la canción y la información de la canción
+            songLabel.setText(songList.get(numbersong).getTitle());
             getSongInfo(numbersong);
-        } else {
-            // If there are no songs left, clear the media player
-            mediaPlayer.stop();
-            mediaPlayer = null;
-            // Clear the song label
-            songLabel.setText("");
         }
     }
-
 
     public void beginTimer() {
         timer = new Timer();

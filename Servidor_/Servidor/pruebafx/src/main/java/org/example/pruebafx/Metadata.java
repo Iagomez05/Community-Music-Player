@@ -10,8 +10,9 @@ import java.io.File;
 public class Metadata {
 
     private static final Logger LOG = Log.getLogger(Metadata.class);
-    public static String extractMetadata(String wavFilePath) {
-        MetadataList metadataList = new MetadataList();
+
+    public static SongData extractMetadata(String wavFilePath) {
+
         try {
             // Leer el archivo WAV usando JAudioTagger
             File file = new File(wavFilePath);
@@ -25,14 +26,14 @@ public class Metadata {
 
 
             // Crear una cadena de texto con los metadatos
-            StringBuilder metadataText = new StringBuilder();
-            metadataText.append("Artist: ").append(artist).append("\n");
-            metadataText.append("Title: ").append(title).append("\n");
-            metadataText.append("Album: ").append(album).append("\n");
-            metadataText.append("Genre: ").append(genre).append("\n");
+            SongData songData = new SongData(file);
+            songData.setArtist(artist);
+            songData.setTitle(title);
+            songData.setAlbum(album);
+            songData.setGenre(genre);
 
             // Retornar los metadatos como una cadena de texto
-            return metadataText.toString();
+            return songData;
         } catch (Exception e) {
             e.printStackTrace();
             LOG.error("Error:: No se pudo leer metadata");

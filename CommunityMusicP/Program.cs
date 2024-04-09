@@ -30,7 +30,7 @@ namespace CommunityMusicP
             {
                 // Establecer la dirección IP y el puerto del servidor
                 IPAddress ipAddress = IPAddress.Parse("127.0.0.1");
-                int puerto = 8500;
+                int puerto = 10500;
 
                 // Crear el socket TCP/IP
                 clienteSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
