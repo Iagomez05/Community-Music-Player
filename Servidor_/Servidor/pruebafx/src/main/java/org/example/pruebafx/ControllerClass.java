@@ -17,6 +17,18 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+
+
 
 public class ControllerClass implements Initializable {
 
@@ -64,6 +76,8 @@ public class ControllerClass implements Initializable {
     private Timer timer; //para el progreso de la canción
     private boolean running; // para el progreso de la canción
     private TimerTask task; // para el progreso de la canción
+    private static final String DEFAULT_FILE_NAME = "info.json";
+
 
 
 
@@ -130,9 +144,10 @@ public class ControllerClass implements Initializable {
         }
     }
 
-    public String getSongInfo1() {
-        listaAleatoria = songList.generateRandomList();
-        StringBuilder infoCompleta = new StringBuilder(); // Para almacenar toda la información de las canciones
+
+    public void writeSongInfoToFile(String filePath) {
+        //listaAleatoria = songList.generateRandomList();
+        JSONArray commSongs = new JSONArray();
 
         // Suponiendo que listaAleatoria es una lista de objetos SongData
         for (int i = 0; i < listaAleatoria.size(); i++) {
@@ -142,23 +157,28 @@ public class ControllerClass implements Initializable {
             String songdata = Metadata1.extractMetadata1(rutaMusics + path);
 
             if (songdata != null) {
-                String infocancion = songdata +
-                        ", " +
-                        current.getLikes() + // Llama al método getLikes()
-                        ", " +
-                        current.getDislikes() + // Llama al método getDislikes()
-                        ", " +
-                        current.getId(); // Llama al método getId()
-                infoCompleta.append(infocancion).append("\n"); // Agregar el formato de canción seguido de un salto de línea
+                JSONObject commSong = new JSONObject();
+                commSong.put("name", songdata);
+                commSong.put("likes", current.getLikes());
+                commSong.put("dislikes", current.getDislikes());
+                commSong.put("id", current.getId());
+                commSongs.add(commSong);
             } else {
                 System.out.println("No se pudo extraer metadatos.");
                 LOG.error("NO se pudo extraer metadata");
             }
         }
-        // Devolver toda la información completa de las canciones como una cadena
-        System.out.println(infoCompleta);
-        return infoCompleta.toString();
+
+        // Write JSON array to the specified file path
+        try (FileWriter file = new FileWriter(filePath)) {
+            file.write(commSongs.toJSONString());
+            System.out.println("Successfully wrote JSON to file: " + filePath);
+        } catch (IOException e) {
+            System.out.println("An error occurred while writing JSON to file: " + filePath);
+            e.printStackTrace();
+        }
     }
+
 
     public String UpdateList(){
         listaAleatoria.sortByLikesAndDislikes();
@@ -356,6 +376,7 @@ public class ControllerClass implements Initializable {
 
     @FXML
     public void commumode(ActionEvent event){
+        writeSongInfoToFile("C:\\datos1\\Community-Music-Player\\info.json");
         final int valor = ApplicationSettings.getApplicationSettings().getPuertoServidor();
         if (Toggle_commode.isSelected()) {
             Servidor empiezaservidor = new Servidor(this);

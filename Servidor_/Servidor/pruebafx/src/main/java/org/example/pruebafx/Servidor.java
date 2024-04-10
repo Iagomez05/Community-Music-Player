@@ -2,9 +2,15 @@ package org.example.pruebafx;
 
 import org.apache.log4j.Logger;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 public class Servidor {
     private static final Logger LOG = Log.getLogger(Servidor.class);
@@ -34,35 +40,50 @@ public class Servidor {
                     while ((mensajeCliente = entrada.readLine()) != null) {
                         System.out.println("Mensaje recibido del cliente: " + mensajeCliente);
 
-                        switch (mensajeCliente) {
+                        // Parsear el mensaje JSON
+                        JsonObject jsonMensaje = new Gson().fromJson(mensajeCliente, JsonObject.class);
+                        String comando = jsonMensaje.get("command").getAsString();
+
+                        switch (comando) {
                             case "GetPlaylist":
-                                salida.println("cancion, artits, 110, 10, fvbghjgfd");
-                                //String infosong = controller.getSongInfo1();
-                                //salida.print(infosong);
-                                controller.getSongInfo1();
+                                // Lee el archivo JSON y obtén la información de la lista de reproducción
+                                JSONArray playlist = leerPlaylistDesdeArchivo("C:\\datos1\\Community-Music-Player\\info.json");
+                                // Envía la lista de reproducción al cliente
+                                salida.println(playlist.toString());
                                 break;
+
+
                             case "Update":
-                                controller.UpdateList();
+                                String updateList = controller.UpdateList();
+                                salida.println(updateList);
                                 break;
-                            case "Vote up":
+
+                            case "Vote Up":
+                                System.out.println("ok,like");
                                 salida.println("ok, like");
-                                // Lógica para incrementar el contador de "likes"
+                                String id_like = jsonMensaje.get("id").getAsString();
+                                //controller.songList.addLike(id_like);
                                 break;
-                            case "Vote down":
+
+                            case "Vote Down":
+                                System.out.println("ok, dislike");
                                 salida.println("ok, dislike");
-                                // Lógica para incrementar el contador de "dislikes"
+                                String id_dislike = jsonMensaje.get("id").getAsString();
+                                //controller.songList.addDislike(id_dislike);
                                 break;
+
                             case "FIN":
                                 salida.println("Cerrando conexión...");
                                 LOG.info("Info:: Conexion cerrada");
                                 break;
+
                             default:
                                 salida.println("ERROR");
                                 LOG.error("Error:: Comando erroneo");
                                 break;
                         }
 
-                        if (mensajeCliente.equals("FIN")) {
+                        if (comando.equals("FIN")) {
                             LOG.info("Info:: Fin del servidor");
                             break;
                         }
@@ -89,4 +110,16 @@ public class Servidor {
             }
         }).start();
     }
+    private JSONArray leerPlaylistDesdeArchivo(String rutaArchivo) {
+        try {
+            JSONParser parser = new JSONParser();
+            Object obj = parser.parse(new FileReader(rutaArchivo));
+            return (JSONArray) obj;
+        } catch (Exception e) {
+            System.err.println("Error al leer el archivo JSON: " + e.getMessage());
+            return new JSONArray(); // Devuelve una lista vacía en caso de error
+        }
+    }
+
+
 }
