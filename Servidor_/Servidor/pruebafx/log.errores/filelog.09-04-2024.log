@@ -1,0 +1,15 @@
+09-04-2024 10:20:23 INFO  Servidor:23: Servidor iniciado en el puerto 10500
+09-04-2024 10:21:05 INFO  Servidor:28: Cliente conectado: 127.0.0.1
+09-04-2024 10:22:43 ERROR Servidor:64: Error:: Comando erroneo
+09-04-2024 10:22:48 ERROR Servidor:64: Error:: Comando erroneo
+09-04-2024 10:22:49 ERROR Servidor:64: Error:: Comando erroneo
+09-04-2024 10:22:50 ERROR Servidor:64: Error:: Comando erroneo
+09-04-2024 10:22:52 ERROR Servidor:64: Error:: Comando erroneo
+09-04-2024 21:57:10 INFO  Servidor:23: Servidor iniciado en el puerto 10500
+09-04-2024 21:57:15 INFO  Servidor:28: Cliente conectado: 127.0.0.1
+09-04-2024 22:00:14 INFO  Servidor:23: Servidor iniciado en el puerto 10500
+09-04-2024 22:00:21 INFO  Servidor:28: Cliente conectado: 127.0.0.1
+09-04-2024 22:00:32 ERROR Servidor:65: Error:: Comando erroneo
+09-04-2024 23:02:01 INFO  Servidor:25: Servidor iniciado en el puerto 10500
+09-04-2024 23:02:12 INFO  Servidor:30: Cliente conectado: 127.0.0.1
+09-04-2024 23:02:23 INFO  Servidor:95: Info:: Servidor cerrado.
