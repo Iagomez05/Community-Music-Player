@@ -63,13 +63,17 @@ public class LinkedList {
         }
     }
 
-    //Resive un id y le da dislike a la cancion con dicho id
+
+    //Recibe un id y le da dislike a la cancion con dicho id
     public void addDislike(String id) {
         SongData node = findByID(id);
         if (node != null) {
             node.addDislike();
         }
     }
+
+
+
 
     //Funcion que busca el id autogenerado de la cancion implementada
     public SongData findByID(String id) {
@@ -127,8 +131,8 @@ public class LinkedList {
         return randomList;
     }
 
-    //Metodo para ordenar la lista aleatoria que manda el Community Player
 
+    //Metodo para ordenar la lista aleatoria que manda el Community Player
     public void sortByLikesAndDislikes() {
         Node current = head;
         Node next = null;
@@ -152,6 +156,12 @@ public class LinkedList {
             current = current.next;
         }
     }
+
+
+
+
+
+
 
     /*Metodo para eliminar una cancion(dato importante la elimina solo para esa ejecucion y
     no de la carpeta

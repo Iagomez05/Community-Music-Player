@@ -22,6 +22,7 @@ public class Metadata1 {
             // Crear una cadena de texto con los metadatos
             StringBuilder metadataText = new StringBuilder();
             metadataText.append(title);
+            metadataText.append(", ");
             metadataText.append(artist);
 
 
