@@ -1,0 +1,111 @@
+C:\Users\gonza\source\repos\CommunityMusicP\bin\Debug\net8.0-windows\CommunityMusicP.exe
+C:\Users\gonza\source\repos\CommunityMusicP\bin\Debug\net8.0-windows\CommunityMusicP.deps.json
+C:\Users\gonza\source\repos\CommunityMusicP\bin\Debug\net8.0-windows\CommunityMusicP.runtimeconfig.json
+C:\Users\gonza\source\repos\CommunityMusicP\bin\Debug\net8.0-windows\CommunityMusicP.dll
+C:\Users\gonza\source\repos\CommunityMusicP\bin\Debug\net8.0-windows\CommunityMusicP.pdb
+C:\Users\gonza\source\repos\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.Cliente.resources
+C:\Users\gonza\source\repos\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.Properties.Resources.resources
+C:\Users\gonza\source\repos\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.csproj.GenerateResource.cache
+C:\Users\gonza\source\repos\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gonza\source\repos\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.AssemblyInfoInputs.cache
+C:\Users\gonza\source\repos\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.AssemblyInfo.cs
+C:\Users\gonza\source\repos\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.csproj.CoreCompileInputs.cache
+C:\Users\gonza\source\repos\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.dll
+C:\Users\gonza\source\repos\CommunityMusicP\obj\Debug\net8.0-windows\refint\CommunityMusicP.dll
+C:\Users\gonza\source\repos\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.pdb
+C:\Users\gonza\source\repos\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.genruntimeconfig.cache
+C:\Users\gonza\source\repos\CommunityMusicP\obj\Debug\net8.0-windows\ref\CommunityMusicP.dll
+C:\Users\gonza\source\repos\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.Clientcnct.resources
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\CommunityMusicP\bin\Debug\net8.0-windows\CommunityMusicP.exe
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\CommunityMusicP\bin\Debug\net8.0-windows\CommunityMusicP.deps.json
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\CommunityMusicP\bin\Debug\net8.0-windows\CommunityMusicP.runtimeconfig.json
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\CommunityMusicP\bin\Debug\net8.0-windows\CommunityMusicP.dll
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\CommunityMusicP\bin\Debug\net8.0-windows\CommunityMusicP.pdb
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\CommunityMusicP\bin\Debug\net8.0-windows\INIFileParser.dll
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\CommunityMusicP\bin\Debug\net8.0-windows\log4net.dll
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.csproj.AssemblyReference.cache
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.Clientcnct.resources
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.Properties.Resources.resources
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.Cliente.resources
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.csproj.GenerateResource.cache
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.AssemblyInfoInputs.cache
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.AssemblyInfo.cs
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.csproj.CoreCompileInputs.cache
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.sourcelink.json
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\Communit.6D37768D.Up2Date
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.dll
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\refint\CommunityMusicP.dll
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.pdb
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.genruntimeconfig.cache
+C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\ref\CommunityMusicP.dll
+C:\Users\gonza\OneDrive\Desktop\Proyecto1\Community-Music-Player\CommunityMusicP\bin\Debug\net8.0-windows\CommunityMusicP.exe
+C:\Users\gonza\OneDrive\Desktop\Proyecto1\Community-Music-Player\CommunityMusicP\bin\Debug\net8.0-windows\CommunityMusicP.deps.json
+C:\Users\gonza\OneDrive\Desktop\Proyecto1\Community-Music-Player\CommunityMusicP\bin\Debug\net8.0-windows\CommunityMusicP.runtimeconfig.json
+C:\Users\gonza\OneDrive\Desktop\Proyecto1\Community-Music-Player\CommunityMusicP\bin\Debug\net8.0-windows\CommunityMusicP.dll
+C:\Users\gonza\OneDrive\Desktop\Proyecto1\Community-Music-Player\CommunityMusicP\bin\Debug\net8.0-windows\CommunityMusicP.pdb
+C:\Users\gonza\OneDrive\Desktop\Proyecto1\Community-Music-Player\CommunityMusicP\bin\Debug\net8.0-windows\INIFileParser.dll
+C:\Users\gonza\OneDrive\Desktop\Proyecto1\Community-Music-Player\CommunityMusicP\bin\Debug\net8.0-windows\log4net.dll
+C:\Users\gonza\OneDrive\Desktop\Proyecto1\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.csproj.AssemblyReference.cache
+C:\Users\gonza\OneDrive\Desktop\Proyecto1\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.Clientcnct.resources
+C:\Users\gonza\OneDrive\Desktop\Proyecto1\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.Properties.Resources.resources
+C:\Users\gonza\OneDrive\Desktop\Proyecto1\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.Cliente.resources
+C:\Users\gonza\OneDrive\Desktop\Proyecto1\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.csproj.GenerateResource.cache
+C:\Users\gonza\OneDrive\Desktop\Proyecto1\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gonza\OneDrive\Desktop\Proyecto1\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.AssemblyInfoInputs.cache
+C:\Users\gonza\OneDrive\Desktop\Proyecto1\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.AssemblyInfo.cs
+C:\Users\gonza\OneDrive\Desktop\Proyecto1\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.csproj.CoreCompileInputs.cache
+C:\Users\gonza\OneDrive\Desktop\Proyecto1\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.sourcelink.json
+C:\Users\gonza\OneDrive\Desktop\Proyecto1\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\Communit.6D37768D.Up2Date
+C:\Users\gonza\OneDrive\Desktop\Proyecto1\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.dll
+C:\Users\gonza\OneDrive\Desktop\Proyecto1\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\refint\CommunityMusicP.dll
+C:\Users\gonza\OneDrive\Desktop\Proyecto1\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.pdb
+C:\Users\gonza\OneDrive\Desktop\Proyecto1\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.genruntimeconfig.cache
+C:\Users\gonza\OneDrive\Desktop\Proyecto1\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\ref\CommunityMusicP.dll
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\CommunityMusicP\bin\Debug\net8.0-windows\CommunityMusicP.exe
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\CommunityMusicP\bin\Debug\net8.0-windows\CommunityMusicP.deps.json
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\CommunityMusicP\bin\Debug\net8.0-windows\CommunityMusicP.runtimeconfig.json
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\CommunityMusicP\bin\Debug\net8.0-windows\CommunityMusicP.dll
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\CommunityMusicP\bin\Debug\net8.0-windows\CommunityMusicP.pdb
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\CommunityMusicP\bin\Debug\net8.0-windows\INIFileParser.dll
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\CommunityMusicP\bin\Debug\net8.0-windows\log4net.dll
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.csproj.AssemblyReference.cache
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.Clientcnct.resources
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.Properties.Resources.resources
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.Cliente.resources
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.csproj.GenerateResource.cache
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.AssemblyInfoInputs.cache
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.AssemblyInfo.cs
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.csproj.CoreCompileInputs.cache
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.sourcelink.json
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\Communit.6D37768D.Up2Date
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.dll
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\refint\CommunityMusicP.dll
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.pdb
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\CommunityMusicP.genruntimeconfig.cache
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\CommunityMusicP\obj\Debug\net8.0-windows\ref\CommunityMusicP.dll
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\cliente\bin\Debug\net8.0-windows\CommunityMusicP.exe
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\cliente\bin\Debug\net8.0-windows\CommunityMusicP.deps.json
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\cliente\bin\Debug\net8.0-windows\CommunityMusicP.runtimeconfig.json
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\cliente\bin\Debug\net8.0-windows\CommunityMusicP.dll
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\cliente\bin\Debug\net8.0-windows\CommunityMusicP.pdb
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\cliente\bin\Debug\net8.0-windows\INIFileParser.dll
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\cliente\bin\Debug\net8.0-windows\log4net.dll
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\cliente\obj\Debug\net8.0-windows\CommunityMusicP.csproj.AssemblyReference.cache
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\cliente\obj\Debug\net8.0-windows\CommunityMusicP.Clientcnct.resources
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\cliente\obj\Debug\net8.0-windows\CommunityMusicP.Properties.Resources.resources
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\cliente\obj\Debug\net8.0-windows\CommunityMusicP.Cliente.resources
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\cliente\obj\Debug\net8.0-windows\CommunityMusicP.csproj.GenerateResource.cache
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\cliente\obj\Debug\net8.0-windows\CommunityMusicP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\cliente\obj\Debug\net8.0-windows\CommunityMusicP.AssemblyInfoInputs.cache
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\cliente\obj\Debug\net8.0-windows\CommunityMusicP.AssemblyInfo.cs
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\cliente\obj\Debug\net8.0-windows\CommunityMusicP.csproj.CoreCompileInputs.cache
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\cliente\obj\Debug\net8.0-windows\CommunityMusicP.sourcelink.json
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\cliente\obj\Debug\net8.0-windows\Communit.6D37768D.Up2Date
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\cliente\obj\Debug\net8.0-windows\CommunityMusicP.dll
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\cliente\obj\Debug\net8.0-windows\refint\CommunityMusicP.dll
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\cliente\obj\Debug\net8.0-windows\CommunityMusicP.pdb
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\cliente\obj\Debug\net8.0-windows\CommunityMusicP.genruntimeconfig.cache
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\cliente\obj\Debug\net8.0-windows\ref\CommunityMusicP.dll
+C:\Users\gonza\OneDrive\Desktop\proyectoDatoss\Community-Music-Player\cliente\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
