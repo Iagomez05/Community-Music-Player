@@ -25,6 +25,7 @@ public class Metadata {
             String genre = audioFile.getTag().getFirst(FieldKey.GENRE);
 
 
+
             // Crear una cadena de texto con los metadatos
             SongData songData = new SongData(file);
             songData.setArtist(artist);

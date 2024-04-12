@@ -38,7 +38,6 @@
             Artista = new ColumnHeader();
             Votesup = new ColumnHeader();
             Votesdown = new ColumnHeader();
-            panel2 = new Panel();
             id = new ColumnHeader();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -50,26 +49,26 @@
             panel1.Controls.Add(btnVoteup);
             panel1.Location = new Point(1, 421);
             panel1.Name = "panel1";
-            panel1.Size = new Size(482, 150);
+            panel1.Size = new Size(938, 150);
             panel1.TabIndex = 1;
             // 
             // button1
             // 
             button1.ForeColor = Color.DarkRed;
-            button1.Location = new Point(378, 36);
+            button1.Location = new Point(646, 38);
             button1.Name = "button1";
-            button1.Size = new Size(77, 54);
+            button1.Size = new Size(204, 50);
             button1.TabIndex = 2;
-            button1.Text = "Update";
+            button1.Text = "Cerrar mi votación";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // btnVotedwn
             // 
             btnVotedwn.ForeColor = Color.DarkRed;
-            btnVotedwn.Location = new Point(232, 13);
+            btnVotedwn.Location = new Point(340, 13);
             btnVotedwn.Name = "btnVotedwn";
-            btnVotedwn.Size = new Size(140, 101);
+            btnVotedwn.Size = new Size(206, 101);
             btnVotedwn.TabIndex = 1;
             btnVotedwn.Text = "Vote-down";
             btnVotedwn.UseVisualStyleBackColor = true;
@@ -78,9 +77,9 @@
             // btnVoteup
             // 
             btnVoteup.ForeColor = Color.DarkRed;
-            btnVoteup.Location = new Point(46, 13);
+            btnVoteup.Location = new Point(65, 13);
             btnVoteup.Name = "btnVoteup";
-            btnVoteup.Size = new Size(140, 101);
+            btnVoteup.Size = new Size(209, 101);
             btnVoteup.TabIndex = 0;
             btnVoteup.Text = "Vote-up";
             btnVoteup.UseVisualStyleBackColor = true;
@@ -121,13 +120,6 @@
             Votesdown.Text = "VotesDown";
             Votesdown.Width = 210;
             // 
-            // panel2
-            // 
-            panel2.Location = new Point(489, 421);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(456, 150);
-            panel2.TabIndex = 3;
-            // 
             // id
             // 
             id.Text = "id";
@@ -138,7 +130,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(951, 571);
-            Controls.Add(panel2);
             Controls.Add(listView);
             Controls.Add(panel1);
             Font = new Font("Impact", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -161,7 +152,6 @@
         private ColumnHeader Artista;
         private Button btnVotedwn;
         private Button btnVoteup;
-        private Panel panel2;
         private ColumnHeader Votesup;
         private ColumnHeader Votesdown;
         private Button button1;

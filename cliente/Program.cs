@@ -2,6 +2,9 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using Newtonsoft.Json.Linq;
+using log4net; //Biblioteca para el manejo de logs
+using log4net.Config; //Biblioteca para configurar el log
+using lectorIni;
 
 namespace CommunityMusicP
 {
@@ -10,10 +13,11 @@ namespace CommunityMusicP
         // Declara clienteSocket como una variable estática para que sea accesible desde otros métodos
         public static Socket clienteSocket;
         private static Clientcnct clienteForm;
-
+        private static readonly ILog log = LogManager.GetLogger(typeof(Program));
 
         static void Main()
         {
+            XmlConfigurator.Configure(new FileInfo("log4net.config"));
             // Inicializa la configuración de la aplicación
             ApplicationConfiguration.Initialize();
             // Llama al método Socketcliente para establecer la conexión con el servidor
@@ -44,6 +48,7 @@ namespace CommunityMusicP
             catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.ToString());
+                log.Error("Error: " + ex.ToString());
             }
         }
 
@@ -70,17 +75,19 @@ namespace CommunityMusicP
                     case "GetPlaylist":
                         // Enviar la respuesta al formulario de cliente
                         clienteForm.MostrarGetPlaylist(respuesta);
+                        SendMessageToServer($"{{\"command\": \"Update\"}}");
                         break;
                     case "Update":
                         // Enviar la respuesta al formulario de cliente
                         clienteForm.UpdatePlaylist(respuesta);
                         break;
                 }
-                 
+
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.ToString());
+                log.Error("Error: " + ex.ToString());
             }
         }
     }

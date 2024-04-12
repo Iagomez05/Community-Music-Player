@@ -1,5 +1,6 @@
 package org.example.pruebafx;
 
+import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -14,6 +15,7 @@ import javafx.util.Duration;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -71,12 +73,13 @@ public class ControllerClass implements Initializable {
     private MediaPlayer mediaPlayer;
     private final LinkedList songList = new LinkedList();
     private LinkedList listaAleatoria = songList.generateRandomList();
-    private MetadataList miau = new MetadataList();
     private int numbersong = 0; // el  numbersong inicia en 0
     private Timer timer; //para el progreso de la canción
     private boolean running; // para el progreso de la canción
     private TimerTask task; // para el progreso de la canción
     private static final String DEFAULT_FILE_NAME = "info.json";
+    @FXML
+    private ListView<String> listView;
 
 
 
@@ -99,8 +102,13 @@ public class ControllerClass implements Initializable {
                     LOG.error("Error al buscar el archivo: " + e.getMessage());
                 }
             }
+            for (int i = 0; i < songList.size(); i++) {
+                SongData song = songList.get(i);
+                listView.getItems().addAll(song.getTitle());
+            }
             getSongInfo(numbersong);
         }
+        listaAleatoria = songList.generateRandomList();
 
 
         try {
@@ -122,6 +130,47 @@ public class ControllerClass implements Initializable {
             }
         });
     }
+    @FXML
+    public void commumode(ActionEvent event){
+        writeSongInfoToFile("info.json");
+        final int valor = ApplicationSettings.getApplicationSettings().getPuertoServidor();
+        if (Toggle_commode.isSelected()) {
+            Servidor empiezaservidor = new Servidor(this);
+            empiezaservidor.iniciarServidor(valor);
+
+            // Asegúrate de que songList contenga la lista original de canciones
+            if (!songList.isEmpty()) {
+                // Limpia la lista aleatoria y agrega las canciones de songList
+                songList.clear();
+                songList.addAll(listaAleatoria);
+                listView.getItems().clear();
+                System.out.println(songList.size());
+                for (int i = 0; i < songList.size(); i++) {
+                    SongData song = songList.get(i);
+                    listView.getItems().addAll(song.getTitle());
+                }
+
+                // Actualiza la interfaz de usuario con la nueva lista aleatoria
+                updateUIAfterListaAleatoria();
+                listView.refresh();
+            } else {
+                // Maneja el caso en que songList esté vacía
+                // Puedes mostrar un mensaje de error o realizar otras acciones según sea necesario
+                System.out.println("La lista de canciones está vacía");
+            }
+        }
+    }
+
+
+    public LinkedList getListaAleatoria() {
+        return listaAleatoria;
+    }
+    public int getNumbersong() {
+        return numbersong;
+    }
+
+
+
     private void getSongInfo(Integer position) {
         SongData current = songList.find(position);
         String path = current.getTitle();
@@ -135,13 +184,35 @@ public class ControllerClass implements Initializable {
 
         if (metadata != null) {
             // Update UI with metadata
-            infoLabel.setText("Artist: " + metadata.getArtist() + "\n" + " Title: " + metadata.getTitle() + "\n" + " Album: " + metadata.getAlbum()+ "\n" + " Genre: " + metadata.getGenre());
+            infoLabel.setText("Artist: " + metadata.getArtist() + "                      " + " Title: " + metadata.getTitle() + "\n" + " Album: " + metadata.getAlbum()+ "           " + " Genre: " + metadata.getGenre()+ "\n" + " Likes: " + current.getLikes()+ "                                   " + " Dislikes: " + current.getDislikes());
 
             System.out.println(metadata);
         } else {
             System.out.println("No se pudo extraer metadatos.");
             LOG.error("NO se pudo extraer metadata");
         }
+    }
+    private void updateUIAfterListaAleatoria() {
+        Platform.runLater(() -> {
+
+            // Actualiza el índice de la canción actual si es necesario
+            if (songList.size() > 0) {
+                // Si hay canciones restantes en la lista
+                if (numbersong >= songList.size()) {
+                    numbersong = songList.size() - 1; // Ajusta el índice si es necesario
+                }
+                // Actualiza el Label con el título de la canción actual
+                songLabel.setText(songList.get(numbersong).getTitle());
+            } else {
+                // Si no quedan canciones en la lista, borra el texto del Label
+                songLabel.setText("");
+            }
+
+            // Si hay canciones en la lista, carga y reproduce la siguiente canción
+            if (!songList.isEmpty()) {
+                loadNextSong();
+            }
+        });
     }
 
 
@@ -178,6 +249,8 @@ public class ControllerClass implements Initializable {
             e.printStackTrace();
         }
     }
+
+
 
 
     public String UpdateList(){
@@ -251,6 +324,7 @@ public class ControllerClass implements Initializable {
         mediaPlayer.setVolume(Slider_Volume.getValue() * 0.01);
         mediaPlayer.play();
         System.out.println("playing");
+
     }
 
     @FXML
@@ -313,7 +387,6 @@ public class ControllerClass implements Initializable {
             songLabel.setText("");
         }
 
-        // Actualiza otros elementos de la interfaz de usuario según sea necesario
     }
 
     // Method to load the next song to play
@@ -375,12 +448,14 @@ public class ControllerClass implements Initializable {
     }
 
     @FXML
-    public void commumode(ActionEvent event){
-        writeSongInfoToFile("C:\\datos1\\Community-Music-Player\\info.json");
-        final int valor = ApplicationSettings.getApplicationSettings().getPuertoServidor();
-        if (Toggle_commode.isSelected()) {
-            Servidor empiezaservidor = new Servidor(this);
-            empiezaservidor.iniciarServidor(valor);
+    void refresh(ActionEvent event) {
+        songList.sortByLikesAndDislikes();
+        // Asegúrate de que songList contenga la lista original de canciones
+
+            // Actualiza la interfaz de usuario con la nueva lista aleatoria
+            updateUIAfterListaAleatoria();
         }
-    }
+
+
+
 }

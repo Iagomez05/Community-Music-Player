@@ -2,19 +2,32 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.ToggleButton?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.2233712512926577" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.pruebafx.ControllerClass">
+<SplitPane dividerPositions="0.2233712512926577" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="862.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.pruebafx.ControllerClass">
   <items>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <ListView fx:id="listView" layoutX="3.0" layoutY="32.0" prefHeight="450.0" prefWidth="183.0" style="-fx-background-color: #D3D3D3;" />
+            <Label layoutX="74.0" prefHeight="29.0" prefWidth="112.0" text="Songs" textAlignment="CENTER">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Label>
+         </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
             <SplitPane dividerPositions="0.13752122241086587" layoutY="-1.0" orientation="VERTICAL" prefHeight="591.0" prefWidth="748.0">
@@ -29,26 +42,48 @@
                         <Label fx:id="songLabel" layoutX="4.0" layoutY="16.0" prefHeight="27.0" prefWidth="239.0" text="Playing">
                            <font>
                               <Font name="System Bold Italic" size="18.0" />
-                           </font></Label>
+                           </font>
+                        </Label>
                         <ProgressBar fx:id="songProgressB" layoutX="242.0" layoutY="50.0" prefHeight="18.0" prefWidth="337.0" progress="0.0" />
                         <Slider fx:id="songSlider" layoutX="239.0" layoutY="49.0" prefHeight="21.0" prefWidth="343.0" />
                         <Button fx:id="Button_Remove" layoutX="39.0" layoutY="46.0" mnemonicParsing="false" onAction="#removeSong" text="Remove" />
                      </children></AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="519.0" prefWidth="746.0">
                      <children>
-                        <Separator layoutX="-2.0" layoutY="196.0" prefHeight="8.0" prefWidth="748.0" />
-                        <Label fx:id="infoLabel" layoutX="21.0" layoutY="25.0" prefHeight="150.0" prefWidth="309.0" text="Label">
+                        <Separator layoutX="-1.0" layoutY="210.0" prefHeight="8.0" prefWidth="748.0" />
+                        <Label fx:id="infoLabel" layoutX="14.0" layoutY="14.0" prefHeight="194.0" prefWidth="634.0" text="Label">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="304.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" />
-                        <Pane layoutX="337.0" layoutY="218.0" prefHeight="166.0" prefWidth="309.0" style="-fx-background-color: GRAY;">
+                        <Pane layoutX="9.0" layoutY="223.0" prefHeight="166.0" prefWidth="647.0" style="-fx-background-color: #D3D3D3;">
                            <children>
-                              <Button layoutX="23.0" layoutY="20.0" mnemonicParsing="false" text="Refresh" />
+                              <Button fx:id="Button_Refresh" layoutX="548.0" layoutY="59.0" mnemonicParsing="false" onAction="#refresh" prefHeight="42.0" prefWidth="74.0" text="Refresh" />
+                              <ToggleButton fx:id="Toggle_commode" layoutX="17.0" layoutY="59.0" mnemonicParsing="false" onAction="#commumode" prefHeight="42.0" prefWidth="132.0" text="Community Mode" textAlignment="CENTER" />
+                              <Label layoutX="14.0" layoutY="8.0" prefHeight="17.0" prefWidth="132.0" text="Click here to vote!" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <effect>
+                                    <Glow level="0.8" />
+                                 </effect>
+                              </Label>
+                              <Line endX="10.0" endY="-13.0" layoutX="73.0" layoutY="45.0" startX="10.0" startY="14.0" />
+                              <Label layoutX="538.0" layoutY="127.0" text="Let's refresh!">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <effect>
+                                    <Glow level="0.79" />
+                                 </effect>
+                              </Label>
+                              <Line endX="11.0" endY="-14.0" layoutX="574.0" layoutY="115.0" startX="10.97265625" startY="12.0" />
+                              <Line endX="-246.5" endY="-154.5" layoutX="246.0" layoutY="155.0" startX="-246.5" startY="10.5" />
+                              <Line endX="-246.5" endY="-154.5" layoutX="893.0" layoutY="155.0" startX="-246.5" startY="10.5" />
                            </children>
                         </Pane>
-                        <ToggleButton fx:id="Toggle_commode" layoutX="14.0" layoutY="218.0" mnemonicParsing="false" onAction="#commumode" text="Community Mode" textAlignment="CENTER" />
+                        <Line endX="101.0" layoutX="555.0" layoutY="223.0" startX="-546.0" />
+                        <Line endX="101.0" layoutX="555.0" layoutY="389.0" startX="-546.0" />
                      </children></AnchorPane>
               </items>
             </SplitPane>

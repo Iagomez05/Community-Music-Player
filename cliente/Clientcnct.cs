@@ -11,7 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using log4net; //Biblioteca para el manejo de logs
 using log4net.Config; //Biblioteca para configurar el log
-using lectorIni; //Uso de la clase IniReader para leer archivos INI
+using lectorIni;
+//using Capa_Acceso_Datos.Txt;//Uso de la clase IniReader para leer archivos INI
 
 namespace CommunityMusicP
 {
@@ -23,6 +24,7 @@ namespace CommunityMusicP
         private IniReader lector = new IniReader();
         private IPAddress ipAddress;
         private int puerto;
+
 
         public Clientcnct()
         {
@@ -37,7 +39,6 @@ namespace CommunityMusicP
 
         public void MostrarGetPlaylist(string respuesta)
         {
-
             // Dividir la respuesta en líneas
             string[] lineasRespuesta = respuesta.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
@@ -83,8 +84,8 @@ namespace CommunityMusicP
                 // Añadir el item al ListView
                 this.listView.Items.Add(item);
             }
-        }
 
+        }
         private void Clientcnct_Load(object sender, EventArgs e)
         {
 
@@ -104,16 +105,20 @@ namespace CommunityMusicP
                 string iddecancion = this.listView.SelectedItems[0].SubItems[4].Text;
 
                 // Formatear el mensaje en formato JSON
-                string jsonMessage = $"{{\"command\": \"Vote Up\", \"id\": \"{iddecancion}\"}}";
+                string jsonMessageU = $"{{\"command\": \"Vote Up\", \"id\": \"{iddecancion}\"}}";
 
                 // Enviar el mensaje formateado al servidor
-                Program.SendMessageToServer(jsonMessage);
+                Program.SendMessageToServer(jsonMessageU);
+
             }
             else
             {
                 Console.WriteLine("no se ha seleccionado ninguna cancion");
 
             }
+            string jsonMessage = $"{{\"command\": \"Update\"}}";
+            Program.SendMessageToServer(jsonMessage);
+            log.Info("Info:: Se ha votado por una canción");
         }
 
         private void btnVotedwn_Click(object sender, EventArgs e)
@@ -124,18 +129,22 @@ namespace CommunityMusicP
                 string iddecancion = this.listView.SelectedItems[0].SubItems[4].Text;
 
                 // Formatear el mensaje en formato JSON
-                string jsonMessage = $"{{\"command\": \"Vote Down\", \"id\": \"{iddecancion}\"}}";
+                string jsonMessageD = $"{{\"command\": \"Vote Down\", \"id\": \"{iddecancion}\"}}";
+                log.Info("Info:: Se ha votado por una canción");
 
                 // Enviar el mensaje formateado al servidor
-                Program.SendMessageToServer(jsonMessage);
+                Program.SendMessageToServer(jsonMessageD);
             }
             else
             {
 
                 Console.WriteLine("no se ha seleccionado ninguna cancion");
             }
+            string jsonMessage = $"{{\"command\": \"Update\"}}";
+            Program.SendMessageToServer(jsonMessage);
+            log.Info("Info:: Se ha votado por una canción");
         }
-     
+
 
 
         private void listView_SelectedIndexChanged(object sender, EventArgs e)
@@ -151,8 +160,9 @@ namespace CommunityMusicP
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string jsonMessage = $"{{\"command\": \"Update\"}}";
+            string jsonMessage = $"{{\"command\": \"FIN\"}}";
             Program.SendMessageToServer(jsonMessage);
+            this.Close();
         }
     }
 }

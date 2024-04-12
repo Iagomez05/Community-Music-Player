@@ -1,26 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\gonza\\OneDrive\\Desktop\\proyectoDatoss\\Community-Music-Player\\cliente\\",
+  "WorkspaceRootPath": "C:\\Users\\gonza\\OneDrive\\Desktop\\ProyectoCMP\\Community-Music-Player\\cliente\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DD9CD746-D162-479B-A8F9-5FB9A23E6A01}|CommunityMusicP.csproj|c:\\users\\gonza\\onedrive\\desktop\\proyectodatoss\\community-music-player\\cliente\\clientcnct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DD9CD746-D162-479B-A8F9-5FB9A23E6A01}|CommunityMusicP.csproj|solutionrelative:clientcnct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DD9CD746-D162-479B-A8F9-5FB9A23E6A01}|CommunityMusicP.csproj|C:\\Users\\gonza\\OneDrive\\Desktop\\proyectoDatoss\\Community-Music-Player\\cliente\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DD9CD746-D162-479B-A8F9-5FB9A23E6A01}|CommunityMusicP.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DD9CD746-D162-479B-A8F9-5FB9A23E6A01}|CommunityMusicP.csproj|C:\\Users\\gonza\\OneDrive\\Desktop\\proyectoDatoss\\Community-Music-Player\\cliente\\uicliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DD9CD746-D162-479B-A8F9-5FB9A23E6A01}|CommunityMusicP.csproj|C:\\Users\\gonza\\OneDrive\\Desktop\\ProyectoCMP\\Community-Music-Player\\cliente\\uicliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DD9CD746-D162-479B-A8F9-5FB9A23E6A01}|CommunityMusicP.csproj|solutionrelative:uicliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DD9CD746-D162-479B-A8F9-5FB9A23E6A01}|CommunityMusicP.csproj|c:\\users\\gonza\\onedrive\\desktop\\proyectodatoss\\community-music-player\\cliente\\clientcnct.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DD9CD746-D162-479B-A8F9-5FB9A23E6A01}|CommunityMusicP.csproj|solutionrelative:clientcnct.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DD9CD746-D162-479B-A8F9-5FB9A23E6A01}|CommunityMusicP.csproj|c:\\users\\gonza\\onedrive\\desktop\\proyectocmp\\community-music-player\\cliente\\clientcnct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD9CD746-D162-479B-A8F9-5FB9A23E6A01}|CommunityMusicP.csproj|solutionrelative:clientcnct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DD9CD746-D162-479B-A8F9-5FB9A23E6A01}|CommunityMusicP.csproj|C:\\Users\\gonza\\OneDrive\\Desktop\\proyectoDatoss\\Community-Music-Player\\cliente\\clientcnct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{DD9CD746-D162-479B-A8F9-5FB9A23E6A01}|CommunityMusicP.csproj|C:\\Users\\gonza\\OneDrive\\Desktop\\ProyectoCMP\\Community-Music-Player\\cliente\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD9CD746-D162-479B-A8F9-5FB9A23E6A01}|CommunityMusicP.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD9CD746-D162-479B-A8F9-5FB9A23E6A01}|CommunityMusicP.csproj|C:\\Users\\gonza\\OneDrive\\Desktop\\ProyectoCMP\\Community-Music-Player\\cliente\\clientcnct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DD9CD746-D162-479B-A8F9-5FB9A23E6A01}|CommunityMusicP.csproj|solutionrelative:clientcnct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD9CD746-D162-479B-A8F9-5FB9A23E6A01}|CommunityMusicP.csproj|C:\\Users\\gonza\\OneDrive\\Desktop\\ProyectoCMP\\Community-Music-Player\\cliente\\clientcnct.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD9CD746-D162-479B-A8F9-5FB9A23E6A01}|CommunityMusicP.csproj|solutionrelative:clientcnct.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,24 +42,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Clientcnct.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\gonza\\OneDrive\\Desktop\\proyectoDatoss\\Community-Music-Player\\cliente\\Clientcnct.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\gonza\\OneDrive\\Desktop\\ProyectoCMP\\Community-Music-Player\\cliente\\Clientcnct.Designer.cs",
               "RelativeDocumentMoniker": "Clientcnct.Designer.cs",
-              "ToolTip": "C:\\Users\\gonza\\OneDrive\\Desktop\\proyectoDatoss\\Community-Music-Player\\cliente\\Clientcnct.Designer.cs",
+              "ToolTip": "C:\\Users\\gonza\\OneDrive\\Desktop\\ProyectoCMP\\Community-Music-Player\\cliente\\Clientcnct.Designer.cs",
               "RelativeToolTip": "Clientcnct.Designer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAKkAAAABAAAA",
+              "ViewState": "AQIAADkAAAAAAAAAAAAwwFUAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-10T01:51:27.971Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Clientcnct.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\gonza\\OneDrive\\Desktop\\proyectoDatoss\\Community-Music-Player\\cliente\\Clientcnct.cs",
+              "DocumentMoniker": "C:\\Users\\gonza\\OneDrive\\Desktop\\ProyectoCMP\\Community-Music-Player\\cliente\\Clientcnct.cs",
               "RelativeDocumentMoniker": "Clientcnct.cs",
-              "ToolTip": "C:\\Users\\gonza\\OneDrive\\Desktop\\proyectoDatoss\\Community-Music-Player\\cliente\\Clientcnct.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\gonza\\OneDrive\\Desktop\\ProyectoCMP\\Community-Music-Player\\cliente\\Clientcnct.cs [Dise\u00F1o]",
               "RelativeToolTip": "Clientcnct.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-01T02:48:14.552Z",
@@ -67,39 +67,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "UIcliente.cs",
-              "DocumentMoniker": "C:\\Users\\gonza\\OneDrive\\Desktop\\proyectoDatoss\\Community-Music-Player\\cliente\\UIcliente.cs",
+              "DocumentMoniker": "C:\\Users\\gonza\\OneDrive\\Desktop\\ProyectoCMP\\Community-Music-Player\\cliente\\UIcliente.cs",
               "RelativeDocumentMoniker": "UIcliente.cs",
-              "ToolTip": "C:\\Users\\gonza\\OneDrive\\Desktop\\proyectoDatoss\\Community-Music-Player\\cliente\\UIcliente.cs",
+              "ToolTip": "C:\\Users\\gonza\\OneDrive\\Desktop\\ProyectoCMP\\Community-Music-Player\\cliente\\UIcliente.cs",
               "RelativeToolTip": "UIcliente.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAA1AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-30T19:54:09.719Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\gonza\\OneDrive\\Desktop\\proyectoDatoss\\Community-Music-Player\\cliente\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\gonza\\OneDrive\\Desktop\\ProyectoCMP\\Community-Music-Player\\cliente\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\gonza\\OneDrive\\Desktop\\proyectoDatoss\\Community-Music-Player\\cliente\\Program.cs",
+              "ToolTip": "C:\\Users\\gonza\\OneDrive\\Desktop\\ProyectoCMP\\Community-Music-Player\\cliente\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAYwE0AAAARAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAF0AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-28T06:54:55.136Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Clientcnct.cs",
-              "DocumentMoniker": "C:\\Users\\gonza\\OneDrive\\Desktop\\proyectoDatoss\\Community-Music-Player\\cliente\\Clientcnct.cs",
+              "DocumentMoniker": "C:\\Users\\gonza\\OneDrive\\Desktop\\ProyectoCMP\\Community-Music-Player\\cliente\\Clientcnct.cs",
               "RelativeDocumentMoniker": "Clientcnct.cs",
-              "ToolTip": "C:\\Users\\gonza\\OneDrive\\Desktop\\proyectoDatoss\\Community-Music-Player\\cliente\\Clientcnct.cs",
+              "ToolTip": "C:\\Users\\gonza\\OneDrive\\Desktop\\ProyectoCMP\\Community-Music-Player\\cliente\\Clientcnct.cs",
               "RelativeToolTip": "Clientcnct.cs",
-              "ViewState": "AQIAADYAAAAAAAAAAAAAAFIAAAAtAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-28T06:54:34.597Z",
               "EditorCaption": ""

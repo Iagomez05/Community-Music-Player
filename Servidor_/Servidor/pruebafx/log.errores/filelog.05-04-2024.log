@@ -1,0 +1,48 @@
+05-04-2024 12:12:52 ERROR Metadata:38: Error:: No se pudo leer metadata
+05-04-2024 12:12:52 ERROR ControllerClass:123: NO se pudo extraer metadata
+05-04-2024 12:13:01 ERROR Metadata:38: Error:: No se pudo leer metadata
+05-04-2024 12:13:01 ERROR ControllerClass:123: NO se pudo extraer metadata
+05-04-2024 12:13:06 ERROR Metadata:38: Error:: No se pudo leer metadata
+05-04-2024 12:13:06 ERROR ControllerClass:123: NO se pudo extraer metadata
+05-04-2024 12:25:32 ERROR Metadata:38: Error:: No se pudo leer metadata
+05-04-2024 12:25:32 ERROR ControllerClass:122: NO se pudo extraer metadata
+05-04-2024 12:25:37 ERROR Metadata:38: Error:: No se pudo leer metadata
+05-04-2024 12:25:37 ERROR ControllerClass:122: NO se pudo extraer metadata
+05-04-2024 12:25:41 ERROR Metadata:38: Error:: No se pudo leer metadata
+05-04-2024 12:25:41 ERROR ControllerClass:122: NO se pudo extraer metadata
+05-04-2024 12:27:35 ERROR Metadata:38: Error:: No se pudo leer metadata
+05-04-2024 12:27:35 ERROR ControllerClass:122: NO se pudo extraer metadata
+05-04-2024 14:01:05 ERROR Metadata:37: Error:: No se pudo leer metadata
+05-04-2024 14:01:05 ERROR ControllerClass:120: NO se pudo extraer metadata
+05-04-2024 14:08:38 ERROR ControllerClass:125: NO se pudo extraer metadata
+05-04-2024 14:13:20 ERROR ControllerClass:125: NO se pudo extraer metadata
+05-04-2024 14:15:49 ERROR ControllerClass:125: NO se pudo extraer metadata
+05-04-2024 14:16:13 ERROR ControllerClass:125: NO se pudo extraer metadata
+05-04-2024 14:16:35 ERROR ControllerClass:125: NO se pudo extraer metadata
+05-04-2024 14:21:03 ERROR ControllerClass:98: Error cargando media: Cannot invoke "org.example.pruebafx.SongData.getTitle()" because the return value of "org.example.pruebafx.LinkedList.get(int)" is null
+05-04-2024 14:24:53 ERROR ControllerClass:125: NO se pudo extraer metadata
+05-04-2024 14:26:07 ERROR ControllerClass:125: NO se pudo extraer metadata
+05-04-2024 14:29:58 ERROR ControllerClass:125: NO se pudo extraer metadata
+05-04-2024 14:30:34 ERROR Metadata:38: Error:: No se pudo leer metadata
+05-04-2024 14:30:34 ERROR ControllerClass:125: NO se pudo extraer metadata
+05-04-2024 14:34:50 ERROR Metadata:38: Error:: No se pudo leer metadata
+05-04-2024 14:34:50 ERROR ControllerClass:125: NO se pudo extraer metadata
+05-04-2024 14:40:22 ERROR Metadata:38: Error:: No se pudo leer metadata
+05-04-2024 14:40:22 ERROR ControllerClass:124: NO se pudo extraer metadata
+05-04-2024 14:40:22 ERROR Metadata:38: Error:: No se pudo leer metadata
+05-04-2024 14:40:22 ERROR ControllerClass:124: NO se pudo extraer metadata
+05-04-2024 14:40:22 ERROR Metadata:38: Error:: No se pudo leer metadata
+05-04-2024 14:40:22 ERROR ControllerClass:124: NO se pudo extraer metadata
+05-04-2024 14:44:44 ERROR Metadata:40: Error:: No se pudo leer metadata
+05-04-2024 14:44:44 ERROR ControllerClass:125: NO se pudo extraer metadata
+05-04-2024 14:45:42 ERROR Metadata:40: Error:: No se pudo leer metadata
+05-04-2024 14:45:42 ERROR ControllerClass:125: NO se pudo extraer metadata
+05-04-2024 14:49:37 ERROR Metadata:39: Error:: No se pudo leer metadata
+05-04-2024 14:49:37 ERROR ControllerClass:125: NO se pudo extraer metadata
+05-04-2024 14:50:07 ERROR Metadata:39: Error:: No se pudo leer metadata
+05-04-2024 14:50:07 ERROR ControllerClass:125: NO se pudo extraer metadata
+05-04-2024 15:07:39 ERROR Metadata:39: Error:: No se pudo leer metadata
+05-04-2024 15:07:39 ERROR ControllerClass:127: No se pudo extraer metadata
+05-04-2024 16:32:42 INFO  Servidor:23: Servidor iniciado en el puerto 10500
+05-04-2024 16:33:41 INFO  Servidor:28: Cliente conectado: 127.0.0.1
+05-04-2024 18:06:11 INFO  Servidor:23: Servidor iniciado en el puerto 10500

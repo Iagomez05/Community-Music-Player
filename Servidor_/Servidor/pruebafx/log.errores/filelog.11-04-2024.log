@@ -1,0 +1,87 @@
+11-04-2024 12:39:43 INFO  Servidor:29: Servidor iniciado en el puerto 10500
+11-04-2024 12:40:54 INFO  Servidor:29: Servidor iniciado en el puerto 10500
+11-04-2024 12:41:02 INFO  Servidor:34: Cliente conectado: 127.0.0.1
+11-04-2024 12:41:53 INFO  Servidor:104: Info:: Servidor cerrado.
+11-04-2024 17:13:04 INFO  Servidor:35: Servidor iniciado en el puerto 10500
+11-04-2024 17:13:17 INFO  Servidor:40: Cliente conectado: 127.0.0.1
+11-04-2024 17:13:44 INFO  Servidor:130: Info:: Servidor cerrado.
+11-04-2024 17:20:03 INFO  Servidor:35: Servidor iniciado en el puerto 10500
+11-04-2024 17:20:11 INFO  Servidor:40: Cliente conectado: 127.0.0.1
+11-04-2024 17:20:27 INFO  Servidor:130: Info:: Servidor cerrado.
+11-04-2024 19:30:50 INFO  Servidor:35: Servidor iniciado en el puerto 10500
+11-04-2024 19:31:01 INFO  Servidor:40: Cliente conectado: 127.0.0.1
+11-04-2024 19:32:15 INFO  Servidor:120: Info:: Conexión cerrada con el cliente.
+11-04-2024 19:32:27 INFO  Servidor:40: Cliente conectado: 127.0.0.1
+11-04-2024 19:33:08 INFO  Servidor:120: Info:: Conexión cerrada con el cliente.
+11-04-2024 20:40:36 INFO  Servidor:35: Servidor iniciado en el puerto 10500
+11-04-2024 20:40:55 INFO  Servidor:40: Cliente conectado: 127.0.0.1
+11-04-2024 20:55:44 INFO  Servidor:35: Servidor iniciado en el puerto 10500
+11-04-2024 20:55:52 INFO  Servidor:40: Cliente conectado: 127.0.0.1
+11-04-2024 21:07:40 INFO  Servidor:35: Servidor iniciado en el puerto 10500
+11-04-2024 21:07:52 INFO  Servidor:40: Cliente conectado: 127.0.0.1
+11-04-2024 21:21:36 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 21:21:46 INFO  Servidor:41: Cliente conectado: 127.0.0.1
+11-04-2024 21:32:13 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 21:32:17 INFO  Servidor:41: Cliente conectado: 127.0.0.1
+11-04-2024 21:36:16 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 21:36:31 INFO  Servidor:41: Cliente conectado: 127.0.0.1
+11-04-2024 21:36:53 INFO  Servidor:124: Info:: Conexión cerrada con el cliente.
+11-04-2024 21:39:56 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 21:40:01 INFO  Servidor:41: Cliente conectado: 127.0.0.1
+11-04-2024 21:47:14 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 21:47:20 INFO  Servidor:41: Cliente conectado: 127.0.0.1
+11-04-2024 21:52:16 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 21:52:18 INFO  Servidor:41: Cliente conectado: 127.0.0.1
+11-04-2024 21:55:57 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 21:56:00 INFO  Servidor:41: Cliente conectado: 127.0.0.1
+11-04-2024 21:59:04 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 21:59:07 INFO  Servidor:41: Cliente conectado: 127.0.0.1
+11-04-2024 21:59:56 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 21:59:58 INFO  Servidor:41: Cliente conectado: 127.0.0.1
+11-04-2024 22:05:15 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 22:05:21 INFO  Servidor:41: Cliente conectado: 127.0.0.1
+11-04-2024 22:07:25 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 22:07:27 INFO  Servidor:41: Cliente conectado: 127.0.0.1
+11-04-2024 22:12:22 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 22:12:27 INFO  Servidor:41: Cliente conectado: 127.0.0.1
+11-04-2024 22:15:56 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 22:16:16 INFO  Servidor:41: Cliente conectado: 127.0.0.1
+11-04-2024 22:21:45 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 22:22:05 INFO  Servidor:41: Cliente conectado: 127.0.0.1
+11-04-2024 22:22:25 INFO  Servidor:134: Info:: Conexión cerrada con el cliente.
+11-04-2024 22:24:40 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 22:24:57 INFO  Servidor:41: Cliente conectado: 127.0.0.1
+11-04-2024 22:26:36 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 22:26:52 INFO  Servidor:41: Cliente conectado: 127.0.0.1
+11-04-2024 22:30:55 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 22:31:12 INFO  Servidor:41: Cliente conectado: 127.0.0.1
+11-04-2024 22:33:37 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 22:33:54 INFO  Servidor:41: Cliente conectado: 127.0.0.1
+11-04-2024 22:37:26 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 22:37:43 INFO  Servidor:41: Cliente conectado: 127.0.0.1
+11-04-2024 22:40:19 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 22:40:36 INFO  Servidor:41: Cliente conectado: 127.0.0.1
+11-04-2024 22:43:30 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 22:43:53 INFO  Servidor:41: Cliente conectado: 127.0.0.1
+11-04-2024 22:46:35 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 22:46:51 INFO  Servidor:41: Cliente conectado: 127.0.0.1
+11-04-2024 22:51:38 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 22:51:52 INFO  Servidor:41: Cliente conectado: 127.0.0.1
+11-04-2024 22:53:17 INFO  Servidor:137: Info:: Conexión cerrada con el cliente.
+11-04-2024 22:54:40 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 22:56:31 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 22:56:51 INFO  Servidor:41: Cliente conectado: 127.0.0.1
+11-04-2024 22:56:54 ERROR Servidor:141: Error de entrada/salida: Connection reset
+11-04-2024 22:56:54 INFO  Servidor:147: Info:: Servidor cerrado.
+11-04-2024 22:57:17 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 22:58:56 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 23:20:31 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 23:20:42 INFO  Servidor:41: Cliente conectado: 127.0.0.1
+11-04-2024 23:23:50 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 23:23:54 INFO  Servidor:41: Cliente conectado: 127.0.0.1
+11-04-2024 23:24:04 ERROR Servidor:141: Error de entrada/salida: Connection reset
+11-04-2024 23:24:04 INFO  Servidor:147: Info:: Servidor cerrado.
+11-04-2024 23:51:20 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 23:51:27 INFO  Servidor:41: Cliente conectado: 127.0.0.1
+11-04-2024 23:57:40 INFO  Servidor:36: Servidor iniciado en el puerto 10500
+11-04-2024 23:57:45 INFO  Servidor:41: Cliente conectado: 127.0.0.1
