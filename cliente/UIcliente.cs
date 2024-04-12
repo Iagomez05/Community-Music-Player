@@ -1,4 +1,6 @@
 using System.Text;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace CommunityMusicP
 {
@@ -25,9 +27,14 @@ namespace CommunityMusicP
         private void btnEmpezarV_Click(object sender, EventArgs e)
         {
 
-            // Crear una instancia del segundo formulario
-            string jsonMessage = $"{{\"command\": \"GetPlaylist\"}}";
-            Program.SendMessageToServer(jsonMessage);
+            JObject jsonObject = new JObject();
+            jsonObject.Add("command", "GetPlaylist");
+            StringWriter sw = new StringWriter();
+            JsonWriter writer = new JsonTextWriter(sw);
+            jsonObject.WriteTo(writer);
+            string json = sw.ToString();
+
+            Program.SendMessageToServer(json);
 
             // Mostrar el segundo formulario
             form2.Show();

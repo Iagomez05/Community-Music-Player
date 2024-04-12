@@ -12,6 +12,8 @@ using System.Windows.Forms;
 using log4net; //Biblioteca para el manejo de logs
 using log4net.Config; //Biblioteca para configurar el log
 using lectorIni; //Uso de la clase IniReader para leer archivos INI
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace CommunityMusicP
 {
@@ -37,26 +39,35 @@ namespace CommunityMusicP
 
         public void MostrarGetPlaylist(string respuesta)
         {
+            // Deserializar el mensaje JSON en una lista de objetos
+            List<PlaylistItem> playlist = JsonConvert.DeserializeObject<List<PlaylistItem>>(respuesta);
 
-            // Dividir la respuesta en líneas
-            string[] lineasRespuesta = respuesta.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-
-            foreach (string linea in lineasRespuesta)
+            // Iterar sobre la lista de objetos y agregar cada elemento al ListView
+            foreach (var item in playlist)
             {
-                // Parsear la línea en partes (canción, artista, álbum, etc.)
-                string[] partesRespuesta = linea.Split(',');
+                // Dividir el nombre del artista y el título de la canción
+                string[] partesNombre = item.name.Split(',');
 
-                // Crear un nuevo ListViewItem para mostrar la línea en el ListView
-                ListViewItem item = new ListViewItem(partesRespuesta[0]); // Primera parte: canción
-
-                // Añadir las partes restantes como subítems
-                for (int i = 1; i < partesRespuesta.Length; i++)
+                // Verificar si se dividió correctamente
+                if (partesNombre.Length >= 2)
                 {
-                    item.SubItems.Add(partesRespuesta[i]);
+                    // Asignar el nombre del artista y el título de la canción
+                    item.songTitle = partesNombre[0].Trim();
+                    item.artist = partesNombre[1].Trim(); // Trim() elimina los espacios en blanco al principio y al final
+                }
+                else
+                {
+                    // En caso de que no se pueda dividir correctamente, asignar todo a la propiedad de la canción
+                    item.songTitle = item.name;
                 }
 
-                // Añadir el item al ListView
-                this.listView.Items.Add(item);
+                // Agregar el elemento al ListView
+                ListViewItem listItem = new ListViewItem(item.songTitle);
+                listItem.SubItems.Add(item.artist);
+                listItem.SubItems.Add(item.likes.ToString());
+                listItem.SubItems.Add(item.dislikes.ToString());
+                listItem.SubItems.Add(item.id);
+                listView.Items.Add(listItem);
             }
         }
 
@@ -101,13 +112,16 @@ namespace CommunityMusicP
             if (this.listView.SelectedItems.Count > 0)
             {
                 // Obtener el ID de la canción del cuarto subítem del elemento seleccionado
-                string iddecancion = this.listView.SelectedItems[0].SubItems[4].Text;
+                string iddecancion = this.listView.SelectedItems[0].SubItems[0].Text;
+                JObject jsonObject = new JObject();
+                jsonObject.Add("command", "Vote up");
+                jsonObject.Add("id", iddecancion);
+                StringWriter sw = new StringWriter();
+                JsonWriter writer = new JsonTextWriter(sw);
+                jsonObject.WriteTo(writer);
+                string json = sw.ToString();
 
-                // Formatear el mensaje en formato JSON
-                string jsonMessage = $"{{\"command\": \"Vote Up\", \"id\": \"{iddecancion}\"}}";
-
-                // Enviar el mensaje formateado al servidor
-                Program.SendMessageToServer(jsonMessage);
+                Program.SendMessageToServer(json);
             }
             else
             {
@@ -121,13 +135,16 @@ namespace CommunityMusicP
             if (this.listView.SelectedItems.Count > 0)
             {
                 // Obtener el ID de la canción del cuarto subítem del elemento seleccionado
-                string iddecancion = this.listView.SelectedItems[0].SubItems[4].Text;
+                string iddecancion = this.listView.SelectedItems[0].SubItems[0].Text;
+                JObject jsonObject = new JObject();
+                jsonObject.Add("command", "Vote down");
+                jsonObject.Add("id", iddecancion);
+                StringWriter sw = new StringWriter();
+                JsonWriter writer = new JsonTextWriter(sw);
+                jsonObject.WriteTo(writer);
+                string json = sw.ToString();
 
-                // Formatear el mensaje en formato JSON
-                string jsonMessage = $"{{\"command\": \"Vote Down\", \"id\": \"{iddecancion}\"}}";
-
-                // Enviar el mensaje formateado al servidor
-                Program.SendMessageToServer(jsonMessage);
+                Program.SendMessageToServer(json);
             }
             else
             {
@@ -151,8 +168,23 @@ namespace CommunityMusicP
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string jsonMessage = $"{{\"command\": \"Update\"}}";
-            Program.SendMessageToServer(jsonMessage);
+            JObject jsonObject = new JObject();
+            jsonObject.Add("command", "Update");
+            StringWriter sw = new StringWriter();
+            JsonWriter writer = new JsonTextWriter(sw);
+            jsonObject.WriteTo(writer);
+            string json = sw.ToString();
+
+            Program.SendMessageToServer(json);
         }
+    }
+    public class PlaylistItem
+    {
+        public string name { get; set; }
+        public string songTitle { get; set; }
+        public string artist { get; set; }
+        public int likes { get; set; }
+        public int dislikes { get; set; }
+        public string id { get; set; }
     }
 }
