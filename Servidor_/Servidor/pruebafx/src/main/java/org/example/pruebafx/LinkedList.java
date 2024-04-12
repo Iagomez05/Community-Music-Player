@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
+import java.util.PriorityQueue;
 
 public class LinkedList {
 
@@ -34,7 +35,6 @@ public class LinkedList {
             tail = newNode;
         }
     }
-
     public SongData find(int index) {
         Node current = head;
         int currentNumber = 0;
@@ -49,12 +49,10 @@ public class LinkedList {
         }
         return null;
     }
-
     public SongData get(int index) {
         SongData results = find(index);
         return results;
     }
-
     //Resive un id y le da like a la cancion con dicho id
     public void addLike(String id) {
         SongData node = findByID(id);
@@ -62,8 +60,6 @@ public class LinkedList {
             node.addLike();
         }
     }
-
-
     //Recibe un id y le da dislike a la cancion con dicho id
     public void addDislike(String id) {
         SongData node = findByID(id);
@@ -71,9 +67,6 @@ public class LinkedList {
             node.addDislike();
         }
     }
-
-
-
 
     //Funcion que busca el id autogenerado de la cancion implementada
     public SongData findByID(String id) {
@@ -119,7 +112,7 @@ public class LinkedList {
         int maxAttempts = 100; // Número máximo de intentos para evitar un bucle infinito
         int attempts = 0;
 
-        while (randomList.size() <= 1 && attempts < maxAttempts) {
+        while (randomList.size() <= 9 && attempts < maxAttempts) {
             SongData randomNode = getRandomNode();
             if (randomNode != null && !selectedNodes.contains(randomNode)) {
                 randomList.insert(randomNode);
@@ -130,39 +123,6 @@ public class LinkedList {
 
         return randomList;
     }
-
-
-    //Metodo para ordenar la lista aleatoria que manda el Community Player
-    public void sortByLikesAndDislikes() {
-        Node current = head;
-        Node next = null;
-        Node temp = null;
-        int size = size();
-
-        for (int i = 0; i < size - 1; i++) {
-            next = current.next;
-            while (next != null) {
-                if (current.data.getLikes() - current.data.getDislikes() < next.data.getLikes() - next.data.getDislikes()) {
-                    temp = next.next;
-                    next.next = current;
-                    current.next = temp;
-
-                    if (current == head) {
-                        head = next;
-                    }
-                }
-                next = next.next;
-            }
-            current = current.next;
-        }
-    }
-
-
-
-
-
-
-
     /*Metodo para eliminar una cancion(dato importante la elimina solo para esa ejecucion y
     no de la carpeta
      */
@@ -190,35 +150,40 @@ public class LinkedList {
             }
         }
     }
-    public void print() {
-        StringBuilder jsonOutput = new StringBuilder();
-        jsonOutput.append("{\n");
-        jsonOutput.append(" \"playlist\": [\n");
-
-        Node currentNode = head;
-        while (currentNode != null) {
-            var current = currentNode.data;
-            jsonOutput.append("    {\n")
-                    .append("      \"id\": \"" + current.getId() + "\",\n")
-                    .append("      \"likes\": " + current.getLikes() + ",\n")
-                    .append("      \"dislikes\": " + current.getDislikes())
-                    .append("    }");
-
-            if (currentNode.next != null) {
-                jsonOutput.append(",");
+    public void clear() {
+        head = null;
+        tail = null;
+        current = null;
+    }
+    public void addAll(LinkedList otherList) {
+        if (otherList != null) {
+            Node otherCurrent = otherList.head;
+            while (otherCurrent != null) {
+                this.insert(otherCurrent.data);
+                otherCurrent = otherCurrent.next;
             }
-
-            jsonOutput.append("\n");
-            currentNode = currentNode.next;
         }
-        jsonOutput.append(" ]\n");
-        jsonOutput.append("}\n");
-
-        System.out.println(jsonOutput.toString());
     }
     public boolean isEmpty() {
         return head == null;
     }
 
+    public void sortByLikesAndDislikes() {
+        PriorityQueue<SongData> priorityQueue = new PriorityQueue<>();
+        Node current = head;
+
+        // Extraer los datos de cada nodo y agregarlos a la PriorityQueue
+        while (current != null) {
+            priorityQueue.add(current.data);
+            current = current.next;
+        }
+
+        // Reconstruir la lista enlazada con los elementos ordenados de la PriorityQueue
+        clear(); // Limpia la lista actual para reconstruirla
+        while (!priorityQueue.isEmpty()) {
+            SongData data = priorityQueue.poll();
+            insert(data); // Asume que insert() es un método que inserta al final de la lista
+        }
+    }
 }
 

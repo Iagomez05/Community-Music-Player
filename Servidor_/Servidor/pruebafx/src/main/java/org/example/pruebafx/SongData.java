@@ -3,7 +3,7 @@ package org.example.pruebafx;
 import java.io.File;
 import java.io.IOException;
 
-public class SongData {
+public class SongData implements Comparable<SongData> {
 
     private String artist;
     private String title;
@@ -89,5 +89,10 @@ public class SongData {
 
     public void addDislike() {
         this.dislikes++;
+    }
+
+    @Override
+    public int compareTo(SongData other) {
+        return (this.dislikes - this.likes) - (other.dislikes - other.likes);
     }
 }

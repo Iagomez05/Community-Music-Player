@@ -1,0 +1,37 @@
+08-04-2024 17:15:27 INFO  Servidor:23: Servidor iniciado en el puerto 10500
+08-04-2024 17:16:30 ERROR Servidor:75: Error de entrada/salida: Address already in use: bind
+08-04-2024 17:18:29 INFO  Servidor:23: Servidor iniciado en el puerto 10500
+08-04-2024 17:20:52 INFO  Servidor:23: Servidor iniciado en el puerto 10500
+08-04-2024 17:23:31 INFO  Servidor:23: Servidor iniciado en el puerto 10500
+08-04-2024 17:26:44 INFO  Servidor:23: Servidor iniciado en el puerto 10500
+08-04-2024 17:33:12 INFO  Servidor:23: Servidor iniciado en el puerto 10500
+08-04-2024 17:33:56 INFO  Servidor:23: Servidor iniciado en el puerto 10500
+08-04-2024 17:34:46 INFO  Servidor:28: Cliente conectado: 127.0.0.1
+08-04-2024 17:41:08 INFO  Servidor:23: Servidor iniciado en el puerto 10500
+08-04-2024 17:41:19 INFO  Servidor:28: Cliente conectado: 127.0.0.1
+08-04-2024 17:42:55 INFO  Servidor:23: Servidor iniciado en el puerto 10500
+08-04-2024 17:43:06 INFO  Servidor:28: Cliente conectado: 127.0.0.1
+08-04-2024 17:53:20 ERROR Servidor:76: Error de entrada/salida: Connection reset
+08-04-2024 17:53:20 INFO  Servidor:82: Info:: Servidor cerrado.
+08-04-2024 17:54:15 INFO  Servidor:23: Servidor iniciado en el puerto 10500
+08-04-2024 17:54:27 INFO  Servidor:28: Cliente conectado: 127.0.0.1
+08-04-2024 17:55:34 ERROR Servidor:76: Error de entrada/salida: Connection reset
+08-04-2024 17:55:34 INFO  Servidor:82: Info:: Servidor cerrado.
+08-04-2024 17:59:01 INFO  Servidor:23: Servidor iniciado en el puerto 10500
+08-04-2024 17:59:13 INFO  Servidor:28: Cliente conectado: 127.0.0.1
+08-04-2024 18:00:13 ERROR Servidor:76: Error de entrada/salida: Connection reset
+08-04-2024 18:00:13 INFO  Servidor:82: Info:: Servidor cerrado.
+08-04-2024 18:01:45 INFO  Servidor:23: Servidor iniciado en el puerto 10500
+08-04-2024 18:02:00 INFO  Servidor:28: Cliente conectado: 127.0.0.1
+08-04-2024 18:05:37 INFO  Servidor:23: Servidor iniciado en el puerto 10500
+08-04-2024 18:05:48 INFO  Servidor:28: Cliente conectado: 127.0.0.1
+08-04-2024 18:06:26 ERROR Servidor:76: Error de entrada/salida: Connection reset
+08-04-2024 18:06:26 INFO  Servidor:82: Info:: Servidor cerrado.
+08-04-2024 18:09:18 INFO  Servidor:23: Servidor iniciado en el puerto 10500
+08-04-2024 18:09:29 INFO  Servidor:28: Cliente conectado: 127.0.0.1
+08-04-2024 18:10:43 ERROR Servidor:77: Error de entrada/salida: Connection reset
+08-04-2024 18:10:43 INFO  Servidor:83: Info:: Servidor cerrado.
+08-04-2024 18:11:37 INFO  Servidor:23: Servidor iniciado en el puerto 10500
+08-04-2024 18:11:47 INFO  Servidor:28: Cliente conectado: 127.0.0.1
+08-04-2024 18:17:51 INFO  Servidor:23: Servidor iniciado en el puerto 10500
+08-04-2024 18:18:01 INFO  Servidor:28: Cliente conectado: 127.0.0.1

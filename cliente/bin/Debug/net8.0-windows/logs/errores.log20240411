@@ -1,0 +1,47 @@
+2024-04-11 18:47:57,810 [1] INFO CommunityMusicP.Program - Conexión establecida con el servidor.
+2024-04-11 18:48:02,085 [1] INFO CommunityMusicP.Program - MostrarGetPlaylist
+2024-04-11 18:48:17,369 [1] ERROR CommunityMusicP.Program - Error: System.Net.Sockets.SocketException (10054): Se ha forzado la interrupción de una conexión existente por el host remoto.
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   at CommunityMusicP.Program.SendMessageToServer(String message) in C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\cliente\Program.cs:line 66
+2024-04-11 18:55:39,314 [1] INFO CommunityMusicP.Program - Conexión establecida con el servidor.
+2024-04-11 18:55:43,848 [1] INFO CommunityMusicP.Program - MostrarGetPlaylist
+2024-04-11 18:56:31,833 [1] ERROR CommunityMusicP.Program - Error: System.Net.Sockets.SocketException (10054): Se ha forzado la interrupción de una conexión existente por el host remoto.
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   at CommunityMusicP.Program.SendMessageToServer(String message) in C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\cliente\Program.cs:line 66
+2024-04-11 18:59:10,076 [1] INFO CommunityMusicP.Program - Conexión establecida con el servidor.
+2024-04-11 18:59:12,176 [1] INFO CommunityMusicP.Program - MostrarGetPlaylist
+2024-04-11 18:59:59,150 [1] ERROR CommunityMusicP.Program - Error: System.Net.Sockets.SocketException (10054): Se ha forzado la interrupción de una conexión existente por el host remoto.
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   at CommunityMusicP.Program.SendMessageToServer(String message) in C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\cliente\Program.cs:line 66
+2024-04-11 19:07:20,861 [1] INFO CommunityMusicP.Program - Conexión establecida con el servidor.
+2024-04-11 19:07:23,686 [1] INFO CommunityMusicP.Program - MostrarGetPlaylist
+2024-04-11 19:07:58,229 [1] ERROR CommunityMusicP.Program - Error: System.Net.Sockets.SocketException (10054): Se ha forzado la interrupción de una conexión existente por el host remoto.
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   at CommunityMusicP.Program.SendMessageToServer(String message) in C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\cliente\Program.cs:line 66
+2024-04-11 22:50:04,063 [1] INFO CommunityMusicP.Program - Conexión establecida con el servidor.
+2024-04-11 22:50:07,291 [1] INFO CommunityMusicP.Program - MostrarGetPlaylist
+2024-04-11 22:56:22,038 [1] INFO CommunityMusicP.Program - Conexión establecida con el servidor.
+2024-04-11 22:56:26,666 [1] INFO CommunityMusicP.Program - MostrarGetPlaylist
+2024-04-11 22:56:57,130 [1] ERROR CommunityMusicP.Program - Error: System.Net.Sockets.SocketException (10054): Se ha forzado la interrupción de una conexión existente por el host remoto.
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   at CommunityMusicP.Program.SendMessageToServer(String message) in C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\cliente\Program.cs:line 66
+2024-04-11 23:10:16,149 [1] INFO CommunityMusicP.Program - Conexión establecida con el servidor.
+2024-04-11 23:10:21,059 [1] INFO CommunityMusicP.Program - MostrarGetPlaylist
+2024-04-11 23:10:33,148 [1] ERROR CommunityMusicP.Program - Error: System.Net.Sockets.SocketException (10053): Se ha anulado una conexión establecida por el software en su equipo host..
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   at CommunityMusicP.Program.SendMessageToServer(String message) in C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\cliente\Program.cs:line 66
+2024-04-11 23:29:50,983 [1] INFO CommunityMusicP.Program - Conexión establecida con el servidor.
+2024-04-11 23:29:54,680 [1] INFO CommunityMusicP.Program - MostrarGetPlaylist
+2024-04-11 23:30:47,089 [1] ERROR CommunityMusicP.Program - Error: System.Net.Sockets.SocketException (10054): Se ha forzado la interrupción de una conexión existente por el host remoto.
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   at CommunityMusicP.Program.SendMessageToServer(String message) in C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\cliente\Program.cs:line 66
+2024-04-11 23:34:33,579 [1] INFO CommunityMusicP.Program - Conexión establecida con el servidor.
+2024-04-11 23:34:42,826 [1] INFO CommunityMusicP.Program - MostrarGetPlaylist
+2024-04-11 23:41:30,640 [1] ERROR CommunityMusicP.Program - Error: System.Net.Sockets.SocketException (10054): Se ha forzado la interrupción de una conexión existente por el host remoto.
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   at CommunityMusicP.Program.SendMessageToServer(String message) in C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\cliente\Program.cs:line 66
+2024-04-11 23:46:20,682 [1] INFO CommunityMusicP.Program - Conexión establecida con el servidor.
+2024-04-11 23:46:23,232 [1] INFO CommunityMusicP.Program - MostrarGetPlaylist
+2024-04-11 23:46:39,990 [1] ERROR CommunityMusicP.Program - Error: System.Net.Sockets.SocketException (10054): Se ha forzado la interrupción de una conexión existente por el host remoto.
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer)
+   at CommunityMusicP.Program.SendMessageToServer(String message) in C:\Users\mario\OneDrive\Escritorio\2024\I Semestre\Datos I\Community-Music-Player\cliente\Program.cs:line 66
