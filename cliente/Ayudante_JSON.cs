@@ -22,15 +22,7 @@
         }
 
         public T Deserialize_Modelo<T>(string json) {
-            try
-            {
-                T modelo = JsonSerializer.Deserialize<T>(json);
-                return modelo;
-            }
-            catch (Exception e)
-            {
-
-                throw new Exception(e.Message);
-            }           
+            return JsonSerializer.Deserialize<T>(json)
+                ?? throw new JsonException("The JSON payload could not be deserialized.");
         }
     }

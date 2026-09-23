@@ -1,31 +1,24 @@
-using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using Newtonsoft.Json.Linq;
-using log4net; //Biblioteca para el manejo de logs
-using log4net.Config; //Biblioteca para configurar el log
+using log4net;
+using log4net.Config;
 using lectorIni;
 
 namespace CommunityMusicP
 {
     internal static class Program
     {
-        // Declara clienteSocket como una variable estática para que sea accesible desde otros métodos
-        public static Socket clienteSocket;
-        private static Clientcnct clienteForm;
+        private static Socket? clientSocket;
+        private static Clientcnct? clienteForm;
         private static readonly ILog log = LogManager.GetLogger(typeof(Program));
 
         static void Main()
         {
             XmlConfigurator.Configure(new FileInfo("log4net.config"));
-            // Inicializa la configuración de la aplicación
             ApplicationConfiguration.Initialize();
-            // Llama al método Socketcliente para establecer la conexión con el servidor
-            Console.WriteLine("HOLAAAA MUNDOOOOO");
             clienteForm = new Clientcnct();
             Socketcliente();
-
-            // Crear una instancia del primer formulario y pasar la instancia de Clientcnct
             Application.Run(new Cliente(clienteForm));
         }
 
@@ -33,15 +26,13 @@ namespace CommunityMusicP
         {
             try
             {
-                // Establecer la dirección IP y el puerto del servidor
-                IPAddress ipAddress = IPAddress.Parse("127.0.0.1");
-                int puerto = 10500;
+                IniReader settings = new IniReader();
+                const string settingsPath = "data1.ini";
+                string host = settings.LeerConfiguracion(settingsPath, "Sockets", "IP");
+                int port = int.Parse(settings.LeerConfiguracion(settingsPath, "Sockets", "Puerto"));
 
-                // Crear el socket TCP/IP
-                clienteSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-
-                // Conectar el socket al servidor
-                clienteSocket.Connect(ipAddress, puerto);
+                clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                clientSocket.Connect(host, port);
 
                 Console.WriteLine("Conexión establecida con el servidor.");
             }
@@ -56,14 +47,15 @@ namespace CommunityMusicP
         {
             try
             {
-                // Enviar datos al servidor
-                byte[] mensajeBytes = Encoding.UTF8.GetBytes(message + "\n"); // Agregar un salto de línea al final del mensaje
-                Program.clienteSocket.Send(mensajeBytes);
+                if (clientSocket is null || clienteForm is null)
+                {
+                    throw new InvalidOperationException("The client is not connected to the server.");
+                }
 
-                // Recibir respuesta del servidor
-                byte[] buffer = new byte[1024];
-                int bytesRecibidos = Program.clienteSocket.Receive(buffer);
-                string respuesta = Encoding.UTF8.GetString(buffer, 0, bytesRecibidos);
+                clientSocket.Send(Encoding.UTF8.GetBytes(message + "\n"));
+                byte[] buffer = new byte[64 * 1024];
+                int received = clientSocket.Receive(buffer);
+                string respuesta = Encoding.UTF8.GetString(buffer, 0, received);
                 dynamic jsonData = JObject.Parse(message);
 
                 // Obtener el valor de la propiedad "command" del mensaje JSON
@@ -78,8 +70,10 @@ namespace CommunityMusicP
                         SendMessageToServer($"{{\"command\": \"Update\"}}");
                         break;
                     case "Update":
-                        // Enviar la respuesta al formulario de cliente
                         clienteForm.UpdatePlaylist(respuesta);
+                        break;
+                    case "FIN":
+                        clientSocket.Close();
                         break;
                 }
 

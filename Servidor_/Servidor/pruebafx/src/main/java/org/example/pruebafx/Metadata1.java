@@ -1,6 +1,6 @@
 package org.example.pruebafx;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.jaudiotagger.audio.AudioFile;
 import org.jaudiotagger.audio.AudioFileIO;
 import org.jaudiotagger.tag.FieldKey;

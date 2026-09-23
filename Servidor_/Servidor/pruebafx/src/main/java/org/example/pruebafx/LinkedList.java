@@ -101,6 +101,9 @@ public class LinkedList {
     // Método para obtener un nodo aleatorio
     private SongData getRandomNode() {
         int size = size();
+        if (size == 0) {
+            return null;
+        }
         int randomIndex = (int) (Math.random() * size);
         return find(randomIndex);
     }
@@ -112,7 +115,8 @@ public class LinkedList {
         int maxAttempts = 100; // Número máximo de intentos para evitar un bucle infinito
         int attempts = 0;
 
-        while (randomList.size() <= 9 && attempts < maxAttempts) {
+        int targetSize = Math.min(10, size());
+        while (randomList.size() < targetSize && attempts < maxAttempts) {
             SongData randomNode = getRandomNode();
             if (randomNode != null && !selectedNodes.contains(randomNode)) {
                 randomList.insert(randomNode);

@@ -9,7 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import javafx.util.Duration;
 
 import java.io.File;
@@ -93,6 +93,9 @@ public class ControllerClass implements Initializable {
 
         if (files != null) {
             for (File file : files) {
+                if (!file.isFile()) {
+                    continue;
+                }
                 try {
                     SongData songData = new SongData(file);
                     songList.insert(songData);
@@ -106,7 +109,9 @@ public class ControllerClass implements Initializable {
                 SongData song = songList.get(i);
                 listView.getItems().addAll(song.getTitle());
             }
-            getSongInfo(numbersong);
+            if (!songList.isEmpty()) {
+                getSongInfo(numbersong);
+            }
         }
         listaAleatoria = songList.generateRandomList();
 
@@ -123,10 +128,17 @@ public class ControllerClass implements Initializable {
             LOG.error("Error cargando media: " + e.getMessage());
         }
 
+        if (songList.isEmpty()) {
+            songLabel.setText("Add audio files to the configured music folder");
+            infoLabel.setText("No music files found");
+        }
+
         Slider_Volume.valueProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
-                mediaPlayer.setVolume(Slider_Volume.getValue() * 0.01);
+                if (mediaPlayer != null) {
+                    mediaPlayer.setVolume(Slider_Volume.getValue() * 0.01);
+                }
             }
         });
     }
