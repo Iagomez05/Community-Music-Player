@@ -4,14 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Net;
-using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using log4net; //Biblioteca para el manejo de logs
 using log4net.Config; //Biblioteca para configurar el log
-using lectorIni;
 //using Capa_Acceso_Datos.Txt;//Uso de la clase IniReader para leer archivos INI
 
 namespace CommunityMusicP
@@ -20,21 +17,10 @@ namespace CommunityMusicP
     {
         // Instancia de log para el manejo de logs
         private static readonly ILog log = LogManager.GetLogger(typeof(Clientcnct));
-        // Instancia de IniReader para leer archivos INI
-        private IniReader lector = new IniReader();
-        private IPAddress ipAddress;
-        private int puerto;
-
-
         public Clientcnct()
         {
             XmlConfigurator.Configure(new FileInfo("log4net.config"));
             InitializeComponent();
-            // Leer la configuración del archivo INI
-            string rutaArchivo = "data1.ini"; // Asegúrate de proporcionar la ruta correcta
-            ipAddress = IPAddress.Parse(lector.LeerConfiguracion(rutaArchivo, "Sockets", "IP"));
-            puerto = int.Parse(lector.LeerConfiguracion(rutaArchivo, "Sockets", "Puerto"));
-
         }
 
         public void MostrarGetPlaylist(string respuesta)

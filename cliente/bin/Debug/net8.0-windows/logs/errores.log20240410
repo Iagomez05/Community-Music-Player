@@ -1,3 +1,0 @@
-2024-03-27 21:40:13,504 [1] ERROR CommunityMusicP.Program - Error: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión. 127.0.0.1:7500
-2024-03-27 21:40:13,519 [1] INFO CommunityMusicP.Program - Aplicaci�n iniciada
-2024-03-27 21:40:23,732 [1] ERROR CommunityMusicP.Clientcnct - Error: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión. 127.0.0.1:7500

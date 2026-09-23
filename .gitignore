@@ -1,0 +1,29 @@
+# IDE settings
+.idea/
+.vs/
+*.iml
+*.suo
+*.user
+*.csproj.user
+
+# .NET build output
+**/bin/
+**/obj/
+
+# Java / Maven build output
+**/target/
+**/.mvn/wrapper/maven-wrapper.jar
+
+# Runtime output
+**/logs/
+**/log.errores/
+*.log
+**/info.json
+
+# Machine-specific configuration
+cliente/data1.ini
+Servidor_/Servidor/pruebafx/settings.ini
+
+# Local media library
+Servidor_/Servidor/pruebafx/music/*
+!Servidor_/Servidor/pruebafx/music/.gitkeep
