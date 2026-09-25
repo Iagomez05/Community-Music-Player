@@ -12,6 +12,7 @@ namespace CommunityMusicP
         private static Socket? clientSocket;
         private static Clientcnct? clienteForm;
         private static readonly ILog log = LogManager.GetLogger(typeof(Program));
+        public static bool IsConnected => clientSocket?.Connected == true;
 
         static void Main()
         {

@@ -31,6 +31,22 @@ flowchart LR
 - Multiple TCP client connections handled concurrently
 - File-based configuration and rolling application logs
 
+## UI Redesign
+
+The original academic interfaces were revisited to improve visual consistency, usability, and presentation while preserving the JavaFX, Windows Forms, and client-server architecture.
+
+### JavaFX server and player
+
+| Original academic interface | Refined portfolio version |
+| --- | --- |
+| ![Original JavaFX player](docs/screenshots/before/server-player.png) | ![Redesigned JavaFX player](docs/screenshots/after/server-player.png) |
+
+### Windows Forms collaborative playlist
+
+| Original academic interface | Refined portfolio version |
+| --- | --- |
+| ![Original voting client](docs/screenshots/before/client-playlist.png) | ![Redesigned voting client](docs/screenshots/after/client-playlist.png) |
+
 ## Tech Stack
 
 | Area | Technologies |
