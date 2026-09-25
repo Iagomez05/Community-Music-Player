@@ -66,6 +66,8 @@ public class ControllerClass implements Initializable {
 
     @FXML
     private Label infoLabel;
+    @FXML
+    private Label serverStatusLabel;
 
 
 
@@ -93,7 +95,7 @@ public class ControllerClass implements Initializable {
 
         if (files != null) {
             for (File file : files) {
-                if (!file.isFile()) {
+                if (!isSupportedAudioFile(file)) {
                     continue;
                 }
                 try {
@@ -114,23 +116,30 @@ public class ControllerClass implements Initializable {
             }
         }
         listaAleatoria = songList.generateRandomList();
+        boolean hasSongs = !songList.isEmpty();
+        Button_Last.setDisable(!hasSongs);
+        Button_Pause.setDisable(!hasSongs);
+        Button_Play.setDisable(!hasSongs);
+        Button_NEXT.setDisable(!hasSongs);
+        Button_Remove.setDisable(!hasSongs);
 
-
-        try {
-            String musicFileName = songList.get(numbersong).getTitle(); // Obtiene el nombre del archivo de música
-            String musicDirectoryPath = ApplicationSettings.getApplicationSettings().getCarpetaBibliotecaMusical(); // Obtiene la ruta del directorio de música
-            String musicFilePath = musicDirectoryPath + File.separator + musicFileName;
-            media = new Media(new File(musicFilePath).toURI().toString());
-            mediaPlayer = new MediaPlayer(media);
-            songLabel.setText(songList.get(numbersong).getTitle());
-        } catch (Exception e) {
-            System.out.println("Error cargando media: " + e.getMessage());
-            LOG.error("Error cargando media: " + e.getMessage());
+        if (hasSongs) {
+            try {
+                String musicFileName = songList.get(numbersong).getTitle(); // Obtiene el nombre del archivo de música
+                String musicDirectoryPath = ApplicationSettings.getApplicationSettings().getCarpetaBibliotecaMusical(); // Obtiene la ruta del directorio de música
+                String musicFilePath = musicDirectoryPath + File.separator + musicFileName;
+                media = new Media(new File(musicFilePath).toURI().toString());
+                mediaPlayer = new MediaPlayer(media);
+                songLabel.setText(songList.get(numbersong).getTitle());
+            } catch (Exception e) {
+                System.out.println("Error cargando media: " + e.getMessage());
+                LOG.error("Error cargando media: " + e.getMessage());
+            }
         }
 
         if (songList.isEmpty()) {
-            songLabel.setText("Add audio files to the configured music folder");
-            infoLabel.setText("No music files found");
+            songLabel.setText("Your library is ready");
+            infoLabel.setText("Add WAV or MP3 files to the configured music folder to begin playback.");
         }
 
         Slider_Volume.valueProperty().addListener(new ChangeListener<Number>() {
@@ -142,6 +151,14 @@ public class ControllerClass implements Initializable {
             }
         });
     }
+
+    private boolean isSupportedAudioFile(File file) {
+        if (!file.isFile()) {
+            return false;
+        }
+        String name = file.getName().toLowerCase();
+        return name.endsWith(".wav") || name.endsWith(".mp3") || name.endsWith(".m4a") || name.endsWith(".aac");
+    }
     @FXML
     public void commumode(ActionEvent event){
         writeSongInfoToFile("info.json");
@@ -149,6 +166,10 @@ public class ControllerClass implements Initializable {
         if (Toggle_commode.isSelected()) {
             Servidor empiezaservidor = new Servidor(this);
             empiezaservidor.iniciarServidor(valor);
+            serverStatusLabel.setText("Online · Listening on port " + valor);
+            serverStatusLabel.getStyleClass().add("online");
+            Toggle_commode.setText("Community mode active");
+            Toggle_commode.setDisable(true);
 
             // Asegúrate de que songList contenga la lista original de canciones
             if (!songList.isEmpty()) {
@@ -196,7 +217,10 @@ public class ControllerClass implements Initializable {
 
         if (metadata != null) {
             // Update UI with metadata
-            infoLabel.setText("Artist: " + metadata.getArtist() + "                      " + " Title: " + metadata.getTitle() + "\n" + " Album: " + metadata.getAlbum()+ "           " + " Genre: " + metadata.getGenre()+ "\n" + " Likes: " + current.getLikes()+ "                                   " + " Dislikes: " + current.getDislikes());
+            infoLabel.setText("Artist  ·  " + metadata.getArtist() + "\n" +
+                    "Album  ·  " + metadata.getAlbum() + "\n" +
+                    "Genre  ·  " + metadata.getGenre() + "\n" +
+                    "Votes  ·  " + current.getLikes() + " up  /  " + current.getDislikes() + " down");
 
             System.out.println(metadata);
         } else {

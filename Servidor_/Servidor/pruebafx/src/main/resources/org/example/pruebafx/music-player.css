@@ -1,0 +1,153 @@
+.app-root {
+    -fx-background-color: #0b0f14;
+    -fx-font-family: "Segoe UI", "Inter", sans-serif;
+}
+
+.top-bar {
+    -fx-background-color: #0f151c;
+    -fx-border-color: transparent transparent #222d3a transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.brand {
+    -fx-text-fill: #f4f6fa;
+    -fx-font-size: 19px;
+    -fx-font-weight: 800;
+    -fx-letter-spacing: 1.5px;
+}
+
+.brand-subtitle,
+.section-caption,
+.control-label {
+    -fx-text-fill: #8996a6;
+    -fx-font-size: 12px;
+}
+
+.status-pill,
+.counter-badge {
+    -fx-background-color: #17212b;
+    -fx-background-radius: 999px;
+    -fx-border-color: #273545;
+    -fx-border-radius: 999px;
+    -fx-padding: 7 12 7 12;
+}
+
+.status-dot { -fx-text-fill: #576575; }
+.status-text { -fx-text-fill: #b9c3cf; -fx-font-size: 12px; -fx-font-weight: 600; }
+.status-text.online { -fx-text-fill: #3ddc97; }
+
+.card {
+    -fx-background-color: #131a22;
+    -fx-background-radius: 16px;
+    -fx-border-color: #202b37;
+    -fx-border-radius: 16px;
+    -fx-padding: 20px;
+}
+
+.section-title {
+    -fx-text-fill: #f4f6fa;
+    -fx-font-size: 17px;
+    -fx-font-weight: 700;
+}
+
+.counter-badge {
+    -fx-text-fill: #9c87ff;
+    -fx-font-size: 10px;
+    -fx-font-weight: 800;
+    -fx-padding: 5 9 5 9;
+}
+
+.list-view {
+    -fx-background-color: #0f151c;
+    -fx-background-radius: 12px;
+    -fx-border-color: #222d3a;
+    -fx-border-radius: 12px;
+    -fx-padding: 4px;
+}
+
+.list-view .viewport { -fx-background-color: transparent; }
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #cbd3dd;
+    -fx-font-size: 13px;
+    -fx-padding: 12 12 12 12;
+    -fx-background-radius: 8px;
+}
+.list-cell:filled:hover { -fx-background-color: #19232e; }
+.list-cell:filled:selected { -fx-background-color: #2b2550; -fx-text-fill: #ffffff; }
+
+.now-playing-card {
+    -fx-background-color: linear-gradient(to bottom right, #171d29, #111820);
+}
+
+.eyebrow {
+    -fx-text-fill: #9c87ff;
+    -fx-font-size: 11px;
+    -fx-font-weight: 800;
+}
+
+.song-title {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 32px;
+    -fx-font-weight: 800;
+}
+
+.song-metadata {
+    -fx-text-fill: #9da8b6;
+    -fx-font-size: 15px;
+    -fx-line-spacing: 5px;
+}
+
+.progress-bar { -fx-pref-height: 4px; }
+.progress-bar .track { -fx-background-color: #2a3440; -fx-background-radius: 999px; }
+.progress-bar .bar { -fx-background-color: #7c5cfc; -fx-background-radius: 999px; -fx-padding: 2px; }
+.slider .track { -fx-background-color: #303b48; -fx-pref-height: 4px; }
+.slider .thumb { -fx-background-color: #f4f6fa; -fx-pref-height: 14px; -fx-pref-width: 14px; }
+
+.button,
+.toggle-button {
+    -fx-cursor: hand;
+    -fx-font-weight: 700;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+}
+
+.icon-button {
+    -fx-background-color: #1a232d;
+    -fx-text-fill: #d7dee7;
+    -fx-border-color: #293643;
+    -fx-pref-height: 44px;
+    -fx-pref-width: 52px;
+    -fx-font-size: 15px;
+}
+.icon-button:hover { -fx-background-color: #242f3b; }
+
+.play-button {
+    -fx-background-color: #7c5cfc;
+    -fx-text-fill: white;
+    -fx-pref-height: 54px;
+    -fx-pref-width: 62px;
+    -fx-font-size: 18px;
+}
+.play-button:hover { -fx-background-color: #8f74ff; }
+
+.secondary-button {
+    -fx-background-color: #19222c;
+    -fx-text-fill: #d5dce5;
+    -fx-border-color: #2b3846;
+    -fx-padding: 10 16 10 16;
+}
+.secondary-button:hover { -fx-background-color: #25313e; }
+
+.primary-toggle {
+    -fx-background-color: #7c5cfc;
+    -fx-text-fill: white;
+    -fx-padding: 11 18 11 18;
+}
+.primary-toggle:hover { -fx-background-color: #8f74ff; }
+.primary-toggle:selected { -fx-background-color: #246a50; }
+
+.button:disabled,
+.toggle-button:disabled { -fx-opacity: 0.38; }
+
+.server-card { -fx-padding: 18px; }

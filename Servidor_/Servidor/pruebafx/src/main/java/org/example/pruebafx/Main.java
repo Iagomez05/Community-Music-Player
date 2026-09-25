@@ -19,9 +19,11 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         ApplicationSettings.getApplicationSettings();
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("music_player.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 854, 484);
-        stage.setTitle("Music Player");
+        Scene scene = new Scene(fxmlLoader.load(), 1100, 700);
+        stage.setTitle("Community Music Player · Server");
         stage.setScene(scene);
+        stage.setMinWidth(960);
+        stage.setMinHeight(640);
         stage.show();
         stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
             @Override
